@@ -4,10 +4,10 @@ import { useTheme } from "../../hooks";
 import { ThemeContext } from "./ThemeContext";
 
 export const ThemeProvider = ({ children }) => {
-  const { themeMode, toggleThemeMode, getPalette } = useTheme();
+  const { theme, toggleTheme, getPalette } = useTheme();
 
   return (
-    <ThemeContext.Provider value={{ themeMode, toggleThemeMode, getPalette }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, getPalette }}>
       {children}
     </ThemeContext.Provider>
   );
