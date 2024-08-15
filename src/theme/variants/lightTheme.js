@@ -3,12 +3,11 @@ import { red, green } from "@mui/material/colors";
 
 export const lightTheme = createTheme({
   palette: {
-    mode: "light",
     primary: {
       main: "#007EAE",
     },
     secondary: {
-      main: "#80BFD7",
+      main: "#007EAE",
     },
     success: {
       main: green.A400,

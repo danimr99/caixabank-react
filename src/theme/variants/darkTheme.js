@@ -3,12 +3,15 @@ import { red, green } from "@mui/material/colors";
 
 export const darkTheme = createTheme({
   palette: {
-    mode: "dark",
+    background: {
+      default: "#C2C2C2",
+      paper: "#D6D6D6",
+    },
     primary: {
-      main: "#3F90CE",
+      main: "#003C6C",
     },
     secondary: {
-      main: "#373F51",
+      main: "#003C6C",
     },
     success: {
       main: green.A400,
