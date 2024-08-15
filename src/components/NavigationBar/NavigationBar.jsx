@@ -8,6 +8,8 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Box,
+  Grid,
   useTheme,
 } from "@mui/material";
 import {
@@ -20,6 +22,7 @@ import {
 
 import { useToggle } from "../../hooks";
 import { CustomAppBar, CustomDrawer, CustomDrawerHeader } from "./ui";
+import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 
 export const NavigationBar = () => {
   const theme = useTheme();
@@ -44,9 +47,37 @@ export const NavigationBar = () => {
           >
             <MenuOutlined />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            CaixaBankNow
-          </Typography>
+
+          <Grid container direction="row" alignItems="center">
+            <img
+              width={64}
+              height={64}
+              src="assets/caixabank-icon.png"
+              alt="CaixaBank logo"
+            />
+
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{
+                display: { xs: "none", sm: "block" },
+              }}
+            >
+              CaixaBankNow
+            </Typography>
+          </Grid>
+
+          <Box
+            sx={{
+              display: {
+                xs: isSideMenuExpanded ? "none" : "block",
+                sm: "block",
+              },
+            }}
+          >
+            <ThemeSwitch />
+          </Box>
         </Toolbar>
       </CustomAppBar>
       <CustomDrawer variant="permanent" open={isSideMenuExpanded}>
