@@ -7,5 +7,13 @@ export const useToggle = (initialValue) => {
     setIsOpened((previousState) => !previousState);
   };
 
-  return { isOpened, toggle };
+  const open = () => {
+    setIsOpened(true);
+  };
+
+  const close = () => {
+    setIsOpened(false);
+  };
+
+  return { isOpened, open, close, toggle };
 };
