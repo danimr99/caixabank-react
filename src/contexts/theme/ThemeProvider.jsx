@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../hooks";
 import { ThemeContext } from "./ThemeContext";
 
-const ThemeProvider = ({ children }) => {
+export const ThemeProvider = ({ children }) => {
   const { themeMode, toggleThemeMode, getPalette } = useTheme();
 
   return (
@@ -19,5 +19,3 @@ ThemeProvider.propTypes = {
     PropTypes.node,
   ]).isRequired,
 };
-
-export default ThemeProvider;

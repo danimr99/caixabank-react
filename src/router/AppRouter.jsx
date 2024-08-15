@@ -1,7 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-const AppRouter = () => {
-  return <Routes></Routes>;
+import { DashboardPage } from "../pages/DashboardPage";
+
+export const AppRouter = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<DashboardPage />} />
+
+      <Route path="/*" element={<Navigate to="/" />} />
+    </Routes>
+  );
 };
-
-export default AppRouter;

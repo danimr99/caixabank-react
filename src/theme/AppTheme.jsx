@@ -4,7 +4,7 @@ import { CssBaseline } from "@mui/material";
 
 import { useThemeContext } from "../contexts/theme/useThemeContext";
 
-const AppTheme = ({ children }) => {
+export const AppTheme = ({ children }) => {
   const { getPalette } = useThemeContext();
 
   return (
@@ -21,5 +21,3 @@ AppTheme.propTypes = {
     PropTypes.node,
   ]).isRequired,
 };
-
-export default AppTheme;
