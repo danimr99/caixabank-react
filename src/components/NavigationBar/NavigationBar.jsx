@@ -94,7 +94,7 @@ export const NavigationBar = () => {
         <List>
           {NavigationBarLinks.map((navigationBarLink) => (
             <NavigationBarItem
-              key={navigationBarLink.text}
+              key={navigationBarLink.label}
               {...navigationBarLink}
               isSideMenuExpanded={isSideMenuExpanded}
             />
