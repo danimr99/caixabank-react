@@ -1,13 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { DashboardPage } from "../pages/DashboardPage";
+import { Routes as RoutesList } from "../constants";
+import { DashboardPage } from "../pages";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<DashboardPage />} />
+      <Route path={RoutesList.DASHBOARD} element={<DashboardPage />} />
 
-      <Route path="/*" element={<Navigate to="/" />} />
+      <Route path="/*" element={<Navigate to={RoutesList.DASHBOARD} />} />
     </Routes>
   );
 };
