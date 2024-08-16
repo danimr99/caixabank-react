@@ -1,0 +1,1832 @@
+[
+  {
+    "account_id": 1,
+    "bank": "Imagin",
+    "name": "Personal Account",
+    "account_number": "ES12 3456 7890 1234 5678 9012",
+    "balance": 7500,
+    "transactions": [
+      {
+        "transaction_id": 1,
+        "transaction_date": "2021-02-22T18:48:32.548Z",
+        "description": "Interest",
+        "amount": 382.72
+      },
+      {
+        "transaction_id": 2,
+        "transaction_date": "2021-02-25T12:42:20.536Z",
+        "description": "Transport",
+        "amount": -287.95
+      },
+      {
+        "transaction_id": 3,
+        "transaction_date": "2021-02-25T22:10:48.215Z",
+        "description": "Gift",
+        "amount": 113.24
+      },
+      {
+        "transaction_id": 4,
+        "transaction_date": "2021-02-27T00:42:24.306Z",
+        "description": "Salary",
+        "amount": 302.45
+      },
+      {
+        "transaction_id": 5,
+        "transaction_date": "2021-04-04T18:05:05.740Z",
+        "description": "Dividends",
+        "amount": 288.17
+      },
+      {
+        "transaction_id": 6,
+        "transaction_date": "2021-04-21T14:55:24.478Z",
+        "description": "Insurance",
+        "amount": -303.31
+      },
+      {
+        "transaction_id": 7,
+        "transaction_date": "2021-05-06T14:49:32.586Z",
+        "description": "Health",
+        "amount": -237.73
+      },
+      {
+        "transaction_id": 8,
+        "transaction_date": "2021-05-08T02:33:03.065Z",
+        "description": "Interest",
+        "amount": 109.43
+      },
+      {
+        "transaction_id": 9,
+        "transaction_date": "2021-05-15T08:26:48.179Z",
+        "description": "Transport",
+        "amount": -92.9
+      },
+      {
+        "transaction_id": 10,
+        "transaction_date": "2021-05-28T22:15:08.047Z",
+        "description": "Gift",
+        "amount": 384.74
+      },
+      {
+        "transaction_id": 11,
+        "transaction_date": "2021-06-19T16:03:33.850Z",
+        "description": "Rent",
+        "amount": -304.87
+      },
+      {
+        "transaction_id": 12,
+        "transaction_date": "2021-06-20T09:19:28.123Z",
+        "description": "Dividends",
+        "amount": 362.14
+      },
+      {
+        "transaction_id": 13,
+        "transaction_date": "2021-07-17T06:53:40.984Z",
+        "description": "Gift",
+        "amount": 213.4
+      },
+      {
+        "transaction_id": 14,
+        "transaction_date": "2021-07-31T05:25:29.842Z",
+        "description": "Entertainment",
+        "amount": -194.33
+      },
+      {
+        "transaction_id": 15,
+        "transaction_date": "2021-08-01T14:59:09.917Z",
+        "description": "Entertainment",
+        "amount": -123.01
+      },
+      {
+        "transaction_id": 16,
+        "transaction_date": "2021-08-02T09:07:01.401Z",
+        "description": "Clothing",
+        "amount": -321.64
+      },
+      {
+        "transaction_id": 17,
+        "transaction_date": "2021-08-04T04:34:20.712Z",
+        "description": "Salary",
+        "amount": 237.12
+      },
+      {
+        "transaction_id": 18,
+        "transaction_date": "2021-08-07T18:22:41.755Z",
+        "description": "Clothing",
+        "amount": -243.46
+      },
+      {
+        "transaction_id": 19,
+        "transaction_date": "2021-09-07T12:27:30.275Z",
+        "description": "Salary",
+        "amount": 171.33
+      },
+      {
+        "transaction_id": 20,
+        "transaction_date": "2021-09-17T23:06:17.058Z",
+        "description": "Gift",
+        "amount": 156.2
+      },
+      {
+        "transaction_id": 21,
+        "transaction_date": "2021-10-10T00:33:56.160Z",
+        "description": "Interest",
+        "amount": 203.08
+      },
+      {
+        "transaction_id": 22,
+        "transaction_date": "2021-10-16T02:18:44.784Z",
+        "description": "Interest",
+        "amount": 107.57
+      },
+      {
+        "transaction_id": 23,
+        "transaction_date": "2021-10-16T06:47:27.550Z",
+        "description": "Utilities",
+        "amount": -274.17
+      },
+      {
+        "transaction_id": 24,
+        "transaction_date": "2021-10-22T21:53:23.476Z",
+        "description": "Refund",
+        "amount": 399.53
+      },
+      {
+        "transaction_id": 25,
+        "transaction_date": "2021-10-27T05:34:05.511Z",
+        "description": "Insurance",
+        "amount": -201.07
+      },
+      {
+        "transaction_id": 26,
+        "transaction_date": "2021-11-26T21:02:00.240Z",
+        "description": "Gift",
+        "amount": 196.09
+      },
+      {
+        "transaction_id": 27,
+        "transaction_date": "2021-12-04T22:02:08.667Z",
+        "description": "Health",
+        "amount": -190.01
+      },
+      {
+        "transaction_id": 28,
+        "transaction_date": "2021-12-13T08:30:20.611Z",
+        "description": "Gift",
+        "amount": 218.57
+      },
+      {
+        "transaction_id": 29,
+        "transaction_date": "2021-12-16T12:29:46.152Z",
+        "description": "Education",
+        "amount": -169.57
+      },
+      {
+        "transaction_id": 30,
+        "transaction_date": "2021-12-21T12:33:20.050Z",
+        "description": "Utilities",
+        "amount": -255.99
+      },
+      {
+        "transaction_id": 31,
+        "transaction_date": "2022-01-30T15:21:02.004Z",
+        "description": "Dividends",
+        "amount": 179
+      },
+      {
+        "transaction_id": 32,
+        "transaction_date": "2022-02-06T18:56:37.575Z",
+        "description": "Dividends",
+        "amount": 151.62
+      },
+      {
+        "transaction_id": 33,
+        "transaction_date": "2022-03-03T03:59:00.413Z",
+        "description": "Salary",
+        "amount": 333.31
+      },
+      {
+        "transaction_id": 34,
+        "transaction_date": "2022-04-12T18:06:25.495Z",
+        "description": "Health",
+        "amount": -201.45
+      },
+      {
+        "transaction_id": 35,
+        "transaction_date": "2022-04-13T12:53:46.670Z",
+        "description": "Groceries",
+        "amount": -297.18
+      },
+      {
+        "transaction_id": 36,
+        "transaction_date": "2022-05-11T15:31:57.389Z",
+        "description": "Gift",
+        "amount": 162.75
+      },
+      {
+        "transaction_id": 37,
+        "transaction_date": "2022-05-20T22:59:18.408Z",
+        "description": "Utilities",
+        "amount": -239.69
+      },
+      {
+        "transaction_id": 38,
+        "transaction_date": "2022-06-02T20:27:16.035Z",
+        "description": "Education",
+        "amount": -352.2
+      },
+      {
+        "transaction_id": 39,
+        "transaction_date": "2022-06-06T06:01:35.575Z",
+        "description": "Clothing",
+        "amount": -197.13
+      },
+      {
+        "transaction_id": 40,
+        "transaction_date": "2022-06-07T23:01:38.496Z",
+        "description": "Gift",
+        "amount": 234.24
+      },
+      {
+        "transaction_id": 41,
+        "transaction_date": "2022-07-24T23:31:03.868Z",
+        "description": "Education",
+        "amount": -251.92
+      },
+      {
+        "transaction_id": 42,
+        "transaction_date": "2022-07-31T09:19:28.859Z",
+        "description": "Salary",
+        "amount": 326.18
+      },
+      {
+        "transaction_id": 43,
+        "transaction_date": "2022-08-19T20:21:17.695Z",
+        "description": "Transport",
+        "amount": -88.78
+      },
+      {
+        "transaction_id": 44,
+        "transaction_date": "2022-09-01T01:14:45.072Z",
+        "description": "Interest",
+        "amount": 290.55
+      },
+      {
+        "transaction_id": 45,
+        "transaction_date": "2022-09-21T07:11:33.315Z",
+        "description": "Transport",
+        "amount": -225.2
+      },
+      {
+        "transaction_id": 46,
+        "transaction_date": "2022-10-05T19:55:03.873Z",
+        "description": "Clothing",
+        "amount": -83.29
+      },
+      {
+        "transaction_id": 47,
+        "transaction_date": "2022-10-08T08:16:19.235Z",
+        "description": "Transport",
+        "amount": -212.48
+      },
+      {
+        "transaction_id": 48,
+        "transaction_date": "2022-10-20T07:02:33.018Z",
+        "description": "Education",
+        "amount": -134.24
+      },
+      {
+        "transaction_id": 49,
+        "transaction_date": "2022-11-20T18:12:03.418Z",
+        "description": "Interest",
+        "amount": 250.84
+      },
+      {
+        "transaction_id": 50,
+        "transaction_date": "2022-12-01T21:04:34.788Z",
+        "description": "Interest",
+        "amount": 317.7
+      },
+      {
+        "transaction_id": 51,
+        "transaction_date": "2022-12-05T01:57:58.927Z",
+        "description": "Dividends",
+        "amount": 190.02
+      },
+      {
+        "transaction_id": 52,
+        "transaction_date": "2022-12-15T07:54:01.213Z",
+        "description": "Interest",
+        "amount": 110.53
+      },
+      {
+        "transaction_id": 53,
+        "transaction_date": "2022-12-19T02:44:37.179Z",
+        "description": "Utilities",
+        "amount": -378.69
+      },
+      {
+        "transaction_id": 54,
+        "transaction_date": "2022-12-23T23:55:36.919Z",
+        "description": "Refund",
+        "amount": 227.75
+      },
+      {
+        "transaction_id": 55,
+        "transaction_date": "2023-01-02T10:22:20.304Z",
+        "description": "Interest",
+        "amount": 366.86
+      },
+      {
+        "transaction_id": 56,
+        "transaction_date": "2023-01-05T12:21:43.052Z",
+        "description": "Clothing",
+        "amount": -276.98
+      },
+      {
+        "transaction_id": 57,
+        "transaction_date": "2023-03-13T12:42:12.681Z",
+        "description": "Groceries",
+        "amount": -334.1
+      },
+      {
+        "transaction_id": 58,
+        "transaction_date": "2023-03-15T04:20:50.031Z",
+        "description": "Dividends",
+        "amount": 197.09
+      },
+      {
+        "transaction_id": 59,
+        "transaction_date": "2023-03-29T02:36:51.876Z",
+        "description": "Health",
+        "amount": -341.76
+      },
+      {
+        "transaction_id": 60,
+        "transaction_date": "2023-04-13T22:23:43.251Z",
+        "description": "Dividends",
+        "amount": 311.79
+      },
+      {
+        "transaction_id": 61,
+        "transaction_date": "2023-05-11T09:51:49.821Z",
+        "description": "Utilities",
+        "amount": -369.65
+      },
+      {
+        "transaction_id": 62,
+        "transaction_date": "2023-05-13T12:42:25.172Z",
+        "description": "Interest",
+        "amount": 105.11
+      },
+      {
+        "transaction_id": 63,
+        "transaction_date": "2023-05-30T19:36:48.158Z",
+        "description": "Interest",
+        "amount": 125.74
+      },
+      {
+        "transaction_id": 64,
+        "transaction_date": "2023-06-19T16:46:00.090Z",
+        "description": "Entertainment",
+        "amount": -393.63
+      },
+      {
+        "transaction_id": 65,
+        "transaction_date": "2023-07-05T15:31:06.640Z",
+        "description": "Refund",
+        "amount": 115.09
+      },
+      {
+        "transaction_id": 66,
+        "transaction_date": "2023-07-21T20:09:12.218Z",
+        "description": "Refund",
+        "amount": 199.51
+      },
+      {
+        "transaction_id": 67,
+        "transaction_date": "2023-07-24T03:05:24.292Z",
+        "description": "Gift",
+        "amount": 176.01
+      },
+      {
+        "transaction_id": 68,
+        "transaction_date": "2023-07-24T16:44:59.843Z",
+        "description": "Dividends",
+        "amount": 277.86
+      },
+      {
+        "transaction_id": 69,
+        "transaction_date": "2023-09-11T14:35:26.863Z",
+        "description": "Salary",
+        "amount": 391.32
+      },
+      {
+        "transaction_id": 70,
+        "transaction_date": "2023-10-25T20:57:18.968Z",
+        "description": "Transport",
+        "amount": -314.34
+      },
+      {
+        "transaction_id": 71,
+        "transaction_date": "2023-11-09T09:16:56.888Z",
+        "description": "Health",
+        "amount": -190.18
+      },
+      {
+        "transaction_id": 72,
+        "transaction_date": "2023-11-13T01:50:30.747Z",
+        "description": "Gift",
+        "amount": 260.04
+      },
+      {
+        "transaction_id": 73,
+        "transaction_date": "2023-12-03T03:59:33.522Z",
+        "description": "Insurance",
+        "amount": -303.6
+      },
+      {
+        "transaction_id": 74,
+        "transaction_date": "2023-12-27T08:24:15.707Z",
+        "description": "Education",
+        "amount": -256.97
+      },
+      {
+        "transaction_id": 75,
+        "transaction_date": "2024-01-01T01:38:36.227Z",
+        "description": "Health",
+        "amount": -93.57
+      },
+      {
+        "transaction_id": 76,
+        "transaction_date": "2024-01-14T20:32:10.495Z",
+        "description": "Entertainment",
+        "amount": -145.1
+      },
+      {
+        "transaction_id": 77,
+        "transaction_date": "2024-01-16T10:46:40.905Z",
+        "description": "Gift",
+        "amount": 149.94
+      },
+      {
+        "transaction_id": 78,
+        "transaction_date": "2024-01-22T02:00:18.874Z",
+        "description": "Health",
+        "amount": -227.08
+      },
+      {
+        "transaction_id": 79,
+        "transaction_date": "2024-01-28T04:18:03.074Z",
+        "description": "Refund",
+        "amount": 124.82
+      },
+      {
+        "transaction_id": 80,
+        "transaction_date": "2024-01-31T08:54:56.843Z",
+        "description": "Salary",
+        "amount": 391.32
+      },
+      {
+        "transaction_id": 81,
+        "transaction_date": "2024-02-19T02:53:39.071Z",
+        "description": "Rent",
+        "amount": -270.05
+      },
+      {
+        "transaction_id": 82,
+        "transaction_date": "2024-03-31T20:13:11.094Z",
+        "description": "Interest",
+        "amount": 394.67
+      },
+      {
+        "transaction_id": 83,
+        "transaction_date": "2024-04-21T09:10:49.717Z",
+        "description": "Dividends",
+        "amount": 347.73
+      },
+      {
+        "transaction_id": 84,
+        "transaction_date": "2024-06-22T04:10:54.040Z",
+        "description": "Salary",
+        "amount": 216.67
+      },
+      {
+        "transaction_id": 85,
+        "transaction_date": "2024-07-17T01:26:47.589Z",
+        "description": "Dividends",
+        "amount": 196.21
+      },
+      {
+        "transaction_id": 86,
+        "transaction_date": "2024-08-06T00:26:55.134Z",
+        "description": "Health",
+        "amount": -246.39
+      },
+      {
+        "transaction_id": 87,
+        "transaction_date": "2024-08-21T11:48:32.394Z",
+        "description": "Education",
+        "amount": -351.74
+      },
+      {
+        "transaction_id": 88,
+        "transaction_date": "2024-09-07T16:10:38.840Z",
+        "description": "Refund",
+        "amount": 110.11
+      },
+      {
+        "transaction_id": 89,
+        "transaction_date": "2024-09-25T18:11:39.781Z",
+        "description": "Interest",
+        "amount": 149.5
+      },
+      {
+        "transaction_id": 90,
+        "transaction_date": "2024-09-30T14:20:57.314Z",
+        "description": "Salary",
+        "amount": 332.67
+      },
+      {
+        "transaction_id": 91,
+        "transaction_date": "2024-10-14T07:44:45.998Z",
+        "description": "Clothing",
+        "amount": -382.38
+      },
+      {
+        "transaction_id": 92,
+        "transaction_date": "2024-10-21T18:09:08.024Z",
+        "description": "Dividends",
+        "amount": 286.51
+      },
+      {
+        "transaction_id": 93,
+        "transaction_date": "2024-10-29T22:28:32.649Z",
+        "description": "Entertainment",
+        "amount": -390.44
+      },
+      {
+        "transaction_id": 94,
+        "transaction_date": "2024-11-06T18:03:03.516Z",
+        "description": "Transport",
+        "amount": -299.47
+      },
+      {
+        "transaction_id": 95,
+        "transaction_date": "2024-11-14T14:10:24.365Z",
+        "description": "Transport",
+        "amount": -197.08
+      },
+      {
+        "transaction_id": 96,
+        "transaction_date": "2024-12-06T02:16:27.233Z",
+        "description": "Clothing",
+        "amount": -379.92
+      },
+      {
+        "transaction_id": 97,
+        "transaction_date": "2024-12-11T16:31:31.301Z",
+        "description": "Refund",
+        "amount": 153.67
+      },
+      {
+        "transaction_id": 98,
+        "transaction_date": "2024-12-12T16:50:55.371Z",
+        "description": "Education",
+        "amount": -368.29
+      },
+      {
+        "transaction_id": 99,
+        "transaction_date": "2024-12-28T17:54:22.935Z",
+        "description": "Refund",
+        "amount": 262.26
+      },
+      {
+        "transaction_id": 100,
+        "transaction_date": "2024-12-29T22:23:57.436Z",
+        "description": "Dividends",
+        "amount": 118.07
+      }
+    ],
+    "is_shared_account": false
+  },
+  {
+    "account_id": 2,
+    "bank": "CaixaBank",
+    "name": "Family Savings",
+    "account_number": "ES98 7654 3210 9876 5432 1098",
+    "balance": 15000,
+    "transactions": [
+      {
+        "transaction_id": 101,
+        "transaction_date": "2021-03-03T07:06:31.451Z",
+        "description": "Health",
+        "amount": -179.18
+      },
+      {
+        "transaction_id": 102,
+        "transaction_date": "2021-04-03T22:08:37.741Z",
+        "description": "Interest",
+        "amount": 342.1
+      },
+      {
+        "transaction_id": 103,
+        "transaction_date": "2021-05-24T21:50:52.387Z",
+        "description": "Health",
+        "amount": -371.09
+      },
+      {
+        "transaction_id": 104,
+        "transaction_date": "2021-05-26T18:29:51.583Z",
+        "description": "Insurance",
+        "amount": -126.86
+      },
+      {
+        "transaction_id": 105,
+        "transaction_date": "2021-06-05T00:23:11.872Z",
+        "description": "Dividends",
+        "amount": 139.37
+      },
+      {
+        "transaction_id": 106,
+        "transaction_date": "2021-06-08T10:11:05.303Z",
+        "description": "Insurance",
+        "amount": -129.56
+      },
+      {
+        "transaction_id": 107,
+        "transaction_date": "2021-06-09T08:47:04.268Z",
+        "description": "Insurance",
+        "amount": -143.79
+      },
+      {
+        "transaction_id": 108,
+        "transaction_date": "2021-06-29T07:07:39.426Z",
+        "description": "Clothing",
+        "amount": -195.85
+      },
+      {
+        "transaction_id": 109,
+        "transaction_date": "2021-06-29T10:24:34.212Z",
+        "description": "Clothing",
+        "amount": -292.23
+      },
+      {
+        "transaction_id": 110,
+        "transaction_date": "2021-07-01T19:03:34.961Z",
+        "description": "Utilities",
+        "amount": -187.99
+      },
+      {
+        "transaction_id": 111,
+        "transaction_date": "2021-07-04T14:28:53.504Z",
+        "description": "Gift",
+        "amount": 155.46
+      },
+      {
+        "transaction_id": 112,
+        "transaction_date": "2021-07-09T07:27:54.663Z",
+        "description": "Refund",
+        "amount": 360.46
+      },
+      {
+        "transaction_id": 113,
+        "transaction_date": "2021-07-12T18:39:40.615Z",
+        "description": "Salary",
+        "amount": 358.45
+      },
+      {
+        "transaction_id": 114,
+        "transaction_date": "2021-07-17T20:22:08.607Z",
+        "description": "Interest",
+        "amount": 89.23
+      },
+      {
+        "transaction_id": 115,
+        "transaction_date": "2021-08-15T17:08:07.464Z",
+        "description": "Insurance",
+        "amount": -180.59
+      },
+      {
+        "transaction_id": 116,
+        "transaction_date": "2021-08-24T05:30:21.973Z",
+        "description": "Utilities",
+        "amount": -140.84
+      },
+      {
+        "transaction_id": 117,
+        "transaction_date": "2021-09-02T15:05:49.031Z",
+        "description": "Clothing",
+        "amount": -150.13
+      },
+      {
+        "transaction_id": 118,
+        "transaction_date": "2021-09-05T12:15:42.936Z",
+        "description": "Transport",
+        "amount": -208.61
+      },
+      {
+        "transaction_id": 119,
+        "transaction_date": "2021-09-07T09:08:56.591Z",
+        "description": "Groceries",
+        "amount": -95.31
+      },
+      {
+        "transaction_id": 120,
+        "transaction_date": "2021-09-23T22:33:37.577Z",
+        "description": "Salary",
+        "amount": 365.67
+      },
+      {
+        "transaction_id": 121,
+        "transaction_date": "2021-10-15T22:25:27.932Z",
+        "description": "Salary",
+        "amount": 334.88
+      },
+      {
+        "transaction_id": 122,
+        "transaction_date": "2021-10-23T14:57:13.497Z",
+        "description": "Interest",
+        "amount": 274.69
+      },
+      {
+        "transaction_id": 123,
+        "transaction_date": "2021-10-26T09:40:18.044Z",
+        "description": "Dividends",
+        "amount": 196.86
+      },
+      {
+        "transaction_id": 124,
+        "transaction_date": "2021-11-05T23:54:47.877Z",
+        "description": "Interest",
+        "amount": 372.52
+      },
+      {
+        "transaction_id": 125,
+        "transaction_date": "2021-11-06T08:30:00.010Z",
+        "description": "Refund",
+        "amount": 285.66
+      },
+      {
+        "transaction_id": 126,
+        "transaction_date": "2021-11-28T10:24:55.603Z",
+        "description": "Clothing",
+        "amount": -242.3
+      },
+      {
+        "transaction_id": 127,
+        "transaction_date": "2022-01-03T19:03:07.478Z",
+        "description": "Transport",
+        "amount": -225.03
+      },
+      {
+        "transaction_id": 128,
+        "transaction_date": "2022-01-22T18:00:22.750Z",
+        "description": "Clothing",
+        "amount": -234.87
+      },
+      {
+        "transaction_id": 129,
+        "transaction_date": "2022-02-05T06:22:55.432Z",
+        "description": "Gift",
+        "amount": 347.12
+      },
+      {
+        "transaction_id": 130,
+        "transaction_date": "2022-03-03T09:42:28.253Z",
+        "description": "Interest",
+        "amount": 383.37
+      },
+      {
+        "transaction_id": 131,
+        "transaction_date": "2022-05-10T20:31:56.360Z",
+        "description": "Education",
+        "amount": -118.54
+      },
+      {
+        "transaction_id": 132,
+        "transaction_date": "2022-06-03T13:40:32.054Z",
+        "description": "Health",
+        "amount": -353.25
+      },
+      {
+        "transaction_id": 133,
+        "transaction_date": "2022-06-06T04:44:30.194Z",
+        "description": "Health",
+        "amount": -331.9
+      },
+      {
+        "transaction_id": 134,
+        "transaction_date": "2022-06-10T01:54:37.238Z",
+        "description": "Insurance",
+        "amount": -143.13
+      },
+      {
+        "transaction_id": 135,
+        "transaction_date": "2022-06-22T11:40:11.864Z",
+        "description": "Dividends",
+        "amount": 221.6
+      },
+      {
+        "transaction_id": 136,
+        "transaction_date": "2022-06-25T06:56:14.252Z",
+        "description": "Interest",
+        "amount": 198.49
+      },
+      {
+        "transaction_id": 137,
+        "transaction_date": "2022-07-05T20:13:36.136Z",
+        "description": "Interest",
+        "amount": 384
+      },
+      {
+        "transaction_id": 138,
+        "transaction_date": "2022-07-18T18:45:33.151Z",
+        "description": "Utilities",
+        "amount": -152.42
+      },
+      {
+        "transaction_id": 139,
+        "transaction_date": "2022-08-08T10:23:55.212Z",
+        "description": "Groceries",
+        "amount": -376.07
+      },
+      {
+        "transaction_id": 140,
+        "transaction_date": "2022-08-10T00:46:21.581Z",
+        "description": "Salary",
+        "amount": 152.83
+      },
+      {
+        "transaction_id": 141,
+        "transaction_date": "2022-08-26T07:49:19.199Z",
+        "description": "Refund",
+        "amount": 98.08
+      },
+      {
+        "transaction_id": 142,
+        "transaction_date": "2022-08-31T03:17:34.228Z",
+        "description": "Dividends",
+        "amount": 203.18
+      },
+      {
+        "transaction_id": 143,
+        "transaction_date": "2022-09-11T12:40:27.725Z",
+        "description": "Salary",
+        "amount": 356.46
+      },
+      {
+        "transaction_id": 144,
+        "transaction_date": "2022-09-22T22:32:44.918Z",
+        "description": "Groceries",
+        "amount": -367.29
+      },
+      {
+        "transaction_id": 145,
+        "transaction_date": "2022-09-25T12:00:31.585Z",
+        "description": "Refund",
+        "amount": 100.28
+      },
+      {
+        "transaction_id": 146,
+        "transaction_date": "2022-09-28T13:30:50.368Z",
+        "description": "Clothing",
+        "amount": -308.64
+      },
+      {
+        "transaction_id": 147,
+        "transaction_date": "2022-10-18T17:02:36.499Z",
+        "description": "Utilities",
+        "amount": -307.95
+      },
+      {
+        "transaction_id": 148,
+        "transaction_date": "2022-11-03T20:36:10.238Z",
+        "description": "Groceries",
+        "amount": -360.07
+      },
+      {
+        "transaction_id": 149,
+        "transaction_date": "2022-11-05T08:21:41.262Z",
+        "description": "Gift",
+        "amount": 206.67
+      },
+      {
+        "transaction_id": 150,
+        "transaction_date": "2022-11-08T22:02:09.496Z",
+        "description": "Rent",
+        "amount": -285.87
+      },
+      {
+        "transaction_id": 151,
+        "transaction_date": "2022-11-24T09:28:46.479Z",
+        "description": "Insurance",
+        "amount": -92.02
+      },
+      {
+        "transaction_id": 152,
+        "transaction_date": "2022-12-22T04:09:50.763Z",
+        "description": "Education",
+        "amount": -109.65
+      },
+      {
+        "transaction_id": 153,
+        "transaction_date": "2022-12-30T08:06:05.640Z",
+        "description": "Interest",
+        "amount": 382.89
+      },
+      {
+        "transaction_id": 154,
+        "transaction_date": "2023-01-03T08:34:33.973Z",
+        "description": "Groceries",
+        "amount": -373.59
+      },
+      {
+        "transaction_id": 155,
+        "transaction_date": "2023-01-17T10:21:52.251Z",
+        "description": "Clothing",
+        "amount": -182.26
+      },
+      {
+        "transaction_id": 156,
+        "transaction_date": "2023-02-05T14:11:06.540Z",
+        "description": "Salary",
+        "amount": 130.92
+      },
+      {
+        "transaction_id": 157,
+        "transaction_date": "2023-02-13T19:07:36.830Z",
+        "description": "Gift",
+        "amount": 215.08
+      },
+      {
+        "transaction_id": 158,
+        "transaction_date": "2023-03-30T04:43:50.650Z",
+        "description": "Health",
+        "amount": -181.35
+      },
+      {
+        "transaction_id": 159,
+        "transaction_date": "2023-04-14T18:01:53.750Z",
+        "description": "Salary",
+        "amount": 170.51
+      },
+      {
+        "transaction_id": 160,
+        "transaction_date": "2023-04-15T20:28:27.601Z",
+        "description": "Health",
+        "amount": -226.99
+      },
+      {
+        "transaction_id": 161,
+        "transaction_date": "2023-04-25T12:57:57.529Z",
+        "description": "Dividends",
+        "amount": 317.9
+      },
+      {
+        "transaction_id": 162,
+        "transaction_date": "2023-06-22T13:12:23.111Z",
+        "description": "Insurance",
+        "amount": -293.6
+      },
+      {
+        "transaction_id": 163,
+        "transaction_date": "2023-07-18T00:53:34.193Z",
+        "description": "Clothing",
+        "amount": -283.32
+      },
+      {
+        "transaction_id": 164,
+        "transaction_date": "2023-08-05T09:54:29.821Z",
+        "description": "Gift",
+        "amount": 262.38
+      },
+      {
+        "transaction_id": 165,
+        "transaction_date": "2023-08-06T12:21:04.161Z",
+        "description": "Gift",
+        "amount": 145.88
+      },
+      {
+        "transaction_id": 166,
+        "transaction_date": "2023-08-23T19:20:50.997Z",
+        "description": "Rent",
+        "amount": -366.12
+      },
+      {
+        "transaction_id": 167,
+        "transaction_date": "2023-08-24T07:12:15.956Z",
+        "description": "Refund",
+        "amount": 118.41
+      },
+      {
+        "transaction_id": 168,
+        "transaction_date": "2023-08-25T14:46:38.231Z",
+        "description": "Salary",
+        "amount": 334.21
+      },
+      {
+        "transaction_id": 169,
+        "transaction_date": "2023-08-26T18:46:43.084Z",
+        "description": "Refund",
+        "amount": 346.32
+      },
+      {
+        "transaction_id": 170,
+        "transaction_date": "2023-09-07T14:34:43.766Z",
+        "description": "Refund",
+        "amount": 122.16
+      },
+      {
+        "transaction_id": 171,
+        "transaction_date": "2023-09-26T05:30:05.805Z",
+        "description": "Refund",
+        "amount": 85.04
+      },
+      {
+        "transaction_id": 172,
+        "transaction_date": "2023-10-01T00:49:33.102Z",
+        "description": "Dividends",
+        "amount": 138.19
+      },
+      {
+        "transaction_id": 173,
+        "transaction_date": "2023-10-09T21:09:30.930Z",
+        "description": "Interest",
+        "amount": 120.8
+      },
+      {
+        "transaction_id": 174,
+        "transaction_date": "2023-10-10T00:37:47.548Z",
+        "description": "Dividends",
+        "amount": 220.98
+      },
+      {
+        "transaction_id": 175,
+        "transaction_date": "2023-11-08T00:38:40.595Z",
+        "description": "Education",
+        "amount": -341.09
+      },
+      {
+        "transaction_id": 176,
+        "transaction_date": "2023-11-10T07:03:54.437Z",
+        "description": "Refund",
+        "amount": 341.88
+      },
+      {
+        "transaction_id": 177,
+        "transaction_date": "2023-11-15T12:10:47.626Z",
+        "description": "Salary",
+        "amount": 150.42
+      },
+      {
+        "transaction_id": 178,
+        "transaction_date": "2023-11-24T03:25:25.135Z",
+        "description": "Gift",
+        "amount": 237.16
+      },
+      {
+        "transaction_id": 179,
+        "transaction_date": "2023-12-07T03:43:03.443Z",
+        "description": "Health",
+        "amount": -194.53
+      },
+      {
+        "transaction_id": 180,
+        "transaction_date": "2024-01-30T15:20:43.124Z",
+        "description": "Interest",
+        "amount": 322.68
+      },
+      {
+        "transaction_id": 181,
+        "transaction_date": "2024-01-31T01:10:10.093Z",
+        "description": "Gift",
+        "amount": 137.3
+      },
+      {
+        "transaction_id": 182,
+        "transaction_date": "2024-02-08T21:43:40.015Z",
+        "description": "Transport",
+        "amount": -351.23
+      },
+      {
+        "transaction_id": 183,
+        "transaction_date": "2024-02-24T20:53:53.578Z",
+        "description": "Refund",
+        "amount": 398.74
+      },
+      {
+        "transaction_id": 184,
+        "transaction_date": "2024-03-13T16:40:42.640Z",
+        "description": "Utilities",
+        "amount": -134.17
+      },
+      {
+        "transaction_id": 185,
+        "transaction_date": "2024-04-08T01:11:48.498Z",
+        "description": "Insurance",
+        "amount": -88.55
+      },
+      {
+        "transaction_id": 186,
+        "transaction_date": "2024-05-06T20:11:17.785Z",
+        "description": "Dividends",
+        "amount": 164.41
+      },
+      {
+        "transaction_id": 187,
+        "transaction_date": "2024-05-18T18:37:05.991Z",
+        "description": "Rent",
+        "amount": -350.49
+      },
+      {
+        "transaction_id": 188,
+        "transaction_date": "2024-05-21T07:07:11.541Z",
+        "description": "Utilities",
+        "amount": -310.66
+      },
+      {
+        "transaction_id": 189,
+        "transaction_date": "2024-06-07T17:26:19.842Z",
+        "description": "Education",
+        "amount": -120.24
+      },
+      {
+        "transaction_id": 190,
+        "transaction_date": "2024-06-20T10:02:12.079Z",
+        "description": "Rent",
+        "amount": -385.98
+      },
+      {
+        "transaction_id": 191,
+        "transaction_date": "2024-08-19T03:57:35.741Z",
+        "description": "Salary",
+        "amount": 214.33
+      },
+      {
+        "transaction_id": 192,
+        "transaction_date": "2024-08-27T18:29:40.447Z",
+        "description": "Gift",
+        "amount": 364.67
+      },
+      {
+        "transaction_id": 193,
+        "transaction_date": "2024-09-11T03:40:04.880Z",
+        "description": "Interest",
+        "amount": 181.68
+      },
+      {
+        "transaction_id": 194,
+        "transaction_date": "2024-09-28T18:25:04.640Z",
+        "description": "Salary",
+        "amount": 155.94
+      },
+      {
+        "transaction_id": 195,
+        "transaction_date": "2024-11-05T09:07:57.829Z",
+        "description": "Salary",
+        "amount": 183.73
+      },
+      {
+        "transaction_id": 196,
+        "transaction_date": "2024-11-13T10:27:53.537Z",
+        "description": "Clothing",
+        "amount": -230.82
+      },
+      {
+        "transaction_id": 197,
+        "transaction_date": "2024-11-13T10:39:30.383Z",
+        "description": "Interest",
+        "amount": 268.09
+      },
+      {
+        "transaction_id": 198,
+        "transaction_date": "2024-11-23T09:25:06.512Z",
+        "description": "Rent",
+        "amount": -325.26
+      },
+      {
+        "transaction_id": 199,
+        "transaction_date": "2024-12-12T23:20:43.732Z",
+        "description": "Refund",
+        "amount": 210.89
+      },
+      {
+        "transaction_id": 200,
+        "transaction_date": "2024-12-15T23:16:58.648Z",
+        "description": "Refund",
+        "amount": 237.77
+      }
+    ],
+    "is_shared_account": true
+  },
+  {
+    "account_id": 3,
+    "bank": "CaixaBank",
+    "name": "Personal Savings",
+    "account_number": "ES98 7654 5786 8354 1333 5492",
+    "balance": 10000,
+    "transactions": [
+      {
+        "transaction_id": 201,
+        "transaction_date": "2021-01-09T06:26:02.527Z",
+        "description": "Health",
+        "amount": -357.29
+      },
+      {
+        "transaction_id": 202,
+        "transaction_date": "2021-01-14T16:48:06.047Z",
+        "description": "Interest",
+        "amount": 287.7
+      },
+      {
+        "transaction_id": 203,
+        "transaction_date": "2021-03-08T04:32:54.028Z",
+        "description": "Entertainment",
+        "amount": -265.62
+      },
+      {
+        "transaction_id": 204,
+        "transaction_date": "2021-03-28T16:19:48.977Z",
+        "description": "Clothing",
+        "amount": -91.08
+      },
+      {
+        "transaction_id": 205,
+        "transaction_date": "2021-04-08T23:56:08.989Z",
+        "description": "Dividends",
+        "amount": 231.18
+      },
+      {
+        "transaction_id": 206,
+        "transaction_date": "2021-04-16T15:15:39.262Z",
+        "description": "Salary",
+        "amount": 344.59
+      },
+      {
+        "transaction_id": 207,
+        "transaction_date": "2021-05-14T03:46:40.519Z",
+        "description": "Clothing",
+        "amount": -326.34
+      },
+      {
+        "transaction_id": 208,
+        "transaction_date": "2021-05-17T12:29:41.287Z",
+        "description": "Rent",
+        "amount": -325.85
+      },
+      {
+        "transaction_id": 209,
+        "transaction_date": "2021-05-28T00:40:46.560Z",
+        "description": "Rent",
+        "amount": -112.04
+      },
+      {
+        "transaction_id": 210,
+        "transaction_date": "2021-06-04T01:57:13.729Z",
+        "description": "Insurance",
+        "amount": -129.75
+      },
+      {
+        "transaction_id": 211,
+        "transaction_date": "2021-06-27T14:28:28.096Z",
+        "description": "Salary",
+        "amount": 179.17
+      },
+      {
+        "transaction_id": 212,
+        "transaction_date": "2021-07-22T00:56:59.494Z",
+        "description": "Clothing",
+        "amount": -358.25
+      },
+      {
+        "transaction_id": 213,
+        "transaction_date": "2021-07-23T01:27:52.215Z",
+        "description": "Rent",
+        "amount": -387.9
+      },
+      {
+        "transaction_id": 214,
+        "transaction_date": "2021-08-12T23:44:47.308Z",
+        "description": "Entertainment",
+        "amount": -153.73
+      },
+      {
+        "transaction_id": 215,
+        "transaction_date": "2021-09-03T06:34:59.540Z",
+        "description": "Health",
+        "amount": -376.42
+      },
+      {
+        "transaction_id": 216,
+        "transaction_date": "2021-09-04T12:25:51.501Z",
+        "description": "Interest",
+        "amount": 214.45
+      },
+      {
+        "transaction_id": 217,
+        "transaction_date": "2021-09-10T05:15:28.805Z",
+        "description": "Dividends",
+        "amount": 274.65
+      },
+      {
+        "transaction_id": 218,
+        "transaction_date": "2021-09-11T19:00:19.390Z",
+        "description": "Clothing",
+        "amount": -245.12
+      },
+      {
+        "transaction_id": 219,
+        "transaction_date": "2021-10-26T08:16:20.022Z",
+        "description": "Insurance",
+        "amount": -130.21
+      },
+      {
+        "transaction_id": 220,
+        "transaction_date": "2021-10-30T06:47:06.254Z",
+        "description": "Salary",
+        "amount": 141.53
+      },
+      {
+        "transaction_id": 221,
+        "transaction_date": "2021-11-07T08:35:06.575Z",
+        "description": "Salary",
+        "amount": 82.32
+      },
+      {
+        "transaction_id": 222,
+        "transaction_date": "2021-11-21T11:19:47.515Z",
+        "description": "Health",
+        "amount": -234.86
+      },
+      {
+        "transaction_id": 223,
+        "transaction_date": "2021-11-29T06:17:34.829Z",
+        "description": "Insurance",
+        "amount": -259.35
+      },
+      {
+        "transaction_id": 224,
+        "transaction_date": "2021-11-29T18:22:29.057Z",
+        "description": "Education",
+        "amount": -267.78
+      },
+      {
+        "transaction_id": 225,
+        "transaction_date": "2021-12-19T20:06:31.799Z",
+        "description": "Dividends",
+        "amount": 126.49
+      },
+      {
+        "transaction_id": 226,
+        "transaction_date": "2022-01-01T00:48:02.604Z",
+        "description": "Refund",
+        "amount": 208.81
+      },
+      {
+        "transaction_id": 227,
+        "transaction_date": "2022-01-20T07:05:22.846Z",
+        "description": "Clothing",
+        "amount": -310.97
+      },
+      {
+        "transaction_id": 228,
+        "transaction_date": "2022-01-21T00:04:03.171Z",
+        "description": "Groceries",
+        "amount": -374.18
+      },
+      {
+        "transaction_id": 229,
+        "transaction_date": "2022-01-28T17:19:38.047Z",
+        "description": "Health",
+        "amount": -98.99
+      },
+      {
+        "transaction_id": 230,
+        "transaction_date": "2022-03-03T02:24:15.734Z",
+        "description": "Utilities",
+        "amount": -244.2
+      },
+      {
+        "transaction_id": 231,
+        "transaction_date": "2022-03-20T12:38:04.453Z",
+        "description": "Salary",
+        "amount": 211.79
+      },
+      {
+        "transaction_id": 232,
+        "transaction_date": "2022-04-05T05:47:22.226Z",
+        "description": "Education",
+        "amount": -361.52
+      },
+      {
+        "transaction_id": 233,
+        "transaction_date": "2022-04-06T15:06:05.093Z",
+        "description": "Transport",
+        "amount": -178.43
+      },
+      {
+        "transaction_id": 234,
+        "transaction_date": "2022-04-29T04:34:07.258Z",
+        "description": "Salary",
+        "amount": 188.56
+      },
+      {
+        "transaction_id": 235,
+        "transaction_date": "2022-05-10T12:11:33.187Z",
+        "description": "Entertainment",
+        "amount": -86.49
+      },
+      {
+        "transaction_id": 236,
+        "transaction_date": "2022-06-02T15:32:59.530Z",
+        "description": "Groceries",
+        "amount": -159.69
+      },
+      {
+        "transaction_id": 237,
+        "transaction_date": "2022-06-06T16:34:32.686Z",
+        "description": "Entertainment",
+        "amount": -200.4
+      },
+      {
+        "transaction_id": 238,
+        "transaction_date": "2022-06-10T09:01:46.006Z",
+        "description": "Salary",
+        "amount": 193.78
+      },
+      {
+        "transaction_id": 239,
+        "transaction_date": "2022-06-18T01:13:24.394Z",
+        "description": "Rent",
+        "amount": -148.05
+      },
+      {
+        "transaction_id": 240,
+        "transaction_date": "2022-06-26T12:47:23.072Z",
+        "description": "Rent",
+        "amount": -78.02
+      },
+      {
+        "transaction_id": 241,
+        "transaction_date": "2022-08-06T10:03:32.028Z",
+        "description": "Entertainment",
+        "amount": -387.57
+      },
+      {
+        "transaction_id": 242,
+        "transaction_date": "2022-08-13T20:50:30.014Z",
+        "description": "Refund",
+        "amount": 323.86
+      },
+      {
+        "transaction_id": 243,
+        "transaction_date": "2022-08-22T09:44:51.401Z",
+        "description": "Health",
+        "amount": -300.48
+      },
+      {
+        "transaction_id": 244,
+        "transaction_date": "2022-08-31T04:46:14.710Z",
+        "description": "Refund",
+        "amount": 310.42
+      },
+      {
+        "transaction_id": 245,
+        "transaction_date": "2022-09-21T05:18:49.185Z",
+        "description": "Salary",
+        "amount": 346
+      },
+      {
+        "transaction_id": 246,
+        "transaction_date": "2022-09-28T08:55:49.337Z",
+        "description": "Gift",
+        "amount": 248.84
+      },
+      {
+        "transaction_id": 247,
+        "transaction_date": "2022-10-23T15:19:47.474Z",
+        "description": "Groceries",
+        "amount": -140.15
+      },
+      {
+        "transaction_id": 248,
+        "transaction_date": "2022-11-14T14:55:36.342Z",
+        "description": "Groceries",
+        "amount": -333.76
+      },
+      {
+        "transaction_id": 249,
+        "transaction_date": "2022-12-18T17:50:56.850Z",
+        "description": "Rent",
+        "amount": -98.87
+      },
+      {
+        "transaction_id": 250,
+        "transaction_date": "2022-12-26T23:54:27.178Z",
+        "description": "Insurance",
+        "amount": -97.16
+      },
+      {
+        "transaction_id": 251,
+        "transaction_date": "2023-01-20T13:20:42.642Z",
+        "description": "Interest",
+        "amount": 265.28
+      },
+      {
+        "transaction_id": 252,
+        "transaction_date": "2023-01-25T15:52:58.968Z",
+        "description": "Utilities",
+        "amount": -259.62
+      },
+      {
+        "transaction_id": 253,
+        "transaction_date": "2023-02-12T22:21:55.680Z",
+        "description": "Entertainment",
+        "amount": -213.06
+      },
+      {
+        "transaction_id": 254,
+        "transaction_date": "2023-03-01T23:18:16.320Z",
+        "description": "Health",
+        "amount": -323.59
+      },
+      {
+        "transaction_id": 255,
+        "transaction_date": "2023-03-20T22:46:16.040Z",
+        "description": "Groceries",
+        "amount": -176.2
+      },
+      {
+        "transaction_id": 256,
+        "transaction_date": "2023-04-01T12:24:20.121Z",
+        "description": "Utilities",
+        "amount": -131.38
+      },
+      {
+        "transaction_id": 257,
+        "transaction_date": "2023-05-21T06:53:27.966Z",
+        "description": "Insurance",
+        "amount": -258.86
+      },
+      {
+        "transaction_id": 258,
+        "transaction_date": "2023-05-26T21:51:55.816Z",
+        "description": "Dividends",
+        "amount": 311.55
+      },
+      {
+        "transaction_id": 259,
+        "transaction_date": "2023-05-29T08:07:01.973Z",
+        "description": "Dividends",
+        "amount": 133.53
+      },
+      {
+        "transaction_id": 260,
+        "transaction_date": "2023-06-02T17:19:11.574Z",
+        "description": "Refund",
+        "amount": 366.59
+      },
+      {
+        "transaction_id": 261,
+        "transaction_date": "2023-07-10T18:15:36.127Z",
+        "description": "Insurance",
+        "amount": -303.07
+      },
+      {
+        "transaction_id": 262,
+        "transaction_date": "2023-08-05T12:29:00.602Z",
+        "description": "Utilities",
+        "amount": -75.91
+      },
+      {
+        "transaction_id": 263,
+        "transaction_date": "2023-08-19T18:56:36.400Z",
+        "description": "Groceries",
+        "amount": -266.53
+      },
+      {
+        "transaction_id": 264,
+        "transaction_date": "2023-08-29T14:30:15.789Z",
+        "description": "Education",
+        "amount": -368.32
+      },
+      {
+        "transaction_id": 265,
+        "transaction_date": "2023-09-02T22:09:12.967Z",
+        "description": "Rent",
+        "amount": -393.69
+      },
+      {
+        "transaction_id": 266,
+        "transaction_date": "2023-10-13T22:25:49.982Z",
+        "description": "Salary",
+        "amount": 250.37
+      },
+      {
+        "transaction_id": 267,
+        "transaction_date": "2023-10-14T09:27:09.391Z",
+        "description": "Dividends",
+        "amount": 300.73
+      },
+      {
+        "transaction_id": 268,
+        "transaction_date": "2023-10-27T01:55:01.945Z",
+        "description": "Entertainment",
+        "amount": -351.87
+      },
+      {
+        "transaction_id": 269,
+        "transaction_date": "2023-11-05T23:12:41.980Z",
+        "description": "Dividends",
+        "amount": 155.04
+      },
+      {
+        "transaction_id": 270,
+        "transaction_date": "2023-11-14T15:33:12.508Z",
+        "description": "Interest",
+        "amount": 283.57
+      },
+      {
+        "transaction_id": 271,
+        "transaction_date": "2023-11-16T16:12:04.917Z",
+        "description": "Health",
+        "amount": -128.32
+      },
+      {
+        "transaction_id": 272,
+        "transaction_date": "2023-11-24T11:52:11.481Z",
+        "description": "Salary",
+        "amount": 298.78
+      },
+      {
+        "transaction_id": 273,
+        "transaction_date": "2023-12-01T03:56:22.368Z",
+        "description": "Health",
+        "amount": -328.91
+      },
+      {
+        "transaction_id": 274,
+        "transaction_date": "2023-12-10T20:10:15.031Z",
+        "description": "Insurance",
+        "amount": -136.56
+      },
+      {
+        "transaction_id": 275,
+        "transaction_date": "2023-12-12T21:08:51.330Z",
+        "description": "Salary",
+        "amount": 326.67
+      },
+      {
+        "transaction_id": 276,
+        "transaction_date": "2024-02-09T01:30:50.402Z",
+        "description": "Interest",
+        "amount": 370.66
+      },
+      {
+        "transaction_id": 277,
+        "transaction_date": "2024-02-19T18:23:45.647Z",
+        "description": "Education",
+        "amount": -217.73
+      },
+      {
+        "transaction_id": 278,
+        "transaction_date": "2024-03-02T12:14:33.862Z",
+        "description": "Clothing",
+        "amount": -366.36
+      },
+      {
+        "transaction_id": 279,
+        "transaction_date": "2024-04-09T22:15:44.983Z",
+        "description": "Clothing",
+        "amount": -101.47
+      },
+      {
+        "transaction_id": 280,
+        "transaction_date": "2024-04-17T16:18:27.543Z",
+        "description": "Salary",
+        "amount": 187.74
+      },
+      {
+        "transaction_id": 281,
+        "transaction_date": "2024-05-02T09:50:19.413Z",
+        "description": "Groceries",
+        "amount": -287.19
+      },
+      {
+        "transaction_id": 282,
+        "transaction_date": "2024-05-16T22:33:17.024Z",
+        "description": "Utilities",
+        "amount": -286.83
+      },
+      {
+        "transaction_id": 283,
+        "transaction_date": "2024-05-25T13:19:54.326Z",
+        "description": "Dividends",
+        "amount": 374.92
+      },
+      {
+        "transaction_id": 284,
+        "transaction_date": "2024-05-28T23:22:21.166Z",
+        "description": "Gift",
+        "amount": 385.49
+      },
+      {
+        "transaction_id": 285,
+        "transaction_date": "2024-06-09T17:52:41.297Z",
+        "description": "Interest",
+        "amount": 366.78
+      },
+      {
+        "transaction_id": 286,
+        "transaction_date": "2024-06-25T12:04:16.640Z",
+        "description": "Salary",
+        "amount": 292.24
+      },
+      {
+        "transaction_id": 287,
+        "transaction_date": "2024-07-13T10:17:11.387Z",
+        "description": "Transport",
+        "amount": -301.59
+      },
+      {
+        "transaction_id": 288,
+        "transaction_date": "2024-07-18T05:26:48.075Z",
+        "description": "Interest",
+        "amount": 266.02
+      },
+      {
+        "transaction_id": 289,
+        "transaction_date": "2024-10-02T06:38:10.499Z",
+        "description": "Refund",
+        "amount": 175.81
+      },
+      {
+        "transaction_id": 290,
+        "transaction_date": "2024-10-12T20:46:41.118Z",
+        "description": "Gift",
+        "amount": 122.61
+      },
+      {
+        "transaction_id": 291,
+        "transaction_date": "2024-10-20T00:10:56.973Z",
+        "description": "Gift",
+        "amount": 189.4
+      },
+      {
+        "transaction_id": 292,
+        "transaction_date": "2024-10-23T12:47:54.616Z",
+        "description": "Education",
+        "amount": -119.4
+      },
+      {
+        "transaction_id": 293,
+        "transaction_date": "2024-10-27T10:00:49.951Z",
+        "description": "Groceries",
+        "amount": -134.05
+      },
+      {
+        "transaction_id": 294,
+        "transaction_date": "2024-11-22T10:14:53.904Z",
+        "description": "Gift",
+        "amount": 293.9
+      },
+      {
+        "transaction_id": 295,
+        "transaction_date": "2024-11-23T10:55:19.240Z",
+        "description": "Insurance",
+        "amount": -184.06
+      },
+      {
+        "transaction_id": 296,
+        "transaction_date": "2024-11-24T07:36:43.650Z",
+        "description": "Transport",
+        "amount": -381.62
+      },
+      {
+        "transaction_id": 297,
+        "transaction_date": "2024-11-26T22:47:35.457Z",
+        "description": "Refund",
+        "amount": 257.64
+      },
+      {
+        "transaction_id": 298,
+        "transaction_date": "2024-12-03T04:34:58.750Z",
+        "description": "Health",
+        "amount": -287.74
+      },
+      {
+        "transaction_id": 299,
+        "transaction_date": "2024-12-14T13:16:28.400Z",
+        "description": "Utilities",
+        "amount": -389.27
+      },
+      {
+        "transaction_id": 300,
+        "transaction_date": "2024-12-21T10:36:48.645Z",
+        "description": "Groceries",
+        "amount": -168.61
+      }
+    ],
+    "is_shared_account": false
+  }
+]

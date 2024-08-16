@@ -4,10 +4,6 @@ import {
   Typography,
   Divider,
   List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Box,
   Grid,
   useTheme,
@@ -16,12 +12,16 @@ import {
   MenuOutlined,
   ChevronLeftOutlined,
   ChevronRightOutlined,
-  InboxOutlined,
-  MailOutlined,
 } from "@mui/icons-material";
 
+import { NavigationBarLinks } from "../../constants";
 import { useToggle } from "../../hooks";
-import { CustomAppBar, CustomDrawer, CustomDrawerHeader } from "./ui";
+import {
+  CustomAppBar,
+  CustomDrawer,
+  CustomDrawerHeader,
+  NavigationBarItem,
+} from "./ui";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 
 export const NavigationBar = () => {
@@ -92,58 +92,12 @@ export const NavigationBar = () => {
         </CustomDrawerHeader>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: isSideMenuExpanded ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: isSideMenuExpanded ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxOutlined /> : <MailOutlined />}
-                </ListItemIcon>
-                <ListItemText
-                  primary={text}
-                  sx={{ opacity: isSideMenuExpanded ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: isSideMenuExpanded ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: isSideMenuExpanded ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxOutlined /> : <MailOutlined />}
-                </ListItemIcon>
-                <ListItemText
-                  primary={text}
-                  sx={{ opacity: isSideMenuExpanded ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+          {NavigationBarLinks.map((navigationBarLink) => (
+            <NavigationBarItem
+              key={navigationBarLink.text}
+              {...navigationBarLink}
+              isSideMenuExpanded={isSideMenuExpanded}
+            />
           ))}
         </List>
       </CustomDrawer>
