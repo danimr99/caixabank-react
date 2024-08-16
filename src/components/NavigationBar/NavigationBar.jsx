@@ -51,7 +51,7 @@ export const NavigationBar = () => {
           <Grid container direction="row" alignItems="center">
             <img
               width={64}
-              height={64}
+              height={48}
               src="assets/caixabank-icon.png"
               alt="CaixaBank logo"
             />
