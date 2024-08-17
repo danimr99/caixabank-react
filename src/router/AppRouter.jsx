@@ -3,8 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Routes as RoutesList } from "../constants";
 import {
   AccountsPage,
-  BrokersPage,
   BrokerDetailsPage,
+  BrokersPage,
   TransactionsPage,
 } from "../pages";
 

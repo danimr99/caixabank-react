@@ -1,3 +1,3 @@
 import { accountsSlice } from "./slice";
 
-export const { setAccounts } = accountsSlice.actions;
+export const { addAccount } = accountsSlice.actions;

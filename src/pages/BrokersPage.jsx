@@ -1,9 +1,15 @@
-import { MainLayout } from "../layouts";
+import { Typography } from "@mui/material";
+
+import { NavigationLayout, PageContentLayout } from "../layouts";
 
 export const BrokersPage = () => {
   return (
-    <MainLayout>
-      <h1>Brokers</h1>
-    </MainLayout>
+    <NavigationLayout>
+      <Typography variant="h4" fontWeight="600" component="h1">
+        Brokers
+      </Typography>
+
+      <PageContentLayout></PageContentLayout>
+    </NavigationLayout>
   );
 };

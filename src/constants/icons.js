@@ -1,5 +1,7 @@
 export const Icons = Object.freeze({
-  ACCOUNTS: "AccountsIcon",
-  BROKERS: "BrokersIcon",
-  TRANSACTIONS: "TransactionsIcon",
+  ACCOUNTS: "Accounts icon",
+  ADD: "Add icon",
+  BROKERS: "Brokers icon",
+  CARD_MENU: "Card menu icon",
+  TRANSACTIONS: "Transactions icon",
 });

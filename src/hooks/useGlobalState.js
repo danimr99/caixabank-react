@@ -1,11 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export const useGlobalState = (store) => {
-  const dispatch = useDispatch();
   const globalState = useSelector((state) => state[store]);
 
-  return {
-    ...globalState,
-    dispatch,
-  };
+  return { ...globalState };
 };

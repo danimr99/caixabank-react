@@ -8,13 +8,13 @@ export const NavigationBarLinks = Object.freeze([
     path: Routes.ACCOUNTS,
   },
   {
-    label: "Brokers",
-    icon: Icons.BROKERS,
-    path: Routes.BROKERS,
-  },
-  {
     label: "Transactions",
     icon: Icons.TRANSACTIONS,
     path: Routes.TRANSACTIONS,
+  },
+  {
+    label: "Brokers",
+    icon: Icons.BROKERS,
+    path: Routes.BROKERS,
   },
 ]);

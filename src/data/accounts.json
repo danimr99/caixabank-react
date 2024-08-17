@@ -4,7 +4,7 @@
     "bank": "Imagin",
     "name": "Personal Account",
     "account_number": "ES12 3456 7890 1234 5678 9012",
-    "balance": 7500,
+    "balance": -7500,
     "transactions": [
       {
         "transaction_id": 1,

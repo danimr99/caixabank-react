@@ -1,20 +1,20 @@
 import {
-  Toolbar,
-  IconButton,
-  Typography,
-  Divider,
-  List,
   Box,
+  Divider,
   Grid,
+  IconButton,
+  List,
+  Toolbar,
+  Typography,
   useTheme,
 } from "@mui/material";
 import {
-  MenuOutlined,
   ChevronLeftOutlined,
   ChevronRightOutlined,
+  MenuOutlined,
 } from "@mui/icons-material";
 
-import { NavigationBarLinks } from "../../constants";
+import { Logos, NavigationBarLinks } from "../../constants";
 import { useToggle } from "../../hooks";
 import {
   CustomAppBar,
@@ -22,7 +22,7 @@ import {
   CustomDrawerHeader,
   NavigationBarItem,
 } from "./ui";
-import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
+import { Logo, ThemeSwitch } from "../";
 
 export const NavigationBar = () => {
   const theme = useTheme();
@@ -43,18 +43,16 @@ export const NavigationBar = () => {
             sx={{
               marginRight: 5,
               ...(isSideMenuExpanded && { display: "none" }),
+              ...(!isSideMenuExpanded && {
+                display: { xs: "none", md: "block" },
+              }),
             }}
           >
             <MenuOutlined />
           </IconButton>
 
           <Grid container direction="row" alignItems="center">
-            <img
-              width={64}
-              height={48}
-              src="assets/caixabank-icon.png"
-              alt="CaixaBank logo"
-            />
+            <Logo variant={Logos.CAIXABANK_VARIANT} />
 
             <Typography
               variant="h6"

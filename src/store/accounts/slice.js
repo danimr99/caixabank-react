@@ -1,17 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import accountsData from "../../data/accounts.json";
+import { accountsData } from "../../data";
+import { format } from "../../utils";
 
 export const initialState = {
-  accounts: accountsData,
+  accounts: [...format(accountsData), ...format(accountsData)],
 };
 
 export const accountsSlice = createSlice({
   name: "accounts",
   initialState,
   reducers: {
-    setAccounts: (state, action) => {
-      state.accounts = action.payload;
+    addAccount: (state, action) => {
+      state.accounts.push(action.payload);
     },
   },
 });

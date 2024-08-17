@@ -3,7 +3,7 @@ import { Box, Toolbar } from "@mui/material";
 
 import { NavigationBar } from "../components/NavigationBar/NavigationBar";
 
-export const MainLayout = ({ children }) => {
+export const NavigationLayout = ({ children }) => {
   return (
     <Box sx={{ display: "flex" }}>
       <NavigationBar />
@@ -16,7 +16,7 @@ export const MainLayout = ({ children }) => {
   );
 };
 
-MainLayout.propTypes = {
+NavigationLayout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
