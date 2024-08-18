@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { Fab } from "@mui/material";
 
-import { Icons } from "../../constants";
-import { Icon } from "../";
+import { Spacing } from "../../layouts";
+import { Icons, Icon } from "../Icons";
 
 export const FloatingActionButton = ({ icon, onClick }) => {
   return (
@@ -11,17 +11,17 @@ export const FloatingActionButton = ({ icon, onClick }) => {
       aria-label={icon}
       sx={{
         position: "fixed",
-        bottom: "1rem",
-        right: "1rem",
+        bottom: Spacing.MD,
+        right: Spacing.MD,
       }}
       onClick={onClick}
     >
-      <Icon variant={icon} />
+      <Icon name={icon} />
     </Fab>
   );
 };
 
 FloatingActionButton.propTypes = {
   icon: PropTypes.oneOf(Object.values(Icons)).isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };

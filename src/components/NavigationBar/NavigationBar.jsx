@@ -8,21 +8,18 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import {
-  ChevronLeftOutlined,
-  ChevronRightOutlined,
-  MenuOutlined,
-} from "@mui/icons-material";
 
-import { Logos, NavigationBarLinks } from "../../constants";
 import { useToggle } from "../../hooks";
+import { NavigationBarLinks } from "./";
 import {
-  CustomAppBar,
-  CustomDrawer,
-  CustomDrawerHeader,
-  NavigationBarItem,
-} from "./ui";
-import { Logo, ThemeSwitch } from "../";
+  Logo,
+  Logos,
+  ThemeSwitch,
+  NavigationBarMenuButton,
+  Icon,
+  Icons,
+} from "../";
+import { AppBar, Drawer, DrawerHeader, NavigationBarItem } from "./ui";
 
 export const NavigationBar = () => {
   const theme = useTheme();
@@ -34,30 +31,20 @@ export const NavigationBar = () => {
 
   return (
     <>
-      <CustomAppBar position="fixed" open={isSideMenuExpanded}>
+      <AppBar position="fixed" open={isSideMenuExpanded}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            onClick={expandSideMenu}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(isSideMenuExpanded && { display: "none" }),
-              ...(!isSideMenuExpanded && {
-                display: { xs: "none", md: "block" },
-              }),
-            }}
-          >
-            <MenuOutlined />
-          </IconButton>
+          <NavigationBarMenuButton
+            isSideMenuExpanded={isSideMenuExpanded}
+            expandSideMenu={expandSideMenu}
+          />
 
           <Grid container direction="row" alignItems="center">
-            <Logo variant={Logos.CAIXABANK_VARIANT} />
+            <Logo name={Logos.NAVIGATION_BAR_CAIXABANK} />
 
             <Typography
               variant="h6"
-              noWrap
               component="div"
+              noWrap
               sx={{
                 display: { xs: "none", sm: "block" },
               }}
@@ -77,17 +64,19 @@ export const NavigationBar = () => {
             <ThemeSwitch />
           </Box>
         </Toolbar>
-      </CustomAppBar>
-      <CustomDrawer variant="permanent" open={isSideMenuExpanded}>
-        <CustomDrawerHeader>
+      </AppBar>
+      <Drawer variant="permanent" open={isSideMenuExpanded}>
+        <DrawerHeader>
           <IconButton onClick={shrinkSideMenu}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightOutlined />
-            ) : (
-              <ChevronLeftOutlined />
-            )}
+            <Icon
+              name={
+                theme.direction === "rtl"
+                  ? Icons.NAVIGATION_BAR_MENU_HEADER_RIGHT
+                  : Icons.NAVIGATION_BAR_MENU_HEADER_LEFT
+              }
+            />
           </IconButton>
-        </CustomDrawerHeader>
+        </DrawerHeader>
         <Divider />
         <List>
           {NavigationBarLinks.map((navigationBarLink) => (
@@ -98,7 +87,7 @@ export const NavigationBar = () => {
             />
           ))}
         </List>
-      </CustomDrawer>
+      </Drawer>
     </>
   );
 };

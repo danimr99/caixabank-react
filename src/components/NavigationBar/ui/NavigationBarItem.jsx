@@ -6,8 +6,8 @@ import {
   ListItemText,
 } from "@mui/material";
 
-import { Icon } from "../../Icon";
 import { useNavigation } from "../../../hooks";
+import { Icon } from "../../";
 
 export const NavigationBarItem = ({
   label,
@@ -42,7 +42,7 @@ export const NavigationBarItem = ({
             justifyContent: "center",
           }}
         >
-          <Icon variant={icon} />
+          <Icon name={icon} />
         </ListItemIcon>
         <ListItemText
           primary={label}

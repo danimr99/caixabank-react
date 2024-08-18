@@ -1,4 +1,4 @@
-import { DRAWER_WIDTH } from "../../../constants";
+import { DRAWER_WIDTH } from "../../../layouts";
 
 export const openedMixin = (theme) => ({
   width: DRAWER_WIDTH,

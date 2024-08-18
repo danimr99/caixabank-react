@@ -1,4 +1,4 @@
-export const Alerts = Object.freeze({
+export const AlertTypes = Object.freeze({
   ERROR: "error",
   INFO: "info",
   SUCCESS: "success",

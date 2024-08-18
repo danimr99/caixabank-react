@@ -1,10 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { accountsData } from "../../data";
-import { format } from "../../utils";
+import {
+  format,
+  generateAccountId,
+  generateAccountIBAN,
+  generateInitialDepositTransaction,
+  toNumber,
+} from "../../utils";
 
 export const initialState = {
-  accounts: [...format(accountsData), ...format(accountsData)],
+  accounts: [...format(accountsData)],
 };
 
 export const accountsSlice = createSlice({
@@ -12,7 +18,18 @@ export const accountsSlice = createSlice({
   initialState,
   reducers: {
     addAccount: (state, action) => {
-      state.accounts.push(action.payload);
+      const { payload } = action;
+      const { bank, accountAlias, initialDeposit, isSharedAccount } = payload;
+
+      state.accounts.push({
+        accountId: generateAccountId(state.accounts),
+        bank,
+        accountAlias,
+        iban: generateAccountIBAN(),
+        balance: toNumber(initialDeposit),
+        transactions: [...generateInitialDepositTransaction(initialDeposit)],
+        isSharedAccount,
+      });
     },
   },
 });

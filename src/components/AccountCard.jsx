@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 
 import { toMoney } from "../utils";
+import { Spacing } from "../layouts";
 import { CardMenuButton, Logo } from ".";
 
 export const AccountCard = ({ account }) => {
@@ -18,7 +19,7 @@ export const AccountCard = ({ account }) => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Logo variant={account?.bank} />
+            <Logo name={account?.bank} />
             <CardMenuButton onClick={handleCardMenuClick} />
           </Box>
           <Box
@@ -27,15 +28,15 @@ export const AccountCard = ({ account }) => {
             alignItems="center"
           >
             <Box>
-              <Typography variant="h6">{account?.name}</Typography>
-              <Typography variant="body1">{account?.accountNumber}</Typography>
+              <Typography variant="h6">{account?.accountAlias}</Typography>
+              <Typography variant="body1">{account?.iban}</Typography>
             </Box>
           </Box>
           <Box
             display="flex"
             justifyContent="end"
             alignItems="end"
-            sx={{ marginTop: "1rem" }}
+            sx={{ marginTop: Spacing.MD }}
           >
             <Typography variant="body2" color="text.secondary">
               Balance:
@@ -44,7 +45,7 @@ export const AccountCard = ({ account }) => {
               variant="body2"
               color={account?.balance < 0 ? "red" : "black"}
               fontWeight={600}
-              sx={{ marginLeft: "0.25rem" }}
+              sx={{ marginLeft: Spacing.DETAILS }}
             >
               {toMoney(account?.balance)}
             </Typography>
@@ -58,9 +59,9 @@ export const AccountCard = ({ account }) => {
 AccountCard.propTypes = {
   account: PropTypes.shape({
     accountId: PropTypes.number.isRequired,
-    accountNumber: PropTypes.string.isRequired,
+    iban: PropTypes.string.isRequired,
     balance: PropTypes.number.isRequired,
     bank: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    accountAlias: PropTypes.string.isRequired,
   }),
 };

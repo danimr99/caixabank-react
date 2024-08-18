@@ -1,10 +1,10 @@
 import { toCamelCase } from "./strings";
 
 /**
- * Formats all keys from an object to camel case.
+ * Formats all keys from an object or array of objects to camel case.
  *
- * @param {any} obj Object or array of objects to format.
- * @returns {any} Formatted object or array of objects.
+ * @param {object | object[]} obj - Object or array of objects to format.
+ * @returns {object | object[]} Formatted object or array of objects.
  */
 export const format = (obj) => {
   if (Array.isArray(obj)) {

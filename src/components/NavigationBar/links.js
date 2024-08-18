@@ -1,5 +1,5 @@
-import { Icons } from "./icons";
-import { Routes } from "./routes";
+import { Routes } from "../../constants/routes";
+import { Icons } from "../Icons/icons";
 
 export const NavigationBarLinks = Object.freeze([
   {

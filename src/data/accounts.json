@@ -2,8 +2,8 @@
   {
     "account_id": 1,
     "bank": "Imagin",
-    "name": "Personal Account",
-    "account_number": "ES12 3456 7890 1234 5678 9012",
+    "account_alias": "Personal Account",
+    "iban": "ES12 3456 7890 1234 5678 9012",
     "balance": -7500,
     "transactions": [
       {
@@ -612,8 +612,8 @@
   {
     "account_id": 2,
     "bank": "CaixaBank",
-    "name": "Family Savings",
-    "account_number": "ES98 7654 3210 9876 5432 1098",
+    "account_alias": "Family Savings",
+    "iban": "ES98 7654 3210 9876 5432 1098",
     "balance": 15000,
     "transactions": [
       {
@@ -1222,8 +1222,8 @@
   {
     "account_id": 3,
     "bank": "CaixaBank",
-    "name": "Personal Savings",
-    "account_number": "ES98 7654 5786 8354 1333 5492",
+    "account_alias": "Personal Savings",
+    "iban": "ES98 7654 5786 8354 1333 5492",
     "balance": 10000,
     "transactions": [
       {

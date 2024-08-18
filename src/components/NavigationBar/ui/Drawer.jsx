@@ -1,9 +1,9 @@
-import { Drawer, styled } from "@mui/material";
+import { Drawer as MuiDrawer, styled } from "@mui/material";
 
-import { DRAWER_WIDTH } from "../../../constants";
+import { DRAWER_WIDTH } from "../../../layouts";
 import { openedMixin, closedMixin } from "../mixins";
 
-export const CustomDrawer = styled(Drawer, {
+export const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   width: DRAWER_WIDTH,

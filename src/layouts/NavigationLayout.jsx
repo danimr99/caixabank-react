@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Box, Toolbar } from "@mui/material";
 
-import { NavigationBar } from "../components/NavigationBar/NavigationBar";
+import { NavigationBar } from "../components";
 
 export const NavigationLayout = ({ children }) => {
   return (

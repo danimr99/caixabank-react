@@ -1,8 +1,8 @@
-import { AppBar, styled } from "@mui/material";
+import { AppBar as MuiAppBar, styled } from "@mui/material";
 
-import { DRAWER_WIDTH } from "../../../constants";
+import { DRAWER_WIDTH } from "../../../layouts";
 
-export const CustomAppBar = styled(AppBar, {
+export const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,

@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 
+import { Spacing } from "./layouts";
+
 export const PageContentLayout = ({ children }) => {
   return (
     <Box
       component="section"
       sx={{
-        marginTop: "2rem",
+        marginTop: Spacing.LG,
       }}
     >
       {children}

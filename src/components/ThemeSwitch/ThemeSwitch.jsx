@@ -4,5 +4,5 @@ import { CustomSwitch } from "./ui";
 export const ThemeSwitch = () => {
   const { toggleTheme } = useThemeContext();
 
-  return <CustomSwitch onClick={toggleTheme} />;
+  return <CustomSwitch name="themeSwitch" onClick={toggleTheme} />;
 };
