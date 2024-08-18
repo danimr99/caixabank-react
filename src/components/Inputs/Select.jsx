@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useController } from "react-hook-form";
 import {
   FormControl,
   FormHelperText,
@@ -11,29 +12,38 @@ export const Select = ({
   name,
   label,
   options = [],
-  selectedValue,
+  placeholder,
   helperText,
-  hasError = false,
+  control,
+  validations,
   fullWidth = false,
-  onChange,
-  required = false,
 }) => {
+  const { field, fieldState } = useController({
+    name,
+    control,
+    rules: validations,
+  });
+
   return (
     <FormControl
       variant="filled"
       margin="dense"
+      error={Boolean(fieldState?.error)}
       fullWidth={fullWidth}
-      error={hasError}
-      required={required}
     >
-      <InputLabel id={`select-${name}-label`}>{label}</InputLabel>
+      <InputLabel
+      // id={`select-${name}-label`}
+      >
+        {label}
+      </InputLabel>
       <MuiSelect
-        id={`select-${name}`}
-        labelId={`select-${name}-label`}
+        // id={`select-${name}`}
+        // labelId={`select-${name}-label`}
         name={name}
         label={label}
-        value={selectedValue}
-        onChange={onChange}
+        value={field?.value}
+        placeholder={placeholder}
+        onChange={field?.onChange}
       >
         {options.map((option) => (
           <MenuItem key={option?.label} value={option?.value}>
@@ -41,7 +51,9 @@ export const Select = ({
           </MenuItem>
         ))}
       </MuiSelect>
-      <FormHelperText>{helperText}</FormHelperText>
+      <FormHelperText>
+        {fieldState?.error?.message || (!fieldState?.isDirty ? helperText : "")}
+      </FormHelperText>
     </FormControl>
   );
 };
@@ -57,10 +69,38 @@ Select.propTypes = {
         .isRequired,
     })
   ).isRequired,
-  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  placeholder: PropTypes.string,
   helperText: PropTypes.string,
-  hasError: PropTypes.bool,
+  control: PropTypes.object.isRequired,
+  validations: PropTypes.shape({
+    required: PropTypes.shape({
+      value: PropTypes.bool,
+      message: PropTypes.string,
+    }),
+    min: PropTypes.shape({
+      value: PropTypes.number,
+      message: PropTypes.string,
+    }),
+    max: PropTypes.shape({
+      value: PropTypes.number,
+      message: PropTypes.string,
+    }),
+    minLength: PropTypes.shape({
+      value: PropTypes.number,
+      message: PropTypes.string,
+    }),
+    maxLength: PropTypes.shape({
+      value: PropTypes.number,
+      message: PropTypes.string,
+    }),
+    pattern: PropTypes.shape({
+      value: PropTypes.string,
+      message: PropTypes.string,
+    }),
+    validate: PropTypes.shape({
+      value: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+      message: PropTypes.string,
+    }),
+  }),
   fullWidth: PropTypes.bool,
-  onChange: PropTypes.func,
-  required: PropTypes.bool,
 };
