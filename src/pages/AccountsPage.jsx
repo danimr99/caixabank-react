@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 
-import { useGlobalState, useToggle } from "../hooks";
+import { useGlobalState, useNotification, useToggle } from "../hooks";
 import { NavigationLayout, PageContentLayout, Spacing } from "../layouts";
 import {
   AccountCard,
@@ -8,6 +8,8 @@ import {
   CreateAccountDialog,
   FloatingActionButton,
   Icons,
+  NotificationTypes,
+  SnackbarAlert,
 } from "../components";
 
 export const AccountsPage = () => {
@@ -17,12 +19,23 @@ export const AccountsPage = () => {
     open: openCreateAccountModal,
     close: closeCreateAccountModal,
   } = useToggle(false);
+  const { notification, isVisible, showNotification, hideNotification } =
+    useNotification();
 
   return (
     <>
       <CreateAccountDialog
         isOpened={isCreateAccountModalOpened}
         onClose={closeCreateAccountModal}
+        showNotification={showNotification}
+      />
+
+      <SnackbarAlert
+        type={notification?.type}
+        isVisible={isVisible}
+        message={notification?.message}
+        duration={notification?.duration}
+        onClose={hideNotification}
       />
 
       <NavigationLayout>
@@ -45,16 +58,16 @@ export const AccountsPage = () => {
 
           {accounts?.length === 0 && (
             <Grid item justifyContent="center" alignItems="center">
-              <Alert type="warning" message="No accounts found. " />
+              <Alert
+                type={NotificationTypes.WARNING}
+                message="No accounts found. "
+              />
             </Grid>
           )}
         </PageContentLayout>
-
-        <FloatingActionButton
-          icon={Icons.ADD}
-          onClick={openCreateAccountModal}
-        />
       </NavigationLayout>
+
+      <FloatingActionButton icon={Icons.ADD} onClick={openCreateAccountModal} />
     </>
   );
 };

@@ -13,6 +13,7 @@ import { useGlobalDispatcher } from "../../hooks";
 import { addAccount } from "../../store";
 import { Spacing } from "../../layouts";
 import {
+  NotificationTypes,
   Button,
   Checkbox,
   Input,
@@ -36,7 +37,11 @@ const bankOptionsList = Object.freeze(
   }))
 );
 
-export const CreateAccountDialog = ({ isOpened = false, onClose }) => {
+export const CreateAccountDialog = ({
+  isOpened = false,
+  onClose,
+  showNotification,
+}) => {
   const { dispatch } = useGlobalDispatcher();
   const { handleSubmit, control, reset } = useForm({
     defaultValues: initialFormValues,
@@ -50,6 +55,7 @@ export const CreateAccountDialog = ({ isOpened = false, onClose }) => {
   const onSubmitForm = (data) => {
     dispatch(addAccount(data));
     closeDialog();
+    showNotification(NotificationTypes.SUCCESS, "Account created successfully");
   };
 
   return (
@@ -124,4 +130,5 @@ export const CreateAccountDialog = ({ isOpened = false, onClose }) => {
 CreateAccountDialog.propTypes = {
   isOpened: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
+  showNotification: PropTypes.func,
 };
