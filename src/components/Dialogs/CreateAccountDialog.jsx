@@ -24,7 +24,7 @@ import {
 
 const initialFormValues = Object.freeze({
   accountAlias: "",
-  initialDeposit: 0,
+  initialDeposit: "",
   bank: "",
   isSharedAccount: false,
 });
