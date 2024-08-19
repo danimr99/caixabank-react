@@ -8,13 +8,13 @@ export const Logos = Object.freeze({
 export const getLogoSrc = (logo) => {
   switch (logo) {
     case Logos.CAIXABANK:
-      return "assets/caixabank-icon-blue.png";
+      return "/assets/caixabank-icon-blue.png";
 
     case Logos.NAVIGATION_BAR_CAIXABANK:
-      return "assets/caixabank-icon.png";
+      return "/assets/caixabank-icon.png";
 
     case Logos.IMAGIN:
-      return "assets/imagin-icon.png";
+      return "/assets/imagin-icon.png";
 
     default:
       throw new Error(`Logo ${logo} not found`);
