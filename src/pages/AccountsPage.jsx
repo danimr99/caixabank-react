@@ -1,7 +1,7 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import { useGlobalState, useNotification, useToggle } from "../hooks";
-import { NavigationLayout, PageContentLayout, Spacing } from "../layouts";
+import { PageLayout, Spacing } from "../layouts";
 import {
   AccountCard,
   Alert,
@@ -38,34 +38,28 @@ export const AccountsPage = () => {
         onClose={hideNotification}
       />
 
-      <NavigationLayout>
-        <Typography variant="h4" fontWeight="600" component="h1">
-          My Accounts
-        </Typography>
+      <PageLayout title="Accounts">
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            marginTop: Spacing.MD,
+          }}
+        >
+          {accounts.map((account) => (
+            <AccountCard key={account?.accountId} account={account} />
+          ))}
+        </Grid>
 
-        <PageContentLayout>
-          <Grid
-            container
-            spacing={2}
-            sx={{
-              marginTop: Spacing.MD,
-            }}
-          >
-            {accounts.map((account) => (
-              <AccountCard key={account?.accountId} account={account} />
-            ))}
+        {accounts?.length === 0 && (
+          <Grid item justifyContent="center" alignItems="center">
+            <Alert
+              type={NotificationTypes.WARNING}
+              message="No accounts found. "
+            />
           </Grid>
-
-          {accounts?.length === 0 && (
-            <Grid item justifyContent="center" alignItems="center">
-              <Alert
-                type={NotificationTypes.WARNING}
-                message="No accounts found. "
-              />
-            </Grid>
-          )}
-        </PageContentLayout>
-      </NavigationLayout>
+        )}
+      </PageLayout>
 
       <FloatingActionButton icon={Icons.ADD} onClick={openCreateAccountModal} />
     </>

@@ -1,3 +1,9 @@
+import { PageLayout } from "../layouts";
+
 export const BrokerDetailsPage = () => {
-  return <div>BrokerDetailsPage</div>;
+  return (
+    <>
+      <PageLayout title="Broker details"></PageLayout>
+    </>
+  );
 };
