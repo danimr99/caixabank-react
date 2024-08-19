@@ -1,6 +1,10 @@
-import { Switch, styled } from "@mui/material";
+import { Switch as MuiSwitch, styled } from "@mui/material";
 
-export const CustomSwitch = styled(Switch)(({ theme }) => ({
+import { Themes } from "../../constants";
+import { darkTheme, lightTheme } from "../../theme/variants";
+import { useThemeContext } from "../../contexts";
+
+const StyledThemeSwitch = styled(MuiSwitch)(({ theme }) => ({
   width: 62,
   height: 34,
   padding: 7,
@@ -18,12 +22,15 @@ export const CustomSwitch = styled(Switch)(({ theme }) => ({
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
-        backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+        backgroundColor: theme === Themes.DARK ? "#8796A5" : "#aab4be",
       },
     },
   },
   "& .MuiSwitch-thumb": {
-    backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
+    backgroundColor:
+      theme === Themes.DARK
+        ? darkTheme?.palette?.secondary?.main
+        : lightTheme?.palette?.secondary?.main,
     width: 32,
     height: 32,
     "&::before": {
@@ -42,7 +49,15 @@ export const CustomSwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-track": {
     opacity: 1,
-    backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+    backgroundColor: theme === Themes.DARK ? "#8796A5" : "#aab4be",
     borderRadius: 20 / 2,
   },
 }));
+
+export const ThemeSwitch = () => {
+  const { theme, toggleTheme } = useThemeContext();
+
+  return (
+    <StyledThemeSwitch name="themeSwitch" theme={theme} onClick={toggleTheme} />
+  );
+};

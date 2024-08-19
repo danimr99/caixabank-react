@@ -47,6 +47,11 @@ export const NavigationBarItem = ({
         <ListItemText
           primary={label}
           sx={{ opacity: isSideMenuExpanded ? 1 : 0 }}
+          primaryTypographyProps={{
+            variant: "subtitle1",
+            color: "text.secondary",
+            fontWeight: 500,
+          }}
         />
       </ListItemButton>
     </ListItem>

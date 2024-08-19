@@ -1,23 +1,16 @@
 import { createTheme } from "@mui/material";
-import { red, green } from "@mui/material/colors";
 
 export const darkTheme = createTheme({
   palette: {
     background: {
-      default: "#C2C2C2",
-      paper: "#D6D6D6",
+      default: "#F5F5F5",
+      paper: "#FFFFFF",
     },
     primary: {
-      main: "#003C6C",
+      main: "#010F2A",
     },
     secondary: {
-      main: "#003C6C",
-    },
-    success: {
-      main: green.A400,
-    },
-    error: {
-      main: red.A400,
+      main: "#007EAE",
     },
   },
   typography: {

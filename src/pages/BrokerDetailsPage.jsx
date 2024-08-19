@@ -3,7 +3,7 @@ import { PageLayout } from "../layouts";
 export const BrokerDetailsPage = () => {
   return (
     <>
-      <PageLayout title="Broker details"></PageLayout>
+      <PageLayout title="Broker details" showGoBackButton></PageLayout>
     </>
   );
 };

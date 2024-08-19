@@ -1,13 +1,14 @@
 import { Grid } from "@mui/material";
 
 import { useGlobalState, useNotification, useToggle } from "../hooks";
-import { PageLayout, Spacing } from "../layouts";
+import { PageLayout } from "../layouts";
 import {
   AccountCard,
   Alert,
   CreateAccountDialog,
   FloatingActionButton,
   Icons,
+  List,
   NotificationTypes,
   SnackbarAlert,
 } from "../components";
@@ -39,17 +40,11 @@ export const AccountsPage = () => {
       />
 
       <PageLayout title="Accounts">
-        <Grid
-          container
-          spacing={2}
-          sx={{
-            marginTop: Spacing.MD,
-          }}
-        >
+        <List>
           {accounts.map((account) => (
             <AccountCard key={account?.accountId} account={account} />
           ))}
-        </Grid>
+        </List>
 
         {accounts?.length === 0 && (
           <Grid item justifyContent="center" alignItems="center">

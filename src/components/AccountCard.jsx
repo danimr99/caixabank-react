@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 
 import { toMoney } from "../utils";
-import { Spacing } from "../layouts";
-import { CardMenuButton, Logo } from ".";
+import { BorderRadius, Spacing } from "../layouts";
+import { CardMenuButton, IconChip, Icons, Logo } from ".";
 
 export const AccountCard = ({ account }) => {
   const handleCardMenuClick = (event) => {
@@ -11,48 +11,75 @@ export const AccountCard = ({ account }) => {
   };
 
   return (
-    <Grid key={account?.accountId} item xs={12} md={6} lg={4}>
-      <Card sx={{ borderRadius: "6px" }}>
-        <CardContent>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
+    <Card sx={{ borderRadius: BorderRadius.MD }}>
+      <CardContent>
+        <Grid container justifyContent="space-between" alignItems="center">
+          <Grid item>
             <Logo name={account?.bank} />
+          </Grid>
+          <Grid item>
             <CardMenuButton onClick={handleCardMenuClick} />
-          </Box>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box>
-              <Typography variant="h6">{account?.accountAlias}</Typography>
-              <Typography variant="body1">{account?.iban}</Typography>
-            </Box>
-          </Box>
-          <Box
-            display="flex"
-            justifyContent="end"
-            alignItems="end"
-            sx={{ marginTop: Spacing.MD }}
-          >
-            <Typography variant="body2" color="text.secondary">
-              Balance:
-            </Typography>
-            <Typography
-              variant="body2"
-              color={account?.balance < 0 ? "red" : "black"}
-              fontWeight={600}
-              sx={{ marginLeft: Spacing.DETAILS }}
+          </Grid>
+        </Grid>
+
+        <Grid container direction="column" justifyContent="flex-start">
+          <Grid item>
+            <Typography variant="h6">{account?.accountAlias}</Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1">{account?.iban}</Typography>
+          </Grid>
+        </Grid>
+
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            marginTop: Spacing.LG,
+            minHeight: "2rem",
+            justifyContent: "space-between",
+            gap: Spacing.MD,
+          }}
+        >
+          <Grid item>
+            {account?.isSharedAccount && (
+              <IconChip
+                iconName={Icons.SHARED_ACCOUNT}
+                label="Shared"
+                sx={{ fontWeight: 600, color: "text.secondary" }}
+              />
+            )}
+          </Grid>
+
+          <Grid item>
+            <Grid
+              container
+              direction="row"
+              alignItems="center"
+              spacing={Spacing.DETAILS}
             >
-              {toMoney(account?.balance)}
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
-    </Grid>
+              <Grid item>
+                <Typography variant="body2" color="text.secondary">
+                  Balance:
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body2"
+                  color={account?.balance < 0 ? "error" : "success"}
+                  fontWeight={600}
+                  sx={{ marginLeft: Spacing.DETAILS }}
+                >
+                  {toMoney(account?.balance)}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -63,5 +90,6 @@ AccountCard.propTypes = {
     balance: PropTypes.number.isRequired,
     bank: PropTypes.string.isRequired,
     accountAlias: PropTypes.string.isRequired,
+    isSharedAccount: PropTypes.bool.isRequired,
   }),
 };

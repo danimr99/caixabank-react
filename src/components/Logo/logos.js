@@ -2,15 +2,15 @@ import { Banks } from "../../constants";
 
 export const Logos = Object.freeze({
   ...Banks,
-  NAVIGATION_BAR_CAIXABANK: "NavigationBar CaixaBank",
+  CAIXABANK_ALT: "CaixaBank white",
 });
 
 export const getLogoSrc = (logo) => {
   switch (logo) {
-    case Logos.CAIXABANK:
+    case Banks.CAIXABANK:
       return "/assets/caixabank-icon-blue.png";
 
-    case Logos.NAVIGATION_BAR_CAIXABANK:
+    case Logos.CAIXABANK_ALT:
       return "/assets/caixabank-icon.png";
 
     case Logos.IMAGIN:
@@ -24,7 +24,7 @@ export const getLogoSrc = (logo) => {
 export const getLogoSize = (logo) => {
   switch (logo) {
     case Logos.CAIXABANK:
-    case Logos.NAVIGATION_BAR_CAIXABANK:
+    case Logos.CAIXABANK_ALT:
       return { width: 64, height: 48 };
 
     case Logos.IMAGIN:

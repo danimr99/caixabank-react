@@ -4,8 +4,12 @@ export const useNavigation = () => {
   const navigate = useNavigate();
 
   const navigateTo = (path) => {
-    navigate(path, { replace: true });
+    navigate(path);
   };
 
-  return { navigateTo };
+  const goBack = () => {
+    navigate(-1);
+  };
+
+  return { navigateTo, goBack };
 };

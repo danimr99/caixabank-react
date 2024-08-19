@@ -6,7 +6,7 @@ import {
   List,
   Toolbar,
   Typography,
-  useTheme,
+  useTheme as useMuiTheme,
 } from "@mui/material";
 
 import { useToggle } from "../../hooks";
@@ -20,9 +20,12 @@ import {
   Icons,
 } from "../";
 import { AppBar, Drawer, DrawerHeader, NavigationBarItem } from "./ui";
+import { Themes } from "../../constants";
+import { useThemeContext } from "../../contexts";
 
 export const NavigationBar = () => {
-  const theme = useTheme();
+  const muiTheme = useMuiTheme();
+  const { theme } = useThemeContext();
   const {
     isOpened: isSideMenuExpanded,
     open: expandSideMenu,
@@ -39,7 +42,11 @@ export const NavigationBar = () => {
           />
 
           <Grid container direction="row" alignItems="center">
-            <Logo name={Logos.NAVIGATION_BAR_CAIXABANK} />
+            <Logo
+              name={
+                theme === Themes.LIGHT ? Logos.CAIXABANK_ALT : Logos.CAIXABANK
+              }
+            />
 
             <Typography
               variant="h6"
@@ -70,7 +77,7 @@ export const NavigationBar = () => {
           <IconButton onClick={shrinkSideMenu}>
             <Icon
               name={
-                theme.direction === "rtl"
+                muiTheme?.direction === "rtl"
                   ? Icons.NAVIGATION_BAR_MENU_HEADER_RIGHT
                   : Icons.NAVIGATION_BAR_MENU_HEADER_LEFT
               }
