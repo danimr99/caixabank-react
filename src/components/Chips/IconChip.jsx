@@ -3,33 +3,23 @@ import { Chip } from "@mui/material";
 
 import { Colors } from "../colors";
 import { Icon, Icons } from "../Icons";
-import { Spacing } from "../../layouts";
 
-export const IconChip = ({
-  iconName,
-  iconColor,
-  label,
-  chipColor = Colors.DEFAULT,
-  sx,
-}) => {
+export const IconChip = ({ iconName, iconColor, label, ...muiProps }) => {
   return (
     <Chip
       icon={<Icon name={iconName} color={iconColor} />}
       label={label}
       variant="filled"
-      color={chipColor}
-      sx={{
-        paddingLeft: Spacing.XS,
-        ...sx,
-      }}
+      {...muiProps}
     />
   );
 };
 
 IconChip.propTypes = {
   iconName: PropTypes.oneOf(Object.values(Icons)).isRequired,
-  iconColor: PropTypes.oneOf(Object.values(Colors)),
+  iconColor: PropTypes.oneOfType([
+    PropTypes.oneOf(Object.values(Colors)),
+    PropTypes.string,
+  ]),
   label: PropTypes.string.isRequired,
-  chipColor: PropTypes.oneOf(Object.values(Colors)),
-  sx: PropTypes.object,
 };

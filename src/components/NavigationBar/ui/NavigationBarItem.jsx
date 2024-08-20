@@ -40,6 +40,7 @@ export const NavigationBarItem = ({
             minWidth: 0,
             mr: isSideMenuExpanded ? 3 : "auto",
             justifyContent: "center",
+            color: "text.secondary",
           }}
         >
           <Icon name={icon} />

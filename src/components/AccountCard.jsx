@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
 import { toMoney } from "../utils";
 import { BorderRadius, Spacing } from "../layouts";
-import { CardMenuButton, IconChip, Icons, Logo } from ".";
+import { CardMenuButton, Chip, Logo } from ".";
 
 export const AccountCard = ({ account }) => {
   const handleCardMenuClick = (event) => {
@@ -13,71 +13,74 @@ export const AccountCard = ({ account }) => {
   return (
     <Card sx={{ borderRadius: BorderRadius.MD }}>
       <CardContent>
-        <Grid container justifyContent="space-between" alignItems="center">
-          <Grid item>
-            <Logo name={account?.bank} />
-          </Grid>
-          <Grid item>
-            <CardMenuButton onClick={handleCardMenuClick} />
-          </Grid>
-        </Grid>
+        <Stack direction="column" spacing={1}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid item>
+              <Logo name={account?.bank} />
+            </Grid>
 
-        <Grid container direction="column" justifyContent="flex-start">
-          <Grid item>
-            <Typography variant="h6">{account?.accountAlias}</Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body1">{account?.iban}</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          sx={{
-            marginTop: Spacing.LG,
-            minHeight: "2rem",
-            justifyContent: "space-between",
-            gap: Spacing.MD,
-          }}
-        >
-          <Grid item>
-            {account?.isSharedAccount && (
-              <IconChip
-                iconName={Icons.SHARED_ACCOUNT}
-                label="Shared"
-                sx={{ fontWeight: 600, color: "text.secondary" }}
-              />
-            )}
+            <Grid item>
+              <CardMenuButton onClick={handleCardMenuClick} />
+            </Grid>
           </Grid>
 
-          <Grid item>
-            <Grid
-              container
-              direction="row"
-              alignItems="center"
-              spacing={Spacing.DETAILS}
+          <Stack
+            direction="column"
+            spacing={2}
+            sx={{ paddingX: "16px" }}
+            useFlexGap
+          >
+            <Typography
+              variant="h4"
+              color={(theme) =>
+                account?.balance < 0
+                  ? theme?.palette?.error?.main
+                  : theme?.palette?.text?.primary
+              }
+              fontWeight={600}
             >
+              {toMoney(account?.balance)}
+            </Typography>
+
+            <Grid container direction="column">
               <Grid item>
-                <Typography variant="body2" color="text.secondary">
-                  Balance:
-                </Typography>
+                <Typography variant="h6">{account?.accountAlias}</Typography>
               </Grid>
               <Grid item>
-                <Typography
-                  variant="body2"
-                  color={account?.balance < 0 ? "error" : "success"}
-                  fontWeight={600}
-                  sx={{ marginLeft: Spacing.DETAILS }}
-                >
-                  {toMoney(account?.balance)}
+                <Typography variant="body1" color="text.secondary">
+                  {account?.iban}
                 </Typography>
               </Grid>
             </Grid>
-          </Grid>
-        </Grid>
+
+            <Grid
+              container
+              direction="row"
+              spacing={1}
+              sx={{
+                minHeight: Spacing.XL,
+                marginTop: Spacing.DETAILS,
+              }}
+            >
+              {account?.isSharedAccount && (
+                <Grid item>
+                  <Chip
+                    label="Shared"
+                    sx={{
+                      fontWeight: 600,
+                      color: "text.secondary",
+                    }}
+                  />
+                </Grid>
+              )}
+            </Grid>
+          </Stack>
+        </Stack>
       </CardContent>
     </Card>
   );

@@ -11,9 +11,10 @@ export const List = ({
     lg: 3,
     xl: 4,
   },
+  spacing = 2,
 }) => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={spacing}>
       {Children.map(children, (child) => (
         <Grid
           item
@@ -42,4 +43,5 @@ List.propTypes = {
     lg: PropTypes.number,
     xl: PropTypes.number,
   }),
+  spacing: PropTypes.number,
 };

@@ -15,11 +15,7 @@ import {
 import { Colors } from "../colors";
 import { Icons, IconSizes } from "./icons";
 
-export const Icon = ({
-  name,
-  color = Colors.INHERIT,
-  size = IconSizes.MEDIUM,
-}) => {
+export const Icon = ({ name, color, size = IconSizes.MEDIUM }) => {
   switch (name) {
     case Icons.ACCOUNTS:
       return <Payment color={color} fontSize={size} />;
@@ -58,6 +54,12 @@ export const Icon = ({
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
-  color: PropTypes.oneOf(Object.values(Colors)),
-  size: PropTypes.oneOf(Object.values(IconSizes)),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf(Object.values(Colors)),
+    PropTypes.string,
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(Object.values(IconSizes)),
+    PropTypes.string,
+  ]),
 };
