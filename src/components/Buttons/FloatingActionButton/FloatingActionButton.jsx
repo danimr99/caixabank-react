@@ -6,7 +6,12 @@ import { Icons, Icon } from "../../Icons";
 import { Breakpoints } from "../../breakpoints";
 import { FabExpandedContent } from "./ui/FabExpandedContent";
 
-export const FloatingActionButton = ({ icon, label, onClick }) => {
+export const FloatingActionButton = ({
+  icon,
+  label,
+  expandable = false,
+  onClick,
+}) => {
   const canExpand = useMediaQuery((theme) =>
     theme?.breakpoints?.up(Breakpoints.MD)
   );
@@ -15,7 +20,7 @@ export const FloatingActionButton = ({ icon, label, onClick }) => {
     <Fab
       color="primary"
       aria-label={icon}
-      variant={canExpand ? "extended" : "circular"}
+      variant={expandable && canExpand ? "extended" : "circular"}
       sx={{
         position: "fixed",
         bottom: 0,
@@ -25,7 +30,7 @@ export const FloatingActionButton = ({ icon, label, onClick }) => {
       }}
       onClick={onClick}
     >
-      {canExpand ? (
+      {expandable && canExpand ? (
         <FabExpandedContent icon={icon} label={label} />
       ) : (
         <Icon name={icon} />
@@ -37,5 +42,6 @@ export const FloatingActionButton = ({ icon, label, onClick }) => {
 FloatingActionButton.propTypes = {
   icon: PropTypes.oneOf(Object.values(Icons)).isRequired,
   label: PropTypes.string.isRequired,
+  expandable: PropTypes.bool,
   onClick: PropTypes.func,
 };

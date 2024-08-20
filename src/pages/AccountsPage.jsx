@@ -59,6 +59,7 @@ export const AccountsPage = () => {
       <FloatingActionButton
         icon={Icons.ADD}
         label="Create account"
+        expandable
         onClick={openCreateAccountModal}
       />
     </>
