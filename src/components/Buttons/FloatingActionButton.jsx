@@ -11,8 +11,10 @@ export const FloatingActionButton = ({ icon, onClick }) => {
       aria-label={icon}
       sx={{
         position: "fixed",
-        bottom: Spacing.MD,
-        right: Spacing.MD,
+        bottom: 0,
+        right: 0,
+        marginBottom: Spacing.MD,
+        marginRight: Spacing.MD,
       }}
       onClick={onClick}
     >

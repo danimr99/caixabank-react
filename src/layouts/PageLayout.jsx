@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Box, Grid, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 
 import { NavigationLayout, Spacing } from "./";
 import { GoBackButton } from "../components";
@@ -7,30 +7,19 @@ import { GoBackButton } from "../components";
 export const PageLayout = ({ title, children, showGoBackButton = false }) => {
   return (
     <NavigationLayout>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "start",
-          gap: Spacing.MD,
-        }}
-      >
+      <Stack direction="column" spacing={1}>
         <Grid
           container
           sx={{
             minHeight: Spacing.LG,
           }}
         >
-          {showGoBackButton && (
-            <Grid item>
-              <GoBackButton />
-            </Grid>
-          )}
+          <Grid item>{showGoBackButton && <GoBackButton />}</Grid>
         </Grid>
         <Typography variant="h4" fontWeight="600" component="h1">
           {title}
         </Typography>
-      </Box>
+      </Stack>
 
       <Grid container component="section" sx={{ marginTop: Spacing.LG }}>
         {children}
