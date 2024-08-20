@@ -58,6 +58,11 @@ export const ThemeSwitch = () => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (
-    <StyledThemeSwitch name="themeSwitch" theme={theme} onClick={toggleTheme} />
+    <StyledThemeSwitch
+      name="themeSwitch"
+      theme={theme}
+      checked={theme === Themes.LIGHT ? false : true}
+      onClick={toggleTheme}
+    />
   );
 };

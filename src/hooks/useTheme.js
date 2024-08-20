@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { Themes } from "../constants";
-import { darkTheme, lightTheme } from "../theme/variants";
+import { LocalStorageKeys, Themes } from "../constants";
+import { useLocalStorage } from "./";
+import { darkTheme, lightTheme } from "../theme";
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState(Themes.LIGHT);
+  const { getItem, setItem } = useLocalStorage();
+  const [theme, setTheme] = useState(
+    getItem(LocalStorageKeys.THEME) ?? Themes.LIGHT
+  );
+
+  useEffect(() => {
+    setItem(LocalStorageKeys.THEME, theme);
+  }, [theme, setItem]);
 
   const toggleTheme = () => {
     setTheme((previousTheme) =>
