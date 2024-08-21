@@ -41,7 +41,7 @@ export const AccountCard = ({ account }) => {
   ];
 
   const handleOpenCardMenu = (event) => {
-    anchorRef.current = event.currentTarget;
+    anchorRef.current = event?.currentTarget;
     openCardMenu();
   };
 
@@ -67,7 +67,7 @@ export const AccountCard = ({ account }) => {
             <Grid item>
               <CardMenuButton onClick={handleOpenCardMenu} />
               <CardMenu
-                anchor={anchorRef.current}
+                anchor={anchorRef?.current}
                 isOpened={isCardMenuOpened}
                 options={accountOptions}
                 onClose={handleClosCardMenu}

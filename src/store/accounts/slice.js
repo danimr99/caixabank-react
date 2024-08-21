@@ -21,7 +21,7 @@ export const accountsSlice = createSlice({
       const { payload } = action;
       const { bank, accountAlias, initialDeposit, isSharedAccount } = payload;
 
-      state.accounts.push({
+      state?.accounts?.push({
         accountId: generateAccountId(state.accounts),
         bank,
         accountAlias,
@@ -35,8 +35,8 @@ export const accountsSlice = createSlice({
       const { payload } = action;
       const { accountId } = payload;
 
-      state.accounts = state.accounts.filter(
-        (account) => account.accountId !== accountId
+      state.accounts = state?.accounts?.filter(
+        (account) => account?.accountId !== accountId
       );
     },
   },

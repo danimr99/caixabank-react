@@ -8,7 +8,7 @@ import { toCamelCase } from "./strings";
  */
 export const format = (obj) => {
   if (Array.isArray(obj)) {
-    return obj.map((element) => format(element));
+    return obj?.map((element) => format(element));
   }
 
   if (typeof obj === "object") {

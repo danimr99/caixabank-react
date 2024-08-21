@@ -33,7 +33,7 @@ const initialFormValues = Object.freeze({
 
 const bankOptionsList = Object.freeze(
   Object.entries(Banks).map(([key, value]) => ({
-    name: key.toLowerCase(),
+    name: key?.toLowerCase(),
     label: value,
     value,
   }))

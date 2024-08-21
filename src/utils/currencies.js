@@ -28,7 +28,7 @@ export const toMoney = (
     }
   }
 
-  return value.toLocaleString(options?.locale, {
+  return value?.toLocaleString(options?.locale, {
     style: "currency",
     currency: options?.currency,
     useGrouping: options?.locale === Locales.ES ? "always" : "auto",

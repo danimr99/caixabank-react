@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { LocalStorageKeys, Themes } from "../constants";
-import { getLocalStorageItem, setLocalStorageItem } from "../utils";
 import { darkTheme, lightTheme } from "../theme";
+import { getLocalStorageItem, setLocalStorageItem } from "../utils";
 
 export const useTheme = () => {
   const [theme, setTheme] = useState(

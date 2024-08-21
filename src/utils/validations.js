@@ -39,8 +39,10 @@ export const lengthValidationFn = (
   }
 
   return (
-    (minIncluded ? value.trim().length >= min : value.trim().length > min) &&
-    (maxIncluded ? value.trim().length <= max : value.trim().length < max)
+    (minIncluded
+      ? value?.trim()?.length >= min
+      : value?.trim()?.length > min) &&
+    (maxIncluded ? value?.trim()?.length <= max : value?.trim()?.length < max)
   );
 };
 

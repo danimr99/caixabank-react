@@ -23,14 +23,14 @@ export const CardMenu = ({
     >
       {options.map((option) => (
         <MenuItem
-          key={option.action}
+          key={option?.action}
           onClick={() => {
-            option.onClick();
+            option?.onClick();
             onClose();
           }}
-          sx={option.sx}
+          sx={option?.sx}
         >
-          {option.label}
+          {option?.label}
         </MenuItem>
       ))}
     </Menu>

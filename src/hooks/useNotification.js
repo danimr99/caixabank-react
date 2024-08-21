@@ -7,7 +7,7 @@ const initialState = Object.freeze({
   type: NotificationTypes.INFO,
   title: "",
   message: "",
-  duration: NotificationDurations.SHORT,
+  duration: NotificationDurations.LONG,
 });
 
 export const useNotification = () => {
