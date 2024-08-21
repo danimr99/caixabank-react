@@ -27,8 +27,8 @@ export const FloatingActionButton = ({
           position: "fixed",
           bottom: 0,
           right: 0,
-          marginBottom: Spacing.MD,
-          marginRight: Spacing.MD,
+          marginBottom: { xs: Spacing.MD, sm: Spacing.LG },
+          marginRight: { xs: Spacing.MD, sm: Spacing.LG },
         }}
         onClick={onClick}
       >

@@ -8,7 +8,7 @@ export const NavigationLayout = ({ children }) => {
     <Box sx={{ display: "flex" }}>
       <NavigationBar />
 
-      <Box component="main" sx={{ flexGrow: 1, padding: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1 }}>
         <Toolbar />
         {children}
       </Box>
