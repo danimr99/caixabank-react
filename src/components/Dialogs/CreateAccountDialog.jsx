@@ -12,6 +12,7 @@ import { Banks } from "../../constants";
 import { toMoney } from "../../utils";
 import { useGlobalDispatcher } from "../../hooks";
 import { addAccount } from "../../store";
+import { useNotificationsContext } from "../../contexts";
 import { Spacing } from "../../layouts";
 import {
   NotificationTypes,
@@ -38,12 +39,9 @@ const bankOptionsList = Object.freeze(
   }))
 );
 
-export const CreateAccountDialog = ({
-  isOpened = false,
-  onClose,
-  showNotification,
-}) => {
+export const CreateAccountDialog = ({ isOpened = false, onClose }) => {
   const { dispatch } = useGlobalDispatcher();
+  const { showNotification } = useNotificationsContext();
   const { handleSubmit, control, reset } = useForm({
     defaultValues: initialFormValues,
   });
@@ -58,7 +56,7 @@ export const CreateAccountDialog = ({
     closeDialog();
     showNotification(
       NotificationTypes.SUCCESS,
-      "Account created successfully!",
+      "Account created successfully",
       `Your new account "${
         data?.accountAlias
       }" has been created with an initial deposit of ${toMoney(

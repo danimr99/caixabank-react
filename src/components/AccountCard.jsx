@@ -4,12 +4,14 @@ import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
 import { toMoney } from "../utils";
 import { useGlobalDispatcher, useToggle } from "../hooks";
-import { BorderRadius, Spacing } from "../layouts";
-import { CardMenu, CardMenuButton, Chip, Logo } from ".";
 import { deleteAccount } from "../store";
+import { useNotificationsContext } from "../contexts";
+import { BorderRadius, Spacing } from "../layouts";
+import { CardMenu, CardMenuButton, Chip, Logo, NotificationTypes } from ".";
 
 export const AccountCard = ({ account }) => {
   const { dispatch } = useGlobalDispatcher();
+  const { showNotification } = useNotificationsContext();
   const anchorRef = useRef(null);
   const {
     isOpened: isCardMenuOpened,
@@ -27,7 +29,14 @@ export const AccountCard = ({ account }) => {
       action: "delete-account",
       label: "Delete account",
       sx: { color: "error.main" },
-      onClick: () => dispatch(deleteAccount({ accountId: account?.accountId })),
+      onClick: () => {
+        dispatch(deleteAccount({ accountId: account?.accountId }));
+        showNotification(
+          NotificationTypes.SUCCESS,
+          "Account deleted successfully",
+          `Your account "${account?.accountAlias}" has been deleted.`
+        );
+      },
     },
   ];
 

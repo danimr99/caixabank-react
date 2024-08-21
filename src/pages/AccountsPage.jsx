@@ -1,13 +1,11 @@
-import { useGlobalState, useNotification, useToggle } from "../hooks";
+import { useGlobalState, useToggle } from "../hooks";
 import { PageLayout } from "../layouts";
 import {
   AccountsList,
   Alert,
   CreateAccountDialog,
-  FloatingActionButton,
   Icons,
   NotificationTypes,
-  SnackbarAlert,
 } from "../components";
 
 export const AccountsPage = () => {
@@ -17,31 +15,23 @@ export const AccountsPage = () => {
     open: openCreateAccountModal,
     close: closeCreateAccountModal,
   } = useToggle(false);
-  const {
-    notification,
-    isVisible: isNotificationVisible,
-    showNotification,
-    hideNotification,
-  } = useNotification();
 
   return (
     <>
       <CreateAccountDialog
         isOpened={isCreateAccountModalOpened}
         onClose={closeCreateAccountModal}
-        showNotification={showNotification}
       />
 
-      <SnackbarAlert
-        type={notification?.type}
-        isVisible={isNotificationVisible}
-        title={notification?.title}
-        message={notification?.message}
-        duration={notification?.duration}
-        onClose={hideNotification}
-      />
-
-      <PageLayout title="Accounts">
+      <PageLayout
+        title="Accounts"
+        showFabButton={!isCreateAccountModalOpened}
+        fab={{
+          icon: Icons.ADD,
+          label: "Create account",
+          onClick: openCreateAccountModal,
+        }}
+      >
         {accounts.length > 0 ? (
           <AccountsList accounts={accounts} />
         ) : (
@@ -52,16 +42,6 @@ export const AccountsPage = () => {
           />
         )}
       </PageLayout>
-
-      {!isCreateAccountModalOpened && !isNotificationVisible && (
-        <FloatingActionButton
-          icon={Icons.ADD}
-          label="Create account"
-          expandable
-          withAnimation
-          onClick={openCreateAccountModal}
-        />
-      )}
     </>
   );
 };

@@ -47,5 +47,5 @@ FloatingActionButton.propTypes = {
   label: PropTypes.string.isRequired,
   expandable: PropTypes.bool,
   withAnimation: PropTypes.bool,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
 };
