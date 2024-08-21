@@ -3,7 +3,8 @@ import { Container, Grid, Stack, Typography } from "@mui/material";
 
 import { useNotificationsContext } from "../contexts";
 import { NavigationLayout, Spacing } from "./";
-import { FloatingActionButton, GoBackButton, Icons } from "../components";
+import { FloatingActionButton, GoBackButton } from "../components";
+import { Icons } from "../components/Icons";
 
 export const PageLayout = ({
   title,
