@@ -11,3 +11,4 @@ export * from "./Logo";
 export * from "./Menus";
 export * from "./NavigationBar";
 export * from "./Notifications";
+export * from "./Texts";

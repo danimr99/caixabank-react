@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { Container, Grid, Stack, Typography } from "@mui/material";
+import { Container, Grid, Stack } from "@mui/material";
 
 import { useNotificationsContext } from "../contexts";
 import { NavigationLayout, Spacing } from "./";
-import { FloatingActionButton, GoBackButton } from "../components";
 import { Icons } from "../components/Icons";
+import { FloatingActionButton, GoBackButton, PageTitle } from "../components";
 
 export const PageLayout = ({
   title,
@@ -28,9 +28,7 @@ export const PageLayout = ({
             >
               <Grid item>{showGoBackButton && <GoBackButton />}</Grid>
             </Grid>
-            <Typography variant="h4" fontWeight="600" component="h1">
-              {title}
-            </Typography>
+            <PageTitle text={title} />
           </Stack>
 
           <Grid container component="section" sx={{ marginTop: Spacing.LG }}>

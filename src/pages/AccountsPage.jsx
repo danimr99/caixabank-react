@@ -32,7 +32,7 @@ export const AccountsPage = () => {
           onClick: openCreateAccountModal,
         }}
       >
-        {accounts.length > 0 ? (
+        {accounts?.length > 0 ? (
           <AccountsList accounts={accounts} />
         ) : (
           <Alert

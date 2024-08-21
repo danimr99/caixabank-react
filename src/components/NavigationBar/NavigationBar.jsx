@@ -5,12 +5,14 @@ import {
   IconButton,
   List,
   Toolbar,
-  Typography,
   useTheme as useMuiTheme,
 } from "@mui/material";
 
+import { Themes } from "../../constants";
 import { useToggle } from "../../hooks";
+import { useThemeContext } from "../../contexts";
 import { NavigationBarLinks } from "./";
+import { AppBar, Drawer, DrawerHeader, NavigationBarItem } from "./ui";
 import {
   Logo,
   Logos,
@@ -18,10 +20,8 @@ import {
   NavigationBarMenuButton,
   Icon,
   Icons,
+  NavigationBarTitle,
 } from "../";
-import { AppBar, Drawer, DrawerHeader, NavigationBarItem } from "./ui";
-import { Themes } from "../../constants";
-import { useThemeContext } from "../../contexts";
 
 export const NavigationBar = () => {
   const muiTheme = useMuiTheme();
@@ -42,22 +42,21 @@ export const NavigationBar = () => {
           />
 
           <Grid container direction="row" alignItems="center">
-            <Logo
-              name={
-                theme === Themes.LIGHT ? Logos.CAIXABANK_ALT : Logos.CAIXABANK
-              }
-            />
-
-            <Typography
-              variant="h6"
-              component="div"
-              noWrap
+            <Grid item>
+              <Logo
+                name={
+                  theme === Themes.LIGHT ? Logos.CAIXABANK_ALT : Logos.CAIXABANK
+                }
+              />
+            </Grid>
+            <Grid
+              item
               sx={{
                 display: { xs: "none", sm: "block" },
               }}
             >
-              CaixaBankNow
-            </Typography>
+              <NavigationBarTitle text="CaixaBank" />
+            </Grid>
           </Grid>
 
           <Box
@@ -88,7 +87,7 @@ export const NavigationBar = () => {
         <List>
           {NavigationBarLinks.map((navigationBarLink) => (
             <NavigationBarItem
-              key={navigationBarLink.label}
+              key={navigationBarLink?.label}
               {...navigationBarLink}
               isSideMenuExpanded={isSideMenuExpanded}
             />
