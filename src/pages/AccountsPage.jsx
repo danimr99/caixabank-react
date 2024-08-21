@@ -1,14 +1,11 @@
-import { Grid } from "@mui/material";
-
 import { useGlobalState, useNotification, useToggle } from "../hooks";
 import { PageLayout } from "../layouts";
 import {
-  AccountCard,
+  AccountsList,
   Alert,
   CreateAccountDialog,
   FloatingActionButton,
   Icons,
-  List,
   NotificationTypes,
   SnackbarAlert,
 } from "../components";
@@ -20,8 +17,12 @@ export const AccountsPage = () => {
     open: openCreateAccountModal,
     close: closeCreateAccountModal,
   } = useToggle(false);
-  const { notification, isVisible, showNotification, hideNotification } =
-    useNotification();
+  const {
+    notification,
+    isVisible: isNotificationVisible,
+    showNotification,
+    hideNotification,
+  } = useNotification();
 
   return (
     <>
@@ -33,35 +34,34 @@ export const AccountsPage = () => {
 
       <SnackbarAlert
         type={notification?.type}
-        isVisible={isVisible}
+        isVisible={isNotificationVisible}
+        title={notification?.title}
         message={notification?.message}
         duration={notification?.duration}
         onClose={hideNotification}
       />
 
       <PageLayout title="Accounts">
-        <List>
-          {accounts.map((account) => (
-            <AccountCard key={account?.accountId} account={account} />
-          ))}
-        </List>
-
-        {accounts?.length === 0 && (
-          <Grid item justifyContent="center" alignItems="center">
-            <Alert
-              type={NotificationTypes.WARNING}
-              message="No accounts found. "
-            />
-          </Grid>
+        {accounts.length > 0 ? (
+          <AccountsList accounts={accounts} />
+        ) : (
+          <Alert
+            type={NotificationTypes.INFO}
+            title="No accounts"
+            message="You don't have any accounts yet. Create one to get started."
+          />
         )}
       </PageLayout>
 
-      <FloatingActionButton
-        icon={Icons.ADD}
-        label="Create account"
-        expandable
-        onClick={openCreateAccountModal}
-      />
+      {!isCreateAccountModalOpened && !isNotificationVisible && (
+        <FloatingActionButton
+          icon={Icons.ADD}
+          label="Create account"
+          expandable
+          withAnimation
+          onClick={openCreateAccountModal}
+        />
+      )}
     </>
   );
 };

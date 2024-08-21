@@ -6,7 +6,7 @@ export * from "./colors";
 export * from "./Dialogs";
 export * from "./Icons";
 export * from "./Inputs";
-export * from "./List";
+export * from "./Lists";
 export * from "./Logo";
 export * from "./Menus";
 export * from "./NavigationBar";

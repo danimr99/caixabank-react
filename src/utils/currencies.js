@@ -1,5 +1,5 @@
 import { Locales, Currencies } from "../constants";
-import { isNumber } from "./numbers";
+import { isNumber, toNumber } from "./numbers";
 
 /**
  * Converts a number to money format.
@@ -19,9 +19,13 @@ export const toMoney = (
   }
 ) => {
   if (!isNumber(value)) {
-    throw new Error(
-      `toMoney expects a number. Received: ${value} of type ${typeof value}.`
-    );
+    if (typeof value === "string") {
+      value = toNumber(value);
+    } else {
+      throw new Error(
+        `toMoney expects a number. Received: ${value} of type ${typeof value}.`
+      );
+    }
   }
 
   return value.toLocaleString(options?.locale, {

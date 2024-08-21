@@ -2,27 +2,27 @@ import { Children } from "react";
 import PropTypes from "prop-types";
 import { Grid } from "@mui/material";
 
-export const List = ({
+export const GridList = ({
   children,
-  itemsBySize = {
-    xs: 1,
-    sm: 1,
-    md: 2,
-    lg: 3,
-    xl: 4,
+  itemColumnsBySize = {
+    xs: 12,
+    sm: 12,
+    md: 6,
+    lg: 6,
+    xl: 6,
   },
-  spacing = 2,
+  spacing = 3,
 }) => {
   return (
     <Grid container spacing={spacing}>
       {Children.map(children, (child) => (
         <Grid
           item
-          xs={12 / itemsBySize?.xs}
-          sm={12 / itemsBySize?.sm}
-          md={12 / itemsBySize?.md}
-          lg={12 / itemsBySize?.lg}
-          xl={12 / itemsBySize?.xl}
+          xs={itemColumnsBySize?.xs}
+          sm={itemColumnsBySize?.sm}
+          md={itemColumnsBySize?.md}
+          lg={itemColumnsBySize?.lg}
+          xl={itemColumnsBySize?.xl}
         >
           {child}
         </Grid>
@@ -31,12 +31,12 @@ export const List = ({
   );
 };
 
-List.propTypes = {
+GridList.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  itemsBySize: PropTypes.shape({
+  itemColumnsBySize: PropTypes.shape({
     xs: PropTypes.number,
     sm: PropTypes.number,
     md: PropTypes.number,

@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 
 import { Banks } from "../../constants";
+import { toMoney } from "../../utils";
 import { useGlobalDispatcher } from "../../hooks";
 import { addAccount } from "../../store";
 import { Spacing } from "../../layouts";
@@ -55,7 +56,15 @@ export const CreateAccountDialog = ({
   const onSubmitForm = (data) => {
     dispatch(addAccount(data));
     closeDialog();
-    showNotification(NotificationTypes.SUCCESS, "Account created successfully");
+    showNotification(
+      NotificationTypes.SUCCESS,
+      "Account created successfully!",
+      `Your new account "${
+        data?.accountAlias
+      }" has been created with an initial deposit of ${toMoney(
+        data?.initialDeposit
+      )}.`
+    );
   };
 
   return (

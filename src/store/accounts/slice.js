@@ -31,5 +31,13 @@ export const accountsSlice = createSlice({
         isSharedAccount,
       });
     },
+    deleteAccount: (state, action) => {
+      const { payload } = action;
+      const { accountId } = payload;
+
+      state.accounts = state.accounts.filter(
+        (account) => account.accountId !== accountId
+      );
+    },
   },
 });

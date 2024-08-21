@@ -1,13 +1,44 @@
+import { useRef } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
 import { toMoney } from "../utils";
+import { useGlobalDispatcher, useToggle } from "../hooks";
 import { BorderRadius, Spacing } from "../layouts";
-import { CardMenuButton, Chip, Logo } from ".";
+import { CardMenu, CardMenuButton, Chip, Logo } from ".";
+import { deleteAccount } from "../store";
 
 export const AccountCard = ({ account }) => {
-  const handleCardMenuClick = (event) => {
-    console.log(event);
+  const { dispatch } = useGlobalDispatcher();
+  const anchorRef = useRef(null);
+  const {
+    isOpened: isCardMenuOpened,
+    open: openCardMenu,
+    close: closeCardMenu,
+  } = useToggle();
+
+  const accountOptions = [
+    {
+      action: "show-details",
+      label: "Show details",
+      onClick: () => console.log("Show details"),
+    },
+    {
+      action: "delete-account",
+      label: "Delete account",
+      sx: { color: "error.main" },
+      onClick: () => dispatch(deleteAccount({ accountId: account?.accountId })),
+    },
+  ];
+
+  const handleOpenCardMenu = (event) => {
+    anchorRef.current = event.currentTarget;
+    openCardMenu();
+  };
+
+  const handleClosCardMenu = () => {
+    anchorRef.current = null;
+    closeCardMenu();
   };
 
   return (
@@ -25,7 +56,13 @@ export const AccountCard = ({ account }) => {
             </Grid>
 
             <Grid item>
-              <CardMenuButton onClick={handleCardMenuClick} />
+              <CardMenuButton onClick={handleOpenCardMenu} />
+              <CardMenu
+                anchor={anchorRef.current}
+                isOpened={isCardMenuOpened}
+                options={accountOptions}
+                onClose={handleClosCardMenu}
+              />
             </Grid>
           </Grid>
 
@@ -89,10 +126,10 @@ export const AccountCard = ({ account }) => {
 AccountCard.propTypes = {
   account: PropTypes.shape({
     accountId: PropTypes.number.isRequired,
-    iban: PropTypes.string.isRequired,
-    balance: PropTypes.number.isRequired,
     bank: PropTypes.string.isRequired,
     accountAlias: PropTypes.string.isRequired,
+    iban: PropTypes.string.isRequired,
+    balance: PropTypes.number.isRequired,
     isSharedAccount: PropTypes.bool.isRequired,
-  }),
+  }).isRequired,
 };

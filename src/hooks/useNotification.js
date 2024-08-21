@@ -5,6 +5,7 @@ import { NotificationDurations, NotificationTypes } from "../components";
 
 const initialState = Object.freeze({
   type: NotificationTypes.INFO,
+  title: "",
   message: "",
   duration: NotificationDurations.SHORT,
 });
@@ -15,10 +16,11 @@ export const useNotification = () => {
 
   const showNotification = (
     type,
+    title,
     message,
-    duration = NotificationDurations.SHORT
+    duration = NotificationDurations.LONG
   ) => {
-    setNotification({ type, message, duration });
+    setNotification({ type, title, message, duration });
     open();
   };
 
