@@ -2,14 +2,15 @@ import { Locales, Currencies } from "../constants";
 import { isNumber, toNumber } from "./numbers";
 
 /**
- * Converts a number to money format.
+ * Converts a value to money format.
  *
- * @param {number} value - The number to convert to money.
+ * @function
+ * @param {number|string} value - The value to convert to money.
  * @param {object} options - The options to format the number.
  * @param {string} options.locale - The locale to format the number.
  * @param {string} options.currency - The currency to format the number.
+ * @throws {Error} If the value cannot be converted.
  * @returns {string} The number formatted as money.
- * @throws {Error} If the input is not a number.
  */
 export const toMoney = (
   value,
@@ -23,7 +24,7 @@ export const toMoney = (
       value = toNumber(value);
     } else {
       throw new Error(
-        `toMoney expects a number. Received: ${value} of type ${typeof value}.`
+        `toMoney expects a number or a string that can be converted internally to number. Received: ${value} of type ${typeof value}.`
       );
     }
   }

@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 
-import { useThemeContext } from "../contexts/theme/useThemeContext";
+import { useThemeContext } from "../contexts";
 
 export const AppTheme = ({ children }) => {
-  const { getPalette } = useThemeContext();
+  const { getThemeConfig } = useThemeContext();
 
   return (
-    <ThemeProvider theme={getPalette()}>
+    <ThemeProvider theme={getThemeConfig()}>
       <CssBaseline />
       {children}
     </ThemeProvider>

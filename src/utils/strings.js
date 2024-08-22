@@ -1,9 +1,10 @@
 /**
  * Converts a string to camel case.
  *
+ * @function
  * @param {string} str - The string to convert to camel case.
- * @returns {string} The string in camel case.
  * @throws {Error} If the input is not a string.
+ * @returns {string} The string in camel case.
  */
 export const toCamelCase = (str) => {
   if (typeof str !== "string") {

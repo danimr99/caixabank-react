@@ -3,6 +3,7 @@ export * from "./currencies";
 export * from "./dataFormatter";
 export * from "./datetime";
 export * from "./localStorage";
+export * from "./logos";
 export * from "./numbers";
 export * from "./strings";
 export * from "./transactions";

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import { useNotification } from "../../hooks";
 import { NotificationsContext } from "./NotificationsContext";
-import { SnackbarAlert } from "../../components";
+import { Notification } from "../../ui";
 
 export const NotificationsProvider = ({ children }) => {
   const {
@@ -21,7 +21,7 @@ export const NotificationsProvider = ({ children }) => {
         hideNotification,
       }}
     >
-      <SnackbarAlert
+      <Notification
         type={notification?.type}
         isVisible={isNotificationVisible}
         title={notification?.title}

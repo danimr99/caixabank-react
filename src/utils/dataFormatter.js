@@ -3,6 +3,7 @@ import { toCamelCase } from "./strings";
 /**
  * Formats all keys from an object or array of objects to camel case.
  *
+ * @function
  * @param {object | object[]} obj - Object or array of objects to format.
  * @returns {object | object[]} Formatted object or array of objects.
  */

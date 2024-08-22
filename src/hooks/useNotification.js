@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import { useToggle } from "./useToggle";
-import { NotificationDurations, NotificationTypes } from "../components";
+import { NotificationDurations, NotificationTypes } from "../ui";
 
-const initialState = Object.freeze({
+const initialNotificationState = Object.freeze({
   type: NotificationTypes.INFO,
   title: "",
   message: "",
@@ -11,8 +11,8 @@ const initialState = Object.freeze({
 });
 
 export const useNotification = () => {
-  const { isOpened, open, close } = useToggle();
-  const [notification, setNotification] = useState(initialState);
+  const { isOpened: isVisible, open, close } = useToggle();
+  const [notification, setNotification] = useState(initialNotificationState);
 
   const showNotification = (
     type,
@@ -29,7 +29,7 @@ export const useNotification = () => {
   };
 
   return {
-    isVisible: isOpened,
+    isVisible,
     notification,
     showNotification,
     hideNotification,

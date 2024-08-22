@@ -1,10 +1,8 @@
-import { AppRouter } from "./router";
 import { AppTheme } from "./theme";
+import { AppRouter } from "./router";
 
-export const CaixaBankApp = () => {
-  return (
-    <AppTheme>
-      <AppRouter />
-    </AppTheme>
-  );
-};
+export const CaixaBankApp = () => (
+  <AppTheme>
+    <AppRouter />
+  </AppTheme>
+);

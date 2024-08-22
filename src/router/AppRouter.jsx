@@ -1,22 +1,30 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import { Routes as RoutesList } from "../constants";
-import {
-  AccountsPage,
-  BrokerDetailsPage,
-  BrokersPage,
-  TransactionsPage,
-} from "../pages";
+import { AuthenticationGuard, NoAuthenticationGuard } from "./guards";
+import { AuthenticationRoutes } from "../features/authentication/routes";
+import { AppRoutes } from "../features/app/routes";
+import { FallbackRoutes } from "../features/fallback/routes";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path={RoutesList.ACCOUNTS} element={<AccountsPage />} />
-      <Route path={RoutesList.BROKERS} element={<BrokersPage />} />
-      <Route path={RoutesList.BROKER_DETAILS} element={<BrokerDetailsPage />} />
-      <Route path={RoutesList.TRANSACTIONS} element={<TransactionsPage />} />
-
-      <Route path="/*" element={<Navigate to={RoutesList.ACCOUNTS} />} />
+      <Route
+        path="authentication/*"
+        element={
+          <NoAuthenticationGuard>
+            <AuthenticationRoutes />
+          </NoAuthenticationGuard>
+        }
+      />
+      <Route
+        path="app/*"
+        element={
+          <AuthenticationGuard>
+            <AppRoutes />
+          </AuthenticationGuard>
+        }
+      />
+      <Route path="*" element={<FallbackRoutes />} />
     </Routes>
   );
 };

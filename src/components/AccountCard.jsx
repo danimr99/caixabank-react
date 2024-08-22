@@ -2,12 +2,19 @@ import { useRef } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
-import { toMoney } from "../utils";
+import { getLogoIdByName, toMoney } from "../utils";
 import { useGlobalDispatcher, useToggle } from "../hooks";
 import { deleteAccount } from "../store";
 import { useNotificationsContext } from "../contexts";
-import { BorderRadius, Spacing } from "../layouts";
-import { CardMenu, CardMenuButton, Chip, Logo, NotificationTypes } from ".";
+import {
+  BorderRadius,
+  Chip,
+  Logo,
+  NotificationTypes,
+  OptionsMenu,
+  OptionsMenuButton,
+  Spacing,
+} from "../ui";
 
 export const AccountCard = ({ account }) => {
   const { dispatch } = useGlobalDispatcher();
@@ -61,12 +68,12 @@ export const AccountCard = ({ account }) => {
             alignItems="center"
           >
             <Grid item>
-              <Logo name={account?.bank} />
+              <Logo name={getLogoIdByName(account?.bank)} />
             </Grid>
 
             <Grid item>
-              <CardMenuButton onClick={handleOpenCardMenu} />
-              <CardMenu
+              <OptionsMenuButton onClick={handleOpenCardMenu} />
+              <OptionsMenu
                 anchor={anchorRef?.current}
                 isOpened={isCardMenuOpened}
                 options={accountOptions}

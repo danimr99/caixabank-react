@@ -1,7 +1,7 @@
-import "./transactions.d.js";
+/** @import {Transaction} from "../docs" */
 
 /**
- * @typedef {Object} Account
+ * @typedef {object} Account
  * @property {number} accountId - The account ID.
  * @property {string} bank - The bank name.
  * @property {string} accountAlias - The account alias.
@@ -10,3 +10,5 @@ import "./transactions.d.js";
  * @property {Transaction[]} transactions - The transactions history of the account.
  * @property {boolean} isSharedAccount - Whether the account is shared or not.
  */
+
+export default {};

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { LocalStorageKeys, Themes } from "../constants";
-import { darkTheme, lightTheme } from "../theme";
+import { LocalStorageKeys } from "../constants";
+import { Themes, darkTheme, lightTheme } from "../theme";
 import { getLocalStorageItem, setLocalStorageItem } from "../utils";
 
 export const useTheme = () => {
@@ -19,9 +19,9 @@ export const useTheme = () => {
     );
   };
 
-  const getPalette = () => {
+  const getThemeConfig = () => {
     return theme === Themes.LIGHT ? lightTheme : darkTheme;
   };
 
-  return { theme, toggleTheme, getPalette };
+  return { theme, toggleTheme, getThemeConfig };
 };

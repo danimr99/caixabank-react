@@ -1,10 +1,13 @@
+/** @import { Account } from "../docs" */
+
 import { generateRandomNumber } from "./numbers";
 
 /**
  * Generates a random IBAN following the pattern
  * ESXX XXXX XXXX XXXX XXXX XXXX.
  *
- * @returns {string} A random IBAN
+ * @function
+ * @returns {string} A random IBAN.
  */
 export const generateAccountIBAN = () => {
   const randomNumber = Array.from({ length: 22 }, () => {
@@ -17,9 +20,10 @@ export const generateAccountIBAN = () => {
 /**
  * Generates a new account ID based on the current list of accounts.
  *
- * @param {object[]} accountsList - The current existing list of accounts.
+ * @function
+ * @param {Account[]} accounts - The current existing list of accounts.
  * @returns {number} A new account ID.
  */
-export const generateAccountId = (accountsList) => {
-  return accountsList.length + 1;
+export const generateAccountId = (accounts) => {
+  return accounts?.length + 1;
 };

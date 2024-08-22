@@ -9,9 +9,9 @@ import {
   toNumber,
 } from "../../utils";
 
-export const initialState = {
+export const initialState = Object.freeze({
   accounts: [...format(accountsData)],
-};
+});
 
 export const accountsSlice = createSlice({
   name: "accounts",
