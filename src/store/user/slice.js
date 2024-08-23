@@ -1,11 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { AuthenticationStatus } from "../../constants";
-
 export const initialState = Object.freeze({
   user: {
     fullName: "",
-    authenticationStatus: AuthenticationStatus.PENDING,
   },
 });
 
@@ -13,20 +10,12 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    login: (state, action) => {
+    setUser: (state, action) => {
       const { payload } = action;
-      const { fullName } = payload;
-
-      state.user = {
-        fullName,
-        authenticationStatus: AuthenticationStatus.AUTHENTICATED,
-      };
+      state.user = payload;
     },
-    logout: (state) => {
-      state.user = {
-        fullName: "",
-        authenticationStatus: AuthenticationStatus.UNAUTHENTICATED,
-      };
+    resetUser: (state) => {
+      state.user = initialState?.user;
     },
   },
 });

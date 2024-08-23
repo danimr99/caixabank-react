@@ -3,12 +3,12 @@ import { useGlobalState } from "./useGlobalState";
 import { Stores } from "../store";
 
 export const useAuthentication = () => {
-  const { user } = useGlobalState(Stores.USER);
+  const { authenticationStatus } = useGlobalState(Stores.AUTHENTICATION);
   const isUserAuthenticated =
-    user?.authenticationStatus === AuthenticationStatus.AUTHENTICATED;
+    authenticationStatus === AuthenticationStatus.AUTHENTICATED;
 
   return {
     isUserAuthenticated,
-    userAuthenticationStatus: user?.authenticationStatus,
+    authenticationStatus,
   };
 };
