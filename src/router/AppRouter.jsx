@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { AuthenticationGuard, NoAuthenticationGuard } from "./guards";
 import { AuthenticationRoutes } from "../features/authentication/routes";
 import { AppRoutes } from "../features/app/routes";
-import { FallbackRoutes } from "../features/fallback/routes";
+import { FallbackRoutes } from "./routes";
 
 export const AppRouter = () => {
   return (

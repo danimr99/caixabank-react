@@ -1,10 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { AccountsPage } from "../pages";
+import { BrokersPage } from "../pages";
 
-export const AccountsRoutes = () => (
+export const BrokersRoutes = () => (
   <Routes>
-    <Route path="/" element={<AccountsPage />} />
+    <Route path="/" element={<BrokersPage />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );

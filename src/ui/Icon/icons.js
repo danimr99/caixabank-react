@@ -10,6 +10,7 @@ export const Icons = Object.freeze({
   GO_BACK: "ArrowBack",
   SHARED_ACCOUNT: "PeopleRounded",
   USER: "AccountCircle",
+  DASHBOARD: "Dashboard",
 });
 
 export const IconSizes = Object.freeze({
