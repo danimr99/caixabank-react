@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { getLocalStorageItem } from "../../utils";
+import { LocalStorageKeys } from "../../constants";
+
 export const initialState = Object.freeze({
-  user: {
-    fullName: "",
-  },
+  user: getLocalStorageItem(LocalStorageKeys.USER),
 });
 
 export const userSlice = createSlice({
