@@ -14,6 +14,8 @@ export const Spacing = Object.freeze({
   MD: "1rem",
   LG: "2rem",
   XL: "3rem",
+  "2XL": "4rem",
+  "3XL": "5rem",
 });
 
 export const BorderRadius = Object.freeze({

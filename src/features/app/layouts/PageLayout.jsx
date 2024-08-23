@@ -24,20 +24,26 @@ export const PageLayout = ({
     <>
       <NavigationLayout>
         <Container fixed>
-          <Stack direction="column" spacing={1}>
-            <Grid
-              container
-              sx={{
-                minHeight: Spacing.LG,
-              }}
-            >
-              <Grid item>{showGoBackButton && <GoBackButton />}</Grid>
-            </Grid>
-
-            <TitleText text={title} />
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            sx={{
+              minHeight: Spacing["3XL"],
+            }}
+          >
+            {showGoBackButton && <GoBackButton />}
+            {title && <TitleText text={title} />}
           </Stack>
 
-          <Grid container component="section" sx={{ marginY: Spacing.LG }}>
+          <Grid
+            container
+            component="section"
+            sx={{
+              marginTop: Spacing.MD,
+              marginBottom: Spacing.LG,
+            }}
+          >
             <Grid item xs={12}>
               {children}
             </Grid>
@@ -53,7 +59,7 @@ export const PageLayout = ({
 };
 
 PageLayout.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
