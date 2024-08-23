@@ -4,6 +4,6 @@ import { AccountsPage } from "../pages";
 export const AccountsRoutes = () => (
   <Routes>
     <Route path="/" element={<AccountsPage />} />
-    <Route path="*" element={<Navigate to="/" />} />
+    <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );
