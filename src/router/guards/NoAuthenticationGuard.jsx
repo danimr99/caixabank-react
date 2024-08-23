@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 export const NoAuthenticationGuard = ({ children }) => {
   const { isUserAuthenticated } = useAuthentication();
 
-  return isUserAuthenticated ? <Navigate to="/app" /> : children;
+  return isUserAuthenticated ? <Navigate to="/app" replace /> : children;
 };
 
 NoAuthenticationGuard.propTypes = {

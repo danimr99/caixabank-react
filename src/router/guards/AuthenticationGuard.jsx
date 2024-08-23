@@ -6,7 +6,11 @@ import { useAuthentication } from "../../hooks";
 export const AuthenticationGuard = ({ children }) => {
   const { isUserAuthenticated } = useAuthentication();
 
-  return isUserAuthenticated ? children : <Navigate to="/authentication" />;
+  return isUserAuthenticated ? (
+    children
+  ) : (
+    <Navigate to="/authentication" replace />
+  );
 };
 
 AuthenticationGuard.propTypes = {

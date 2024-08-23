@@ -16,7 +16,7 @@ export const NavigationBarUser = ({ isSideMenuExpanded }) => {
   return (
     <NavigationBarItem
       icon={Icons.USER}
-      label={user?.name}
+      label={user?.fullName}
       isSideMenuExpanded={isSideMenuExpanded}
       onClick={handleClick}
     />

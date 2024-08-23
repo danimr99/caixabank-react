@@ -11,6 +11,8 @@ export const NavigationBarMenuButton = ({
     color="inherit"
     edge="start"
     sx={{
+      height: 40,
+      width: 40,
       marginRight: 5,
       ...(isSideMenuExpanded && { display: "none" }),
       ...(!isSideMenuExpanded && {

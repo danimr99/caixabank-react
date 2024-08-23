@@ -1,15 +1,9 @@
 import PropTypes from "prop-types";
-import { Container, Grid, Stack } from "@mui/material";
+import { Container, Grid, Stack, Typography } from "@mui/material";
 
 import { useNotificationsContext } from "../../../contexts";
-import { NavigationLayout } from "./NavigationLayout";
-import {
-  FabButton,
-  GoBackButton,
-  Icons,
-  Spacing,
-  TitleText,
-} from "../../../ui";
+import { NavigationLayout } from "../../../layouts";
+import { FabButton, GoBackButton, Icons, Spacing } from "../../../ui";
 
 export const PageLayout = ({
   title,
@@ -33,7 +27,11 @@ export const PageLayout = ({
             }}
           >
             {showGoBackButton && <GoBackButton />}
-            {title && <TitleText text={title} />}
+            {title && (
+              <Typography variant="h4" fontWeight="600" component="h1">
+                {title}
+              </Typography>
+            )}
           </Stack>
 
           <Grid

@@ -12,7 +12,7 @@ import { Themes } from "../../theme";
 import { Icons } from "../Icon";
 import { LogoNames } from "../Logo";
 import { NavigationBarLinks } from "./links";
-import { useNavigation, useToggle } from "../../hooks";
+import { useAuthentication, useNavigation, useToggle } from "../../hooks";
 import { useThemeContext } from "../../contexts";
 import {
   AppBar,
@@ -29,6 +29,7 @@ import { ThemeSwitch } from "../Switches";
 
 export const NavigationBar = () => {
   const { navigateTo } = useNavigation();
+  const { isUserAuthenticated } = useAuthentication();
   const { theme, getThemeConfig } = useThemeContext();
   const muiTheme = getThemeConfig();
   const {
@@ -43,10 +44,12 @@ export const NavigationBar = () => {
     <>
       <AppBar position="fixed" open={isSideMenuExpanded}>
         <Toolbar>
-          <NavigationBarMenuButton
-            isSideMenuExpanded={isSideMenuExpanded}
-            expandSideMenu={expandSideMenu}
-          />
+          {isUserAuthenticated && (
+            <NavigationBarMenuButton
+              isSideMenuExpanded={isSideMenuExpanded}
+              expandSideMenu={expandSideMenu}
+            />
+          )}
 
           <Grid container direction="row" alignItems="center">
             <Grid item>
@@ -82,38 +85,40 @@ export const NavigationBar = () => {
         </Toolbar>
       </AppBar>
 
-      <Drawer variant="permanent" open={isSideMenuExpanded}>
-        <DrawerHeader>
-          <IconButton onClick={shrinkSideMenu}>
-            <Icon
-              name={
-                muiTheme?.direction === "rtl"
-                  ? Icons.NAVIGATION_BAR_MENU_HEADER_RIGHT
-                  : Icons.NAVIGATION_BAR_MENU_HEADER_LEFT
-              }
-            />
-          </IconButton>
-        </DrawerHeader>
-
-        <Divider />
-
-        <Stack direction="column" flexGrow={1} justifyContent="space-between">
-          <List>
-            {NavigationBarLinks.map((navigationBarLink) => (
-              <NavigationBarItem
-                key={navigationBarLink?.label}
-                {...navigationBarLink}
-                isSideMenuExpanded={isSideMenuExpanded}
-                onClick={() =>
-                  handleNavigationItemClick(navigationBarLink?.path)
+      {isUserAuthenticated && (
+        <Drawer variant="permanent" open={isSideMenuExpanded}>
+          <DrawerHeader>
+            <IconButton onClick={shrinkSideMenu}>
+              <Icon
+                name={
+                  muiTheme?.direction === "rtl"
+                    ? Icons.NAVIGATION_BAR_MENU_HEADER_RIGHT
+                    : Icons.NAVIGATION_BAR_MENU_HEADER_LEFT
                 }
               />
-            ))}
-          </List>
+            </IconButton>
+          </DrawerHeader>
 
-          <NavigationBarUser isSideMenuExpanded={isSideMenuExpanded} />
-        </Stack>
-      </Drawer>
+          <Divider />
+
+          <Stack direction="column" flexGrow={1} justifyContent="space-between">
+            <List>
+              {NavigationBarLinks.map((navigationBarLink) => (
+                <NavigationBarItem
+                  key={navigationBarLink?.label}
+                  {...navigationBarLink}
+                  isSideMenuExpanded={isSideMenuExpanded}
+                  onClick={() =>
+                    handleNavigationItemClick(navigationBarLink?.path)
+                  }
+                />
+              ))}
+            </List>
+
+            <NavigationBarUser isSideMenuExpanded={isSideMenuExpanded} />
+          </Stack>
+        </Drawer>
+      )}
     </>
   );
 };

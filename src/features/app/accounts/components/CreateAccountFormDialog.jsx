@@ -8,8 +8,6 @@ import { useGlobalDispatcher } from "../../../../hooks";
 import { useNotificationsContext } from "../../../../contexts";
 import { addAccount } from "../../../../store";
 import {
-  Button,
-  ButtonTypes,
   Checkbox,
   Dialog,
   Input,
@@ -67,8 +65,21 @@ export const CreateAccountFormDialog = ({ isOpened = false, onClose }) => {
         component: "form",
         onSubmit: handleSubmit(onSubmitForm),
       }}
-      title="Create a new account"
       isOpened={isOpened}
+      title="New account"
+      instructions="Fill in the following fields to create a new account:"
+      actions={[
+        {
+          key: "cancel",
+          label: "Cancel",
+          onClick: closeDialog,
+        },
+        {
+          key: "submit",
+          label: "Create account",
+          onClick: handleSubmit(onSubmitForm),
+        },
+      ]}
       onClose={closeDialog}
     >
       <Stack spacing={Spacing.MD}>
@@ -113,8 +124,6 @@ export const CreateAccountFormDialog = ({ isOpened = false, onClose }) => {
           label="I would like to share this account"
           control={control}
         />
-
-        <Button type={ButtonTypes.SUBMIT} label="Create account" fullWidth />
       </Stack>
     </Dialog>
   );

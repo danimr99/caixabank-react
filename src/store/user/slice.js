@@ -4,8 +4,8 @@ import { AuthenticationStatus } from "../../constants";
 
 export const initialState = Object.freeze({
   user: {
-    name: "Daniel Muelle",
-    authenticationStatus: AuthenticationStatus.AUTHENTICATED,
+    fullName: "",
+    authenticationStatus: AuthenticationStatus.PENDING,
   },
 });
 
@@ -15,16 +15,16 @@ export const userSlice = createSlice({
   reducers: {
     login: (state, action) => {
       const { payload } = action;
-      const { name } = payload;
+      const { fullName } = payload;
 
       state.user = {
-        name,
+        fullName,
         authenticationStatus: AuthenticationStatus.AUTHENTICATED,
       };
     },
     logout: (state) => {
       state.user = {
-        name: "",
+        fullName: "",
         authenticationStatus: AuthenticationStatus.UNAUTHENTICATED,
       };
     },
