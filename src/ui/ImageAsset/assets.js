@@ -1,6 +1,6 @@
 import { Banks } from "../../constants";
 
-export const Logos = Object.freeze({
+export const Assets = Object.freeze({
   CAIXABANK: {
     id: "caixabank",
     name: Banks.CAIXABANK,
@@ -19,9 +19,17 @@ export const Logos = Object.freeze({
     src: "/assets/imagin.png",
     size: { width: 48, height: 48 },
   },
+  BOT: {
+    id: "bot",
+    src: "/assets/bot.png",
+    size: { width: 150, height: 150 },
+  },
 });
 
-export const LogoNames = Object.entries(Logos).reduce((acc, [key, value]) => {
-  acc[key] = value?.id;
-  return acc;
-}, {});
+export const AssetsNames = Object.entries(Assets).reduce(
+  (acc, [key, value]) => {
+    acc[key] = value?.id;
+    return acc;
+  },
+  {}
+);

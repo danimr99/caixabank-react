@@ -1,5 +1,5 @@
 /**
- * @typedef {object} Logo
+ * @typedef {object} Asset
  * @property {string} id - The logo ID.
  * @property {string} name - The logo name.
  * @property {string} src - The logo source.
@@ -7,7 +7,7 @@
  */
 
 /**
- * @typedef {object} LogoSize
+ * @typedef {object} AssetSize
  * @property {number} width - The logo width.
  * @property {number} height - The logo height.
  */

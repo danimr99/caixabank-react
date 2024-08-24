@@ -10,7 +10,7 @@ import {
 
 import { Themes } from "../../theme";
 import { Icons } from "../Icon";
-import { LogoNames } from "../Logo";
+import { AssetsNames } from "../ImageAsset";
 import { NavigationBarLinks } from "./links";
 import { useAuthentication, useNavigation, useToggle } from "../../hooks";
 import { useThemeContext } from "../../contexts";
@@ -23,7 +23,7 @@ import {
   NavigationBarTitle,
   NavigationBarUser,
 } from "./components";
-import { Logo } from "../Logo";
+import { ImageAsset } from "../ImageAsset";
 import { Icon } from "../Icon";
 import { ThemeSwitch } from "../Switches";
 
@@ -53,11 +53,11 @@ export const NavigationBar = () => {
 
           <Grid container direction="row" alignItems="center">
             <Grid item>
-              <Logo
+              <ImageAsset
                 name={
                   theme === Themes.LIGHT
-                    ? LogoNames.CAIXABANK_ALT
-                    : LogoNames.CAIXABANK
+                    ? AssetsNames.CAIXABANK_ALT
+                    : AssetsNames.CAIXABANK
                 }
               />
             </Grid>

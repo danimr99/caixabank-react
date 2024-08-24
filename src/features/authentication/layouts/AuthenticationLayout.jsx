@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Container, Grid, Stack, Typography } from "@mui/material";
 
 import { NavigationLayout } from "../../../layouts";
-import { Breakpoints, Logo, LogoNames, Spacing } from "../../../ui";
+import { Breakpoints, ImageAsset, AssetsNames, Spacing } from "../../../ui";
 
 export const AuthenticationLayout = ({ children, title }) => {
   return (
@@ -29,7 +29,7 @@ export const AuthenticationLayout = ({ children, title }) => {
             }}
           >
             <Stack direction="column" alignItems="center">
-              <Logo name={LogoNames.CAIXABANK} />
+              <ImageAsset name={AssetsNames.CAIXABANK} />
               <Typography variant="h5">{title}</Typography>
             </Stack>
           </Grid>

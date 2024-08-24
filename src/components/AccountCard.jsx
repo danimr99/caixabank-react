@@ -2,14 +2,14 @@ import { useRef } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
-import { getLogoIdByName, toMoney } from "../utils";
+import { getAssetIdByName, toMoney } from "../utils";
 import { useGlobalDispatcher, useToggle } from "../hooks";
 import { deleteAccount } from "../store";
 import { useNotificationsContext } from "../contexts";
 import {
   BorderRadius,
   Chip,
-  Logo,
+  ImageAsset,
   NotificationTypes,
   OptionsMenu,
   OptionsMenuButton,
@@ -68,7 +68,7 @@ export const AccountCard = ({ account }) => {
             alignItems="center"
           >
             <Grid item>
-              <Logo name={getLogoIdByName(account?.bank)} />
+              <ImageAsset name={getAssetIdByName(account?.bank)} />
             </Grid>
 
             <Grid item>

@@ -3,14 +3,17 @@ import { Box, Toolbar } from "@mui/material";
 
 import { NavigationBar } from "../ui";
 
-export const NavigationLayout = ({
-  children,
-  avoidNavigationOverlap = true,
-}) => (
+export const NavigationLayout = ({ children }) => (
   <Box sx={{ display: "flex" }}>
     <NavigationBar />
-    <Box component="main" sx={{ flexGrow: 1 }}>
-      {avoidNavigationOverlap && <Toolbar />}
+    <Box
+      component="main"
+      sx={{
+        flexGrow: 1,
+        minHeight: "100vh",
+      }}
+    >
+      <Toolbar />
       {children}
     </Box>
   </Box>
@@ -21,5 +24,4 @@ NavigationLayout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  avoidNavigationOverlap: PropTypes.bool,
 };
