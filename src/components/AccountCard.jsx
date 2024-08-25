@@ -2,7 +2,7 @@ import { useRef } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
-import { getAssetIdByName, toMoney } from "../utils";
+import { getAssetIdByName } from "../utils";
 import { useGlobalDispatcher, useToggle } from "../hooks";
 import { deleteAccount } from "../store";
 import { useNotificationsContext } from "../contexts";
@@ -10,6 +10,7 @@ import {
   BorderRadius,
   Chip,
   ImageAsset,
+  MoneyText,
   NotificationTypes,
   OptionsMenu,
   OptionsMenuButton,
@@ -88,17 +89,7 @@ export const AccountCard = ({ account }) => {
             sx={{ paddingX: "16px" }}
             useFlexGap
           >
-            <Typography
-              variant="h4"
-              color={(theme) =>
-                account?.balance < 0
-                  ? theme?.palette?.error?.main
-                  : theme?.palette?.text?.primary
-              }
-              fontWeight={600}
-            >
-              {toMoney(account?.balance)}
-            </Typography>
+            <MoneyText amount={account?.balance} />
 
             <Grid container direction="column">
               <Grid item>
