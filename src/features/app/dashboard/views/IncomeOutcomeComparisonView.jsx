@@ -1,7 +1,11 @@
 import { useMemo } from "react";
 import { useTheme } from "@mui/material";
 
-import { createPieChartData } from "../../../../utils";
+import {
+  createPieChartData,
+  getAllTransactions,
+  getTotalIncomeOutcome,
+} from "../../../../utils";
 import { useGlobalState } from "../../../../hooks";
 import { Stores } from "../../../../store";
 import { PieChart, ViewBox } from "../../../../ui";
@@ -9,20 +13,10 @@ import { PieChart, ViewBox } from "../../../../ui";
 export const IncomeOutcomeChartView = () => {
   const theme = useTheme();
   const { accounts } = useGlobalState(Stores.ACCOUNTS);
-  const { totalIncome, totalOutcome } = useMemo(() => {
-    const allTransactions = accounts.flatMap((account) => account.transactions);
-    return allTransactions.reduce(
-      (acc, transaction) => {
-        const { amount } = transaction;
-        return {
-          totalIncome: amount > 0 ? acc.totalIncome + amount : acc.totalIncome,
-          totalOutcome:
-            amount < 0 ? acc.totalOutcome + amount * -1 : acc.totalOutcome,
-        };
-      },
-      { totalIncome: 0, totalOutcome: 0 }
-    );
-  }, [accounts]);
+  const { totalIncome, totalOutcome } = useMemo(
+    () => getTotalIncomeOutcome(getAllTransactions(accounts)),
+    [accounts]
+  );
 
   return (
     <ViewBox title="Income vs Outcome">

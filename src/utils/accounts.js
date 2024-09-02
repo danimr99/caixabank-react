@@ -1,4 +1,4 @@
-/** @import { Account } from "../docs" */
+/** @import { Account, AccountsSummary } from "../docs" */
 
 import { generateRandomNumber } from "./numbers";
 
@@ -26,4 +26,32 @@ export const generateAccountIBAN = () => {
  */
 export const generateAccountId = (accounts) => {
   return accounts?.length + 1;
+};
+
+/**
+ * Calculates the total balance, highest balance, and lowest balance of a list of accounts.
+ *
+ * @function
+ * @param {Account[]} accounts - List of accounts to summarize.
+ * @returns {AccountsSummary} An object with the total balance, highest balance, and lowest balance
+ * of the accounts.
+ */
+export const getAccountsSummary = (accounts) => {
+  return accounts.reduce(
+    (acc, account) => {
+      const { balance } = account;
+      return {
+        totalBalance: acc.totalBalance + balance,
+        highestBalance:
+          balance > acc.highestBalance ? balance : acc.highestBalance,
+        lowestBalance:
+          balance < acc.lowestBalance ? balance : acc.lowestBalance,
+      };
+    },
+    {
+      totalBalance: 0,
+      highestBalance: Number.NEGATIVE_INFINITY,
+      lowestBalance: Number.POSITIVE_INFINITY,
+    }
+  );
 };

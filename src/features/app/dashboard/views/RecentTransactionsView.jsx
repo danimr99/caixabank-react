@@ -1,6 +1,10 @@
 import { useMemo } from "react";
 
-import { createTransactionTableData } from "../../../../utils";
+import {
+  createTransactionTableData,
+  getAllTransactions,
+  sortTransactionsByDate,
+} from "../../../../utils";
 import { useGlobalState } from "../../../../hooks";
 import { Stores } from "../../../../store";
 import { PaginationTable, ViewBox } from "../../../../ui";
@@ -16,9 +20,8 @@ const TABLE_COLUMNS = Object.freeze([
 export const RecentTransactionsView = () => {
   const { accounts } = useGlobalState(Stores.ACCOUNTS);
   const rows = useMemo(() => {
-    const allTransactions = accounts.flatMap((account) => account.transactions);
-    allTransactions.sort(
-      (a, b) => new Date(b?.transactionDate) - new Date(a?.transactionDate)
+    const allTransactions = sortTransactionsByDate(
+      getAllTransactions(accounts)
     );
 
     return allTransactions
@@ -27,7 +30,7 @@ export const RecentTransactionsView = () => {
   }, [accounts]);
 
   return (
-    <ViewBox title="Recent Transactions">
+    <ViewBox title={`Latest ${RECENT_TRANSACTIONS_QUANTITY} transactions`}>
       <PaginationTable columns={TABLE_COLUMNS} rows={rows} />
     </ViewBox>
   );

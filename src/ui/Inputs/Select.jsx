@@ -31,14 +31,8 @@ export const Select = ({
       error={Boolean(fieldState?.error)}
       fullWidth={fullWidth}
     >
-      <InputLabel
-      // id={`select-${name}-label`}
-      >
-        {label}
-      </InputLabel>
+      <InputLabel>{label}</InputLabel>
       <MuiSelect
-        // id={`select-${name}`}
-        // labelId={`select-${name}-label`}
         name={name}
         label={label}
         value={field?.value}

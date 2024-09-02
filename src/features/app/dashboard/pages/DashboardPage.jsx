@@ -1,12 +1,13 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import { PageLayout } from "../../layouts";
-import { Spacing, ViewBox } from "../../../../ui";
+import { Spacing } from "../../../../ui";
 import {
   AccountsSummaryView,
+  CategoryHistoryView,
   IncomeOutcomeChartView,
   RecentTransactionsView,
-} from "../components";
+} from "../views";
 
 export const DashboardPage = () => {
   return (
@@ -21,12 +22,7 @@ export const DashboardPage = () => {
         </Grid>
 
         <Grid item xs={12}>
-          <ViewBox>
-            <Typography variant="h6" fontWeight={500}>
-              History by category (Bar chart en un timeline por concepto de
-              transacciones)
-            </Typography>
-          </ViewBox>
+          <CategoryHistoryView />
         </Grid>
 
         <Grid item xs={12}>

@@ -11,4 +11,11 @@
  * @property {boolean} isSharedAccount - Whether the account is shared or not.
  */
 
+/**
+ * @typedef {object} AccountsSummary
+ * @property {number} totalBalance - The total balance of the accounts.
+ * @property {number} highestBalance - The highest balance of the accounts.
+ * @property {number} lowestBalance - The lowest balance of the accounts.
+ */
+
 export default {};

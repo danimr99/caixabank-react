@@ -18,14 +18,14 @@ import {
   Spacing,
 } from "../../../../ui";
 
-const initialFormValues = Object.freeze({
+const INITIAL_FORM_VALUES = Object.freeze({
   accountAlias: "",
   initialDeposit: "",
   bank: "",
   isSharedAccount: false,
 });
 
-const bankOptionsList = Object.freeze(
+const BANKING_OPTIONS_LIST = Object.freeze(
   Object.entries(Banks).map(([key, value]) => ({
     name: key?.toLowerCase(),
     label: value,
@@ -37,11 +37,11 @@ export const CreateAccountFormDialog = ({ isOpened = false, onClose }) => {
   const { dispatch } = useGlobalDispatcher();
   const { showNotification } = useNotificationsContext();
   const { handleSubmit, control, reset } = useForm({
-    defaultValues: initialFormValues,
+    defaultValues: INITIAL_FORM_VALUES,
   });
 
   const closeDialog = () => {
-    reset(initialFormValues);
+    reset(INITIAL_FORM_VALUES);
     onClose();
   };
 
@@ -113,7 +113,7 @@ export const CreateAccountFormDialog = ({ isOpened = false, onClose }) => {
         <Select
           name="bank"
           label="Banking entity"
-          options={bankOptionsList}
+          options={BANKING_OPTIONS_LIST}
           helperText="Select a banking entity for the account"
           control={control}
           validations={{ ...InputValidations.REQUIRED("Banking entity") }}
