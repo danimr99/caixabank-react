@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 import { GridList } from "../../../../ui";
-import { AccountCard } from "../../../../components";
+import { AccountCard } from "./AccountCard";
 
 export const AccountsList = ({ accounts = [] }) => (
   <GridList>

@@ -2,10 +2,10 @@ import { useRef } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
-import { getAssetIdByName } from "../utils";
-import { useGlobalDispatcher, useToggle } from "../hooks";
-import { deleteAccount } from "../store";
-import { useNotificationsContext } from "../contexts";
+import { getAssetIdByName } from "../../../../utils";
+import { useGlobalDispatcher, useToggle } from "../../../../hooks";
+import { deleteAccount } from "../../../../store";
+import { useNotificationsContext } from "../../../../contexts";
 import {
   BorderRadius,
   Chip,
@@ -15,7 +15,7 @@ import {
   OptionsMenu,
   OptionsMenuButton,
   Spacing,
-} from "../ui";
+} from "../../../../ui";
 
 export const AccountCard = ({ account }) => {
   const { dispatch } = useGlobalDispatcher();
