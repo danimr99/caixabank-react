@@ -8,5 +8,6 @@ export * from "./datetime";
 export * from "./localStorage";
 export * from "./numbers";
 export * from "./strings";
+export * from "./themes";
 export * from "./transactions";
 export * from "./validations";

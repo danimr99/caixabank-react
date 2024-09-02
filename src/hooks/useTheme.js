@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 
 import { LocalStorageKeys } from "../constants";
 import { Themes, darkTheme, lightTheme } from "../theme";
-import { getLocalStorageItem, setLocalStorageItem } from "../utils";
+import {
+  getBrowserThemeMode,
+  getLocalStorageItem,
+  setLocalStorageItem,
+} from "../utils";
 
 export const useTheme = () => {
   const [theme, setTheme] = useState(
-    getLocalStorageItem(LocalStorageKeys.THEME) ?? Themes.LIGHT
+    getLocalStorageItem(LocalStorageKeys.THEME) ?? getBrowserThemeMode()
   );
 
   useEffect(() => {
