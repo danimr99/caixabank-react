@@ -8,7 +8,14 @@ import {
 } from "@mui/material";
 
 import { NavigationLayout } from "../layouts";
-import { APPBAR_HEIGHT, Assets, Breakpoints, Link, Spacing } from "../ui";
+import {
+  APPBAR_HEIGHT,
+  Assets,
+  Breakpoints,
+  GoBackButton,
+  Link,
+  Spacing,
+} from "../ui";
 
 export const NotFoundPage = () => {
   const isMobile = useMediaQuery((theme) =>
@@ -18,6 +25,17 @@ export const NotFoundPage = () => {
   return (
     <NavigationLayout>
       <Container fixed>
+        <Stack
+          direction="row"
+          spacing={1}
+          alignItems="center"
+          sx={{
+            minHeight: Spacing["3XL"],
+          }}
+        >
+          <GoBackButton />
+        </Stack>
+
         <Box
           component="section"
           sx={{

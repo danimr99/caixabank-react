@@ -10,6 +10,7 @@ export * from "./Inputs";
 export * from "./layouts";
 export * from "./Links";
 export * from "./Lists";
+export * from "./LoadingIndicator";
 export * from "./Menus";
 export * from "./NavigationBar";
 export * from "./Notifications";

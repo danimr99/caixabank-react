@@ -27,7 +27,7 @@ export const AccountCard = ({ account }) => {
     close: closeCardMenu,
   } = useToggle();
 
-  const accountOptions = [
+  const accountOptions = Object.freeze([
     {
       action: "show-details",
       label: "Show details",
@@ -46,14 +46,14 @@ export const AccountCard = ({ account }) => {
         );
       },
     },
-  ];
+  ]);
 
   const handleOpenCardMenu = (event) => {
     anchorRef.current = event?.currentTarget;
     openCardMenu();
   };
 
-  const handleClosCardMenu = () => {
+  const handleCloseCardMenu = () => {
     anchorRef.current = null;
     closeCardMenu();
   };
@@ -78,7 +78,7 @@ export const AccountCard = ({ account }) => {
                 anchor={anchorRef?.current}
                 isOpened={isCardMenuOpened}
                 options={accountOptions}
-                onClose={handleClosCardMenu}
+                onClose={handleCloseCardMenu}
               />
             </Grid>
           </Grid>
