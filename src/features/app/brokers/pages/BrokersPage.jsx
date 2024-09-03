@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Button } from "@mui/material";
 
 import { GET_ALL_BROKERS_URL } from "../api";
 import { mapBrokerData } from "../../../../utils";
@@ -36,7 +35,7 @@ export const BrokersPage = () => {
             <Alert
               type={NotificationTypes.INFO}
               title="No brokers"
-              message="There are no brokers available."
+              message="There are not brokers available."
             />
           )}
 
@@ -45,11 +44,8 @@ export const BrokersPage = () => {
               type={NotificationTypes.ERROR}
               title="Error"
               message="An error occurred while fetching brokers."
-              action={
-                <Button color="inherit" size="small" onClick={fetchData}>
-                  Retry
-                </Button>
-              }
+              actionLabel="Retry"
+              onClickAction={fetchData}
             />
           )}
         </>
