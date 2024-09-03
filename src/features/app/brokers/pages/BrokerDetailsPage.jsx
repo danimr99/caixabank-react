@@ -3,11 +3,18 @@ import { useParams } from "react-router-dom";
 
 import { GET_BROKER_DETAILS_URL } from "../api";
 import { mapBrokerData } from "../../../../utils";
-import { useFetch } from "../../../../hooks";
+import { useFetch, useNavigation } from "../../../../hooks";
 import { PageLayout } from "../../layouts";
-import { Alert, LoadingIndicator, NotificationTypes } from "../../../../ui";
+import {
+  Alert,
+  Icons,
+  LoadingIndicator,
+  NotificationTypes,
+} from "../../../../ui";
+import { BrokerDetails } from "../components";
 
 export const BrokerDetailsPage = () => {
+  const { navigateToExternal } = useNavigation();
   const { brokerId } = useParams();
   const { data, loading, error, fetchData } = useFetch(
     GET_BROKER_DETAILS_URL(brokerId)
@@ -18,18 +25,28 @@ export const BrokerDetailsPage = () => {
     fetchData();
   }, [fetchData]);
 
+  const visitBrokerWebsite = () => {
+    if (brokerDetails?.website) {
+      navigateToExternal(brokerDetails.website, { openInNewTab: true });
+    }
+  };
+
   return (
     <PageLayout
       title={brokerDetails?.name ?? "Broker details"}
       showGoBackButton
+      showFabButton={!!brokerDetails?.website}
+      fab={{
+        icon: Icons.LINK,
+        label: "Visit website",
+        onClick: visitBrokerWebsite,
+      }}
     >
       {loading ? (
         <LoadingIndicator />
       ) : (
         <>
-          {brokerDetails?.name && (
-            <pre>{JSON.stringify(brokerDetails, null, 2)}</pre>
-          )}
+          {brokerDetails?.name && <BrokerDetails details={brokerDetails} />}
 
           {error && (
             <Alert

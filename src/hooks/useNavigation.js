@@ -11,5 +11,13 @@ export const useNavigation = () => {
     navigate(-1);
   };
 
-  return { navigateTo, goBack };
+  const navigateToExternal = (url, options = { openInNewTab: false }) => {
+    if (options.openInNewTab) {
+      window.open(url, "_blank", "noreferrer");
+    } else {
+      window.location.href = url;
+    }
+  };
+
+  return { navigateTo, goBack, navigateToExternal };
 };

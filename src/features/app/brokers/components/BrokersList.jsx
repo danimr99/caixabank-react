@@ -24,7 +24,7 @@ BrokersList.propTypes = {
       email: PropTypes.string,
       license: PropTypes.string,
       website: PropTypes.string,
-      activityStartDate: PropTypes.string,
+      foundationYear: PropTypes.string,
     })
   ),
 };

@@ -11,6 +11,7 @@ export const Icons = Object.freeze({
   SHARED_ACCOUNT: "PeopleRounded",
   USER: "AccountCircle",
   DASHBOARD: "Dashboard",
+  LINK: "Link",
 });
 
 export const IconSizes = Object.freeze({
