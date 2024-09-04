@@ -15,14 +15,16 @@ export const isNumber = (value) => {
  * @function
  * @param {any} value - The value to convert to a number.
  * @returns {number} The value converted to a number.
- * @throws {Error} If the input is not a number.
+ * @throws {Error} If the input cannot be converted to a number.
  */
 export const toNumber = (value) => {
-  try {
-    return Number(value);
-  } catch {
+  const convertedValue = Number(value);
+
+  if (isNumber(convertedValue)) {
+    return convertedValue;
+  } else {
     throw new Error(
-      `toNumber expects a number. Received: ${value} of type ${typeof value}.`
+      `toNumber cannot convert ${value} of type ${typeof value} to a number.`
     );
   }
 };

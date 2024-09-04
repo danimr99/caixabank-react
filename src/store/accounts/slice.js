@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { accountsData } from "../../data";
+import { Stores } from "../stores";
 import {
   format,
   generateAccountId,
@@ -14,7 +15,7 @@ export const initialState = Object.freeze({
 });
 
 export const accountsSlice = createSlice({
-  name: "accounts",
+  name: Stores.ACCOUNTS,
   initialState,
   reducers: {
     addAccount: (state, action) => {

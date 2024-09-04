@@ -3,6 +3,7 @@ export * from "./api";
 export * from "./assets";
 export * from "./charts";
 export * from "./countries";
+export * from "./crypto";
 export * from "./currencies";
 export * from "./dataFormatter";
 export * from "./datatables";

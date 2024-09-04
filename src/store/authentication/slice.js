@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { AuthenticationStatus, LocalStorageKeys } from "../../constants";
+import { Stores } from "../stores";
 import { getLocalStorageItem } from "../../utils";
 
 export const initialState = Object.freeze({
@@ -11,7 +12,7 @@ export const initialState = Object.freeze({
 });
 
 export const authenticationSlice = createSlice({
-  name: "authentication",
+  name: Stores.AUTHENTICATION,
   initialState,
   reducers: {
     setAuthenticationStatus: (state, action) => {

@@ -1,4 +1,6 @@
 export * from "./useAuthentication";
+export * from "./useErrorId";
+export * from "./useErrors";
 export * from "./useFetch";
 export * from "./useGlobalDispatcher";
 export * from "./useGlobalState";

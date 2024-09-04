@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
 import { getAssetIdByName } from "../../../../utils";
-import { useGlobalDispatcher, useToggle } from "../../../../hooks";
+import {
+  useGlobalDispatcher,
+  useNavigation,
+  useToggle,
+} from "../../../../hooks";
 import { deleteAccount } from "../../../../store";
 import { useNotificationsContext } from "../../../../contexts";
 import {
@@ -19,6 +23,7 @@ import {
 
 export const AccountCard = ({ account }) => {
   const { dispatch } = useGlobalDispatcher();
+  const { navigateTo } = useNavigation();
   const { showNotification } = useNotificationsContext();
   const anchorRef = useRef(null);
   const {
@@ -31,7 +36,7 @@ export const AccountCard = ({ account }) => {
     {
       action: "show-details",
       label: "Show details",
-      onClick: () => console.log("Show details"),
+      onClick: () => navigateTo(`/app/accounts/${account?.accountId}/details`),
     },
     {
       action: "delete-account",

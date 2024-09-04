@@ -17,7 +17,7 @@ export const BrokersPage = () => {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   return (
     <PageLayout title="Brokers">
