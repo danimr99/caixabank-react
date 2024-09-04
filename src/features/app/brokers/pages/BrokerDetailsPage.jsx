@@ -23,7 +23,7 @@ export const BrokerDetailsPage = () => {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const visitBrokerWebsite = () => {
     if (brokerDetails?.website) {
