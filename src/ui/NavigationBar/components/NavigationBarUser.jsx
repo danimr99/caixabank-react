@@ -1,25 +1,33 @@
 import PropTypes from "prop-types";
 
-import { useGlobalDispatcher, useGlobalState } from "../../../hooks";
-import { logout, Stores } from "../../../store";
+import { useGlobalState, useToggle } from "../../../hooks";
+import { Stores } from "../../../store";
 import { Icons } from "../..";
 import { NavigationBarItem } from "./NavigationBarItem";
+import { LogoutConfirmationDialog } from "../../../components";
 
 export const NavigationBarUser = ({ isSideMenuExpanded }) => {
   const { user } = useGlobalState(Stores.USER);
-  const { dispatch } = useGlobalDispatcher();
-
-  const handleClick = () => {
-    dispatch(logout());
-  };
+  const {
+    isOpened: isLogoutConfirmationDialogOpen,
+    open: openLogoutConfirmationDialog,
+    close: closeLogoutConfirmationDialog,
+  } = useToggle();
 
   return (
-    <NavigationBarItem
-      icon={Icons.USER}
-      label={user?.fullName}
-      isSideMenuExpanded={isSideMenuExpanded}
-      onClick={handleClick}
-    />
+    <>
+      <LogoutConfirmationDialog
+        isOpened={isLogoutConfirmationDialogOpen}
+        onClose={closeLogoutConfirmationDialog}
+      />
+
+      <NavigationBarItem
+        icon={Icons.USER}
+        label={user?.fullName}
+        isSideMenuExpanded={isSideMenuExpanded}
+        onClick={openLogoutConfirmationDialog}
+      />
+    </>
   );
 };
 
