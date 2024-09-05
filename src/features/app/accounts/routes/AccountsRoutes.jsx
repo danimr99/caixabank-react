@@ -6,6 +6,6 @@ export const AccountsRoutes = () => (
   <Routes>
     <Route path="/" element={<AccountsPage />} />
     <Route path=":accountId/details" element={<AccountsDetailsPage />} />
-    <Route path="*" element={<Navigate to="/" replace />} />
+    <Route path="*" element={<Navigate to="" replace />} />
   </Routes>
 );
