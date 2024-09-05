@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
+import PropTypes from "prop-types";
 import { Grid, Stack } from "@mui/material";
 
-import { SHOW_ALL } from "../../../../constants";
+import { SHOW_ALL } from "../../../constants";
 import {
   filterTransactionsByConcept,
   filterTransactionsByYear,
@@ -13,18 +14,15 @@ import {
   normalizeTransactionsAmount,
   sortTransactionsByDate,
   toMoney,
-} from "../../../../utils";
-import { useGlobalState } from "../../../../hooks";
-import { Stores } from "../../../../store";
-import { HistoricChart, Select, Spacing, ViewBox } from "../../../../ui";
+} from "../../../utils";
+import { HistoricChart, Select, Spacing, ViewBox } from "../../../ui";
 
 const INITIAL_SELECT_VALUE = {
   category: SHOW_ALL,
   year: SHOW_ALL,
 };
 
-export const CategoryHistoryView = () => {
-  const { accounts } = useGlobalState(Stores.ACCOUNTS);
+export const CategoryHistoryView = ({ accounts }) => {
   const { watch, control } = useForm({
     defaultValues: INITIAL_SELECT_VALUE,
   });
@@ -77,18 +75,18 @@ export const CategoryHistoryView = () => {
 
   const getViewBoxTitle = () => {
     if (selectedCategory === SHOW_ALL && selectedYear === SHOW_ALL) {
-      return "Transactions history";
+      return "Total amount history";
     }
 
     if (selectedCategory !== SHOW_ALL && selectedYear === SHOW_ALL) {
-      return `Transactions history for ${selectedCategory}`;
+      return `Total amount history for ${selectedCategory}`;
     }
 
     if (selectedCategory === SHOW_ALL && selectedYear !== SHOW_ALL) {
-      return `Transactions history for ${selectedYear}`;
+      return `Total amount history for ${selectedYear}`;
     }
 
-    return `Transactions history for ${selectedCategory} in ${selectedYear}`;
+    return `Total amount history ${selectedCategory} in ${selectedYear}`;
   };
 
   return (
@@ -136,4 +134,18 @@ export const CategoryHistoryView = () => {
       </Stack>
     </ViewBox>
   );
+};
+
+CategoryHistoryView.propTypes = {
+  accounts: PropTypes.arrayOf(
+    PropTypes.shape({
+      accountId: PropTypes.number.isRequired,
+      bank: PropTypes.string.isRequired,
+      accountAlias: PropTypes.string.isRequired,
+      iban: PropTypes.string.isRequired,
+      balance: PropTypes.number.isRequired,
+      transactions: PropTypes.array.isRequired,
+      isSharedAccount: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 };

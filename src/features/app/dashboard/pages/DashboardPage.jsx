@@ -1,15 +1,19 @@
 import { Grid } from "@mui/material";
 
+import { useGlobalState } from "../../../../hooks";
+import { Stores } from "../../../../store";
 import { PageLayout } from "../../layouts";
 import { Spacing } from "../../../../ui";
 import {
-  AccountsSummaryView,
   CategoryHistoryView,
-  IncomeOutcomeChartView,
-  RecentTransactionsView,
-} from "../views";
+  IncomeOutcomeComparisonView,
+  TransactionsView,
+} from "../../views";
+import { AccountsSummaryView } from "../views";
 
 export const DashboardPage = () => {
+  const { accounts } = useGlobalState(Stores.ACCOUNTS);
+
   return (
     <PageLayout title="Dashboard">
       <Grid container spacing={Spacing.MD}>
@@ -18,15 +22,15 @@ export const DashboardPage = () => {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <IncomeOutcomeChartView />
+          <IncomeOutcomeComparisonView accounts={accounts} />
         </Grid>
 
         <Grid item xs={12}>
-          <CategoryHistoryView />
+          <CategoryHistoryView accounts={accounts} />
         </Grid>
 
         <Grid item xs={12}>
-          <RecentTransactionsView />
+          <TransactionsView accounts={accounts} showLatestTransactionsOnly />
         </Grid>
       </Grid>
     </PageLayout>

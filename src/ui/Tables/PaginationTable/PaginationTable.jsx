@@ -1,7 +1,5 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-
-import { TablePaginationActions } from "./actions";
 import {
   Paper,
   Table,
@@ -14,11 +12,14 @@ import {
   TableRow,
 } from "@mui/material";
 
+import { INITIAL_PAGE, RESULTS_PER_PAGE } from "./pagination";
+import { TablePaginationActions } from "./actions";
+
 export const PaginationTable = ({
   columns = [],
   rows = [],
-  initialPage = 0,
-  resultsPerPage = 5,
+  initialPage = INITIAL_PAGE,
+  resultsPerPage = RESULTS_PER_PAGE,
   usePaperEffect = false,
 }) => {
   const [page, setPage] = useState(initialPage);

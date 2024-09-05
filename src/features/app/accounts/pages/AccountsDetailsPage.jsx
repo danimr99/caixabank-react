@@ -4,6 +4,7 @@ import { toNumber } from "../../../../utils";
 import { useGlobalState } from "../../../../hooks";
 import { Stores } from "../../../../store";
 import { PageLayout } from "../../layouts";
+import { AccountDetails } from "../components";
 
 export const AccountsDetailsPage = () => {
   const { accounts } = useGlobalState(Stores.ACCOUNTS);
@@ -14,7 +15,7 @@ export const AccountsDetailsPage = () => {
 
   return (
     <PageLayout title={account?.accountAlias} showGoBackButton>
-      AccountsDetailsPage
+      {account && <AccountDetails account={account} />}
     </PageLayout>
   );
 };
