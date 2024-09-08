@@ -67,7 +67,7 @@ Dialog.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
-  ]).isRequired,
+  ]),
   actions: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string.isRequired,

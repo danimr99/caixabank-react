@@ -1,37 +1,28 @@
-import { useRef } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
+import { Routes } from "../../../../constants";
 import { translateCountry } from "../../../../utils";
-import { useNavigation, useToggle } from "../../../../hooks";
-import { BorderRadius, OptionsMenu, OptionsMenuButton } from "../../../../ui";
+import { useNavigation } from "../../../../hooks";
+import {
+  BorderRadius,
+  OptionsMenu,
+  OptionsMenuButton,
+  useOptionsMenu,
+} from "../../../../ui";
 
 export const BrokerCard = ({ broker }) => {
   const { navigateTo } = useNavigation();
-  const anchorRef = useRef(null);
-  const {
-    isOpened: isCardMenuOpened,
-    open: openCardMenu,
-    close: closeCardMenu,
-  } = useToggle();
+  const { anchorRef, isMenuOpened, handleOpenMenu, handleCloseMenu } =
+    useOptionsMenu();
 
   const brokerOptions = Object.freeze([
     {
       action: "show-details",
       label: "Show details",
-      onClick: () => navigateTo(`/app/brokers/${broker?.id}/details`),
+      onClick: () => navigateTo(Routes.BROKER_DETAILS(broker?.id)),
     },
   ]);
-
-  const handleOpenCardMenu = (event) => {
-    anchorRef.current = event?.currentTarget;
-    openCardMenu();
-  };
-
-  const handleCloseCardMenu = () => {
-    anchorRef.current = null;
-    closeCardMenu();
-  };
 
   return (
     <Card sx={{ borderRadius: BorderRadius.MD }}>
@@ -43,12 +34,12 @@ export const BrokerCard = ({ broker }) => {
           alignItems="center"
         >
           <Grid item>
-            <OptionsMenuButton onClick={handleOpenCardMenu} />
+            <OptionsMenuButton onClick={handleOpenMenu} />
             <OptionsMenu
               anchor={anchorRef?.current}
-              isOpened={isCardMenuOpened}
+              isOpened={isMenuOpened}
               options={brokerOptions}
-              onClose={handleCloseCardMenu}
+              onClose={handleCloseMenu}
             />
           </Grid>
         </Grid>

@@ -30,7 +30,7 @@ export const LogoutConfirmationDialog = ({ isOpened = false, onClose }) => {
         },
       ]}
       onClose={onClose}
-    ></Dialog>
+    />
   );
 };
 

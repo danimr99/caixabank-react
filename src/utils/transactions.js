@@ -142,7 +142,7 @@ export const normalizeTransactionsAmount = (transactions) => {
   return transactions.map((transaction) => ({
     ...transaction,
     amount:
-      transaction?.amount < 0 ? transaction?.amount * -1 : transaction?.amount,
+      transaction?.amount < 0 ? -transaction?.amount : transaction?.amount,
   }));
 };
 

@@ -1,3 +1,9 @@
 import { accountsSlice } from "./slice";
 
-export const { addAccount, deleteAccount } = accountsSlice.actions;
+export const {
+  addAccount,
+  addTransaction,
+  addTransference,
+  renameAccount,
+  deleteAccount,
+} = accountsSlice.actions;

@@ -1,3 +1,5 @@
+import { toMoney } from "../../utils";
+
 export const InputTypes = Object.freeze({
   TEXT: "text",
   NUMBER: "number",
@@ -19,14 +21,21 @@ export const InputValidations = Object.freeze({
   REQUIRED: (fieldLabel) => ({
     required: { value: true, message: `${fieldLabel} is required` },
   }),
-  MIN: (fieldLabel, value) => ({
+  MIN: (fieldLabel, value, options = { isMoney: false }) => ({
     min: {
       value,
-      message: `${fieldLabel} must be greater than ${value}`,
+      message: `${fieldLabel} must be greater than ${
+        options.isMoney ? toMoney(value) : value
+      }`,
     },
   }),
-  MAX: (fieldLabel, value) => ({
-    max: { value, message: `${fieldLabel} must be less than ${value}` },
+  MAX: (fieldLabel, value, options = { isMoney: false }) => ({
+    max: {
+      value,
+      message: `${fieldLabel} must be less than ${
+        options.isMoney ? toMoney(value) : value
+      }`,
+    },
   }),
   MIN_LENGTH: (fieldLabel, value) => ({
     minLength: {

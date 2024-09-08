@@ -1,9 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const useNavigation = () => {
+  const location = useLocation();
   const navigate = useNavigate();
 
   const navigateTo = (path, options = { replace: false }) => {
+    if (location?.pathname === path) return;
     navigate(path, options);
   };
 

@@ -25,7 +25,7 @@ const INITIAL_FORM_VALUES = Object.freeze({
   isSharedAccount: false,
 });
 
-const BANKING_OPTIONS_LIST = Object.freeze(
+const BANKING_OPTIONS = Object.freeze(
   Object.entries(Banks).map(([key, value]) => ({
     name: key?.toLowerCase(),
     label: value,
@@ -33,7 +33,7 @@ const BANKING_OPTIONS_LIST = Object.freeze(
   }))
 );
 
-export const CreateAccountFormDialog = ({ isOpened = false, onClose }) => {
+export const CreateAccountDialog = ({ isOpened = false, onClose }) => {
   const { dispatch } = useGlobalDispatcher();
   const { showNotification } = useNotificationsContext();
   const { handleSubmit, control, reset } = useForm({
@@ -105,15 +105,17 @@ export const CreateAccountFormDialog = ({ isOpened = false, onClose }) => {
           control={control}
           validations={{
             ...InputValidations.REQUIRED("Initial deposit"),
-            ...InputValidations.MIN("Initial deposit", 0),
-            ...InputValidations.MAX("Initial deposit", 1000000),
+            ...InputValidations.MIN("Initial deposit", 0, { isMoney: true }),
+            ...InputValidations.MAX("Initial deposit", 1000000, {
+              isMoney: true,
+            }),
           }}
           fullWidth
         />
         <Select
           name="bank"
           label="Banking entity"
-          options={BANKING_OPTIONS_LIST}
+          options={BANKING_OPTIONS}
           helperText="Select a banking entity for the account"
           control={control}
           validations={{ ...InputValidations.REQUIRED("Banking entity") }}
@@ -129,7 +131,7 @@ export const CreateAccountFormDialog = ({ isOpened = false, onClose }) => {
   );
 };
 
-CreateAccountFormDialog.propTypes = {
+CreateAccountDialog.propTypes = {
   isOpened: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
 };

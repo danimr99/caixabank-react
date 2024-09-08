@@ -5,4 +5,5 @@ export * from "./currencies";
 export * from "./filters";
 export * from "./locales";
 export * from "./localStorage";
+export * from "./routes";
 export * from "./transactions";

@@ -1,5 +1,6 @@
 /** @import {Transaction, TransactionTableData} from '../docs' */
 
+import { toMoney } from "./currencies";
 import { toDatetimeString } from "./datetime";
 
 /**
@@ -16,7 +17,7 @@ export const createTransactionTableData = (transaction) => {
       transactionId: transaction?.transactionId,
       transactionDate: toDatetimeString(transaction?.transactionDate),
       concept: transaction?.concept,
-      amount: transaction?.amount,
+      amount: toMoney(transaction?.amount),
     },
   };
 };

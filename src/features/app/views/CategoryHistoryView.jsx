@@ -86,7 +86,7 @@ export const CategoryHistoryView = ({ accounts }) => {
       return `Total amount history for ${selectedYear}`;
     }
 
-    return `Total amount history ${selectedCategory} in ${selectedYear}`;
+    return `Total amount history for ${selectedCategory} in ${selectedYear}`;
   };
 
   return (
@@ -119,10 +119,8 @@ export const CategoryHistoryView = ({ accounts }) => {
             {
               scaleType: "band",
               dataKey: "monthYear",
-              label: "Period of time",
             },
           ]}
-          yAxis={[{ label: "Amount" }]}
           series={[
             {
               dataKey: "amount",

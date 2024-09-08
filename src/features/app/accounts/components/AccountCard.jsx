@@ -1,67 +1,65 @@
-import { useRef } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 
 import { getAssetIdByName } from "../../../../utils";
-import {
-  useGlobalDispatcher,
-  useNavigation,
-  useToggle,
-} from "../../../../hooks";
-import { deleteAccount } from "../../../../store";
-import { useNotificationsContext } from "../../../../contexts";
+import { useAccountOperationsContext } from "../contexts";
 import {
   BorderRadius,
   Chip,
   ImageAsset,
   MoneyText,
-  NotificationTypes,
   OptionsMenu,
   OptionsMenuButton,
   Spacing,
+  useOptionsMenu,
 } from "../../../../ui";
 
 export const AccountCard = ({ account }) => {
-  const { dispatch } = useGlobalDispatcher();
-  const { navigateTo } = useNavigation();
-  const { showNotification } = useNotificationsContext();
-  const anchorRef = useRef(null);
   const {
-    isOpened: isCardMenuOpened,
-    open: openCardMenu,
-    close: closeCardMenu,
-  } = useToggle();
+    selectAccount,
+    showAccountDetails: { navigateToAccountDetails },
+    createTransaction: { openCreateTransactionDialog },
+    renameAccount: { openRenameAccountDialog },
+    deleteAccount: { openDeleteAccountConfirmationDialog },
+  } = useAccountOperationsContext();
+  const { anchorRef, isMenuOpened, handleOpenMenu, handleCloseMenu } =
+    useOptionsMenu();
 
   const accountOptions = Object.freeze([
     {
       action: "show-details",
       label: "Show details",
-      onClick: () => navigateTo(`/app/accounts/${account?.accountId}/details`),
+      onClick: () => {
+        selectAccount(account);
+        navigateToAccountDetails();
+      },
+    },
+    {
+      action: "create-transaction",
+      label: "Create transaction",
+      onClick: () => {
+        selectAccount(account);
+        openCreateTransactionDialog();
+      },
+    },
+    {
+      action: "rename-account",
+      label: "Rename account",
+      onClick: () => {
+        selectAccount(account);
+        openRenameAccountDialog();
+      },
     },
     {
       action: "delete-account",
       label: "Delete account",
       sx: { color: "error.main" },
       onClick: () => {
-        dispatch(deleteAccount({ accountId: account?.accountId }));
-        showNotification(
-          NotificationTypes.SUCCESS,
-          "Account deleted successfully",
-          `Your account "${account?.accountAlias}" has been deleted.`
-        );
+        selectAccount(account);
+        openDeleteAccountConfirmationDialog();
       },
     },
   ]);
-
-  const handleOpenCardMenu = (event) => {
-    anchorRef.current = event?.currentTarget;
-    openCardMenu();
-  };
-
-  const handleCloseCardMenu = () => {
-    anchorRef.current = null;
-    closeCardMenu();
-  };
 
   return (
     <Card sx={{ borderRadius: BorderRadius.MD }}>
@@ -78,12 +76,12 @@ export const AccountCard = ({ account }) => {
             </Grid>
 
             <Grid item>
-              <OptionsMenuButton onClick={handleOpenCardMenu} />
+              <OptionsMenuButton onClick={handleOpenMenu} />
               <OptionsMenu
                 anchor={anchorRef?.current}
-                isOpened={isCardMenuOpened}
+                isOpened={isMenuOpened}
                 options={accountOptions}
-                onClose={handleCloseCardMenu}
+                onClose={handleCloseMenu}
               />
             </Grid>
           </Grid>
