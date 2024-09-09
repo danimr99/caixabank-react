@@ -15,7 +15,7 @@
  */
 
 /**
- * @typedef {object} NotificationsProps
+ * @typedef {object} NotificationsContext
  * @property {Notification} notification - The notification to display.
  * @property {boolean} isNotificationVisible - Whether the notification is visible.
  * @property {function(Notification): void} showNotification - Function to show a notification.

@@ -1,4 +1,4 @@
-/** @import {NotificationsProps} from "../../docs" */
+/** @import {NotificationsContext as NotificationsContextType} from "../../docs" */
 
 import { useContext } from "react";
 
@@ -8,7 +8,7 @@ import { NotificationsContext } from "./NotificationsContext";
  *
  * @function
  * @throws {Error} - If the hook is used outside a NotificationsProvider.
- * @returns {NotificationsProps} The notifications context.
+ * @returns {NotificationsContextType} The notifications context.
  */
 export const useNotificationsContext = () => {
   const context = useContext(NotificationsContext);

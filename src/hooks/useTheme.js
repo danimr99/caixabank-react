@@ -1,4 +1,4 @@
-/** @import {ThemeProps} from "../docs" */
+/** @import {ThemeContext} from "../docs" */
 
 import { useEffect, useState } from "react";
 
@@ -14,7 +14,7 @@ import {
  * Custom hook to use the theme.
  *
  * @function
- * @returns {ThemeProps} The theme props.
+ * @returns {ThemeContext} The theme context.
  */
 export const useTheme = () => {
   const [theme, setTheme] = useState(

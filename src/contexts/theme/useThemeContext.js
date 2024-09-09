@@ -1,4 +1,4 @@
-/** @import {ThemeProps} from "../../docs" */
+/** @import {ThemeContext} from "../../docs" */
 
 import { useContext } from "react";
 
@@ -9,7 +9,7 @@ import { ThemeContext } from "./ThemeContext";
  *
  * @function
  * @throws {Error} - If the hook is used outside a ThemeProvider.
- * @returns {ThemeProps} The theme props.
+ * @returns {ThemeContext} The theme context.
  */
 export const useThemeContext = () => {
   const context = useContext(ThemeContext);
