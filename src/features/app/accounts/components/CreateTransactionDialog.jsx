@@ -108,7 +108,7 @@ export const CreateTransactionDialog = ({
       `${
         transactionType === TransactionTypes.TRANSFER
           ? "Transference"
-          : "Transaction"
+          : transactionType
       } completed successfully`,
       transactionType === TransactionTypes.TRANSFER
         ? `Your transference to "${
@@ -117,7 +117,7 @@ export const CreateTransactionDialog = ({
                 destinationAccount?.value === data?.destinationAccountId
             )?.label
           }" has been completed with an amount of ${toMoney(data?.amount)}.`
-        : `Your transaction "${
+        : `Your ${transactionType?.toLowerCase()} "${
             data?.concept
           }" has been completed with an amount of ${toMoney(data?.amount)}.`
     );
