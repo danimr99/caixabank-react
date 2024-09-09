@@ -1,3 +1,5 @@
+/** @import {AccountsState, AddAccountAction, AddTransactionAction, AddTransferenceAction, DeleteAccountAction, RenameAccountAction} from "../../docs" */
+
 import { createSlice } from "@reduxjs/toolkit";
 
 import { accountsData } from "../../data";
@@ -20,6 +22,13 @@ export const accountsSlice = createSlice({
   name: Stores.ACCOUNTS,
   initialState,
   reducers: {
+    /**
+     * Add account.
+     *
+     * @function
+     * @param {AccountsState} state - Current state.
+     * @param {AddAccountAction} action - The action to be dispatched.
+     */
     addAccount: (state, action) => {
       const { payload } = action;
       const { bank, accountAlias, initialDeposit, isSharedAccount } = payload;
@@ -34,6 +43,13 @@ export const accountsSlice = createSlice({
         isSharedAccount,
       });
     },
+    /**
+     * Delete account.
+     *
+     * @function
+     * @param {AccountsState} state - Current state.
+     * @param {DeleteAccountAction} action - The action to be dispatched.
+     */
     deleteAccount: (state, action) => {
       const { payload } = action;
       const { accountId } = payload;
@@ -42,6 +58,13 @@ export const accountsSlice = createSlice({
         (account) => account?.accountId !== accountId
       );
     },
+    /**
+     * Rename account.
+     *
+     * @function
+     * @param {AccountsState} state - Current state.
+     * @param {RenameAccountAction} action - The action to be dispatched.
+     */
     renameAccount: (state, action) => {
       const { payload } = action;
       const { accountId, newAccountAlias } = payload;
@@ -52,6 +75,13 @@ export const accountsSlice = createSlice({
           : account
       );
     },
+    /**
+     * Add transaction.
+     *
+     * @function
+     * @param {AccountsState} state - Current state.
+     * @param {AddTransactionAction} action - The action to be dispatched.
+     */
     addTransaction: (state, action) => {
       const { payload } = action;
       const { accountId, transactionType, concept, amount } = payload;
@@ -81,6 +111,13 @@ export const accountsSlice = createSlice({
           : account
       );
     },
+    /**
+     * Add transference.
+     *
+     * @function
+     * @param {AccountsState} state - Current state.
+     * @param {AddTransferenceAction} action - The action to be dispatched.
+     */
     addTransference: (state, action) => {
       const { payload } = action;
       const { accountId, destinationAccountId, amount } = payload;

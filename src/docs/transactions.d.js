@@ -7,6 +7,10 @@
  */
 
 /**
+ * @typedef {"Withdrawal" | "Deposit" | "Transfer"} TransactionType - The type of transaction.
+ */
+
+/**
  * @typedef {object} TransactionsSummary
  * @property {number} totalIncome - The total income of the transactions.
  * @property {number} totalOutcome - The total outcome of the transactions.

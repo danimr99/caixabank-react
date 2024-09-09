@@ -15,7 +15,7 @@ export const useErrors = () => {
   };
 
   const clearErrorById = (errorId) => {
-    dispatch(clearError(errorId));
+    dispatch(clearError({ id: errorId }));
   };
 
   const getErrorById = (errorId) => errors[errorId];
