@@ -1,7 +1,16 @@
+/** @import {Error} from "../docs" */
+
 import { useEffect, useRef, useState } from "react";
 
 import { useErrorId, useErrors } from "./";
 
+/**
+ * Custom hook to fetch data from the provided URL.
+ *
+ * @function
+ * @param {string} url - URL to fetch data from.
+ * @returns {{data: any, loading: boolean, error: Error, fetchData: function():Promise<void>}} Data, loading state, error and fetch function.
+ */
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);

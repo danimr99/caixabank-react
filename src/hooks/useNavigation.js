@@ -1,5 +1,15 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
+/**
+ * Custom hook to manage navigation.
+ *
+ * @function
+ * @returns {{
+ * navigateTo: function(string, {replace: boolean}): void,
+ * goBack: function(): void,
+ * navigateToExternal: function(string, {openInNewTab: boolean}): void
+ * }} Navigation object.
+ */
 export const useNavigation = () => {
   const location = useLocation();
   const navigate = useNavigate();

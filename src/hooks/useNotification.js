@@ -1,3 +1,5 @@
+/** @import {Notification} from "../docs" */
+
 import { useState } from "react";
 
 import { useToggle } from "./useToggle";
@@ -10,6 +12,17 @@ const initialNotificationState = Object.freeze({
   duration: NotificationDurations.LONG,
 });
 
+/**
+ * Custom hook to manage notifications.
+ *
+ * @function
+ * @returns {{
+ * isVisible: boolean,
+ * notification: Notification,
+ * showNotification: function(string, string, string, number): void,
+ * hideNotification: function(): void
+ * }} Notification object.
+ */
 export const useNotification = () => {
   const { isOpened: isVisible, open, close } = useToggle();
   const [notification, setNotification] = useState(initialNotificationState);

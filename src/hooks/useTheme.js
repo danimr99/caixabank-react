@@ -1,3 +1,5 @@
+/** @import {ThemeProps} from "../docs" */
+
 import { useEffect, useState } from "react";
 
 import { LocalStorageKeys } from "../constants";
@@ -8,6 +10,12 @@ import {
   setLocalStorageItem,
 } from "../utils";
 
+/**
+ * Custom hook to use the theme.
+ *
+ * @function
+ * @returns {ThemeProps} The theme props.
+ */
 export const useTheme = () => {
   const [theme, setTheme] = useState(
     getLocalStorageItem(LocalStorageKeys.THEME) ?? getBrowserThemeMode()
